@@ -1,5 +1,7 @@
 Kinggordo::Application.routes.draw do
   
+  
+
   devise_for :users
 
   get 'films/autocomplete_function_name'
@@ -15,7 +17,7 @@ Kinggordo::Application.routes.draw do
   
  
   
-  
+  resources :offices
   resources :users
   resources :salles
   resources :villes

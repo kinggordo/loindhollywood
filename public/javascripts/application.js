@@ -27,13 +27,25 @@ $(function() {
   });
 });
 
+
 $(function() {
-  $("#salles th a, #salles .pagination a").live("click", function() {
+  $("#officesearchs th a, #officesearchs .pagination a").live("click", function() {
     $.getScript(this.href);
     return false;
   });
-  $("#salles_search input").keyup(function() {
-    $.get($("#salles_search").attr("action"), $("#salles_search").serialize(), null, "script");
+  $("#officessearchs_search input").keyup(function() {
+    $.get($("#officesearchs_search").attr("action"), $("#officesearchs_search").serialize(), null, "script");
+    return false;
+  });
+});
+
+$(function() {
+  $("#sallesearchs th a, #sallesearchs .pagination a").live("click", function() {
+    $.getScript(this.href);
+    return false;
+  });
+  $("#sallesearchs_search input").keyup(function() {
+    $.get($("#sallesearchs_search").attr("action"), $("#sallesearchs_search").serialize(), null, "script");
     return false;
   });
 });

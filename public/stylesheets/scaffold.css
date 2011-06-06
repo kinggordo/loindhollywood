@@ -105,7 +105,7 @@ a.image img { border: medium none;}
     width: 70%;
 	border: 1px solid #ddd; 
 	padding: 20px 20px 20px 20px; 
-	margin-top:30px;
+	margin-top:70px;
 	background: #fff;
 			
 	/* -- CSS3 - define rounded corners for the form -- */	
@@ -183,7 +183,7 @@ a.image img { border: medium none;}
 
 /*----------------------------------------------------------*/
 
-#navbar_wrapper{margin-top:30px;margin-left:30px; }
+#navbar_wrapper{ position:absolute; margin-top:30px;margin-left:30px;}
 
 #navbar ul li { 
 padding:0; 
@@ -192,8 +192,10 @@ display:inline;
  
 }
 
+
+
 #navbar a {
-	float:left; margin-right:10px;
+margin-right:10px;
 padding-left:30px;	padding-right:30px; padding-top:5px; padding-bottom:5px;
 color: #FFF; 
 text-transform: uppercase; 
@@ -219,6 +221,32 @@ background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#18a5cc), to(#0a85a8))
 background: -moz-linear-gradient(25% 75% 90deg,#0a85a8, #18a5cc);
 }
 
+#navbar li.off a {
+margin-left:200px;
+padding-left:30px;	padding-right:30px; padding-top:5px; padding-bottom:5px;
+color: #FFF; 
+text-transform: uppercase; 
+background-color: #708DAF;
+border: none;
+text-decoration:none;
+text-align: left;
+-webkit-box-shadow:0px 0 20px #ccc;
+-moz-box-shadow:0px 0 20px #ccc; 
+box-shadow:0px 0 20px #ccc;
+
+
+/* -- CSS3 Transition - define which property to animate (i.e. the shadow)  -- */
+-webkit-transition: -webkit-box-shadow 0.3s linear;
+
+/* -- CSS3 - Rounded Corners -- */
+-moz-border-radius: 4px; 
+-webkit-border-radius: 4px;
+border-radius: 4px; 
+				
+/* -- CSS3 Shadow - create a shadow around each input element -- */ 
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#005F88), to(#095588)); 
+background: -moz-linear-gradient(25% 75% 90deg,#095588, #005F88);
+}
 /*----------------------------------------------------------*/
 
 #footer {
@@ -293,6 +321,7 @@ table td.destroy a {
 table th {
   color: #000;
   font-weight: normal;
+  
 }
 
 table th a {
@@ -318,6 +347,7 @@ table tr.result:hover {
 	-moz-box-shadow: 0px 0px 6px #DBDDDC;	
 	box-shadow: 0px 0px 6px #DBDDDC;
 	cursor:pointer;
+	
 }
 
 #user_nav{position: relative; text-align: right; margin-right:15px;margin-bottom:5px;}

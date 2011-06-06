@@ -1,0 +1,87 @@
+<%= form_for(@office) do |f| %>
+<div id="Left">
+  
+  <div id="Right">    
+
+    <div class="submit"><%= f.submit "Update Office",:class => "submit"%></div>
+
+
+  </div>
+  
+  <h1>Editing Office</h1>
+  
+  <% if @office.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@office.errors.count, "error") %> prohibited this office from being saved:</h2>
+
+      <ul>
+      <% @office.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    TITRE:<br />
+    <%= f.text_field :titre %>
+  </div>
+  <div class="field">
+    TITRE ORIGINAL ou ALTERNATIF:<br />
+    <%= f.text_field :titreo %>
+  </div>
+  <div class="field">
+    REALISATEUR:<br />
+    <%= f.text_field :rea %>
+  </div>
+  <div class="field">
+    ANNEE:<br />
+    <%= f.text_field :year %>
+  </div>
+  <div class="field">
+    PAYS:<br />
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    METRAGE APPROXIMATIF:<br />
+    <%= f.text_field :dure %>
+  </div>
+  <div class="field">
+    SON:<br />
+    <%= f.text_field :son %>
+  </div>
+  <div class="field">
+    PRODUCTEUR/DISTRIBUTEUR:<br />
+    <%= f.text_field :producer %>
+  </div>
+  <div class="field">
+    LIEU OFFICE:<br />
+    <%= f.text_field :lieu %>
+  </div>
+  <div class="field">
+    FORMAT EN MM:<br />
+    <%= f.text_field :format %>
+  </div>
+  <div class="field">
+    SUPPORT:<br />
+    <%= f.text_field :support %>
+  </div>
+  <div class="field">
+    GENRE:<br />
+    <%= f.text_field :genre %>
+  </div>
+  <div class="field">
+    THEME 1<br />
+    <%= f.text_field :themea %>
+  </div>
+  <div class="field">
+    THEME 2<br />
+    <%= f.text_field :themeb %>
+  </div>
+  <div class="field">
+    NOTES<br />
+    <%= f.text_area :note %>
+  </div>
+  
+<% end %>
+</div>

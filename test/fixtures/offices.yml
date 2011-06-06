@@ -1,0 +1,35 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  titre: MyString
+  titreo: MyString
+  rea: MyString
+  year: MyString
+  country: MyString
+  dure: MyString
+  son: MyString
+  producer: MyString
+  lieu: MyString
+  format: MyString
+  support: MyString
+  genre: MyString
+  themea: MyString
+  themeb: MyString
+  note: MyText
+
+two:
+  titre: MyString
+  titreo: MyString
+  rea: MyString
+  year: MyString
+  country: MyString
+  dure: MyString
+  son: MyString
+  producer: MyString
+  lieu: MyString
+  format: MyString
+  support: MyString
+  genre: MyString
+  themea: MyString
+  themeb: MyString
+  note: MyText

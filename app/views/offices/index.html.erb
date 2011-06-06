@@ -1,0 +1,23 @@
+<div id="Left">
+  
+  <div id="Right">    
+    <div class="submit"><%= link_to 'Add Office', new_office_path, :class=>"submit" %></div>
+    
+  </div>
+
+  <h1>Search Offices</h1>
+  <%= form_tag offices_path, :method => 'get', :id => "offices_search" do %>
+  <div id='search'>
+    <p>
+      <%= text_field_tag :search, params[:search],:style =>"width:50%" %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+  </div>
+
+    <div id="officessearchs"><%= render 'officessearchs' %></div>
+  <% end %>
+
+
+
+
+</div>

@@ -64,11 +64,15 @@
         <ul> 
           <li><%= link_to "Films", films_path %></li>
           <li><%= link_to "Theaters", salles_path %></li>
+          <li class='off'><%= link_to "Offices", offices_path %></li>
           <%if @film%> 
           <b><%=@film.name%></b>
           <%end%>
+          <%if @office%> 
+          <b><%=@office.titre%></b>
+          <%end%>
         </ul> 
-      </div> 
+      </div>
     </div>
     <%end%>
     <!-- TABS -->
