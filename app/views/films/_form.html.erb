@@ -47,20 +47,34 @@
         <%=  f.text_field :titlec, :style =>"width:99%" %>
     </li>
   </ol>
-  
+
+  <%= link_to_function "Alternate title transliteration", "$('#fd').toggle()" %>
+  <div id="fd" style="display:none;" >
   <ol>
     <li>
-      <label for="first_name">Alternate title transliteration</label><br/ >  
+        
         <%=  f.text_field :titled, :style =>"width:99%" %>
     </li>
   </ol>
-  
+  </div>
+
   <ol>
     <li>
       <label for="first_name">Episode title original</label><br/ >  
         <%=  f.text_field :titlee, :style =>"width:99%" %>
     </li>
   </ol>
+
+  <%= link_to_function "Alternate title translation", "$('#f').toggle()" %>
+
+  <div id="f" style="display:none;" >
+  <ol>
+    <li>
+      
+        <%=  f.text_field :titlef, :style =>"width:99%" %>
+    </li>
+  </ol>
+  </div>
   
   <ol>
     <li>
