@@ -41,10 +41,10 @@
                 
                 <hr/>
               
-              <%= link_to_function "Edit show", "$('##{f.id}').toggle()" %>
+              <%= link_to_function "Edit show", "$('#{f}').toggle()" %>
               
               
-              <div id="<%=f.id%>" style="display:none;" >
+              <div id="<%=f%>" style="display:none;" >
                 
                 <li>
                 Audience :
@@ -101,7 +101,7 @@
               <hr/>
              
               <p class="done">
-               <%= link_to_function "I'm done with  this show", "$('##{f.id}').toggle()" %> 
+               <%= link_to_function "I'm done with  this show", "$('#{f}').toggle()" %> 
               </p>
                             
              </div>

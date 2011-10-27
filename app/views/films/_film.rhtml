@@ -1,7 +1,7 @@
 <div id="Left">
   
   <div id="Right">    
-    <div class="submit"><%= link_to "Edit", edit_film_path(film), :class => "submit"  %></div>
+    <div class="submit"><%= link_to "Edit movie", edit_film_path(film), :class => "submit"  %></div>
   </div>
   
 
@@ -19,13 +19,13 @@
   <ol>
     <li>
       <label for="first_name"></label>  
-       Title translitération : <b><%= @film.titlea %></b>    
+       Title transliteration : <b><%= @film.titlea %></b>    
     </li>
   </ol>
   <ol>
     <li>
       <label for="first_name"></label>  
-        Title literal translitération : <b><%= @film.titleb %></b>    
+        Title literal translation : <b><%= @film.titleb %></b>    
     </li>
   </ol>
   <ol>
@@ -37,7 +37,7 @@
   <ol>
     <li>
       <label for="first_name"></label>  
-        Alternate title translitération : <b><%= @film.titled %></b>    
+        Alternate title transliteration : <b><%= @film.titled %></b>    
     </li>
   </ol>
   <ol>
@@ -151,7 +151,7 @@
   <br/>
   
 <fieldset>
-      <legend>Country / Theaters</legend>  
+      <legend>City / Theaters</legend>  
 
 <hr/>
   
@@ -161,7 +161,7 @@
   <div class="buttoncountry">
   <%= button_to_function "Paris", "$('#pa').toggle()" %> 
   <%= button_to_function "Moscou", "$('#mos').toggle()" %> 
-  <%= button_to_function "Shangai", "$('#sha').toggle()" %>
+  <%= button_to_function "Shanghai", "$('#sha').toggle()" %>
   </div>  
   
   <br/>

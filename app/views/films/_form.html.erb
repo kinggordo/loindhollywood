@@ -5,13 +5,13 @@
 <div id="post_errors" style="display: none;"></div> 
 
 <div id="Right">    
-  <div class="submit"><%= f.submit nil,:class => "submit"%></div> 
+  <div class="submit"><%= f.submit "Update movie",:class => "submit"%></div> 
 </div>
 
 <div class="button">
 <%= button_to_function "Title / Technical", "$('#ti').toggle()" %>
 <%= button_to_function "Functions / People", "$('#fp').toggle()" %>
-<%= button_to_function "Country / Theaters", "$('#sa').toggle()" %>
+<%= button_to_function "City / Theaters", "$('#sa').toggle()" %>
 </div>
 
 <div id="ti" style="display:none;" > 
@@ -29,14 +29,14 @@
   
   <ol>
     <li>
-      <label for="first_name">Title translitération</label><br/ >  
+      <label for="first_name">Title transliteration</label><br/ >  
         <%=  f.text_field :titlea, :style =>"width:99%" %>
     </li>
   </ol>
   
   <ol>
     <li>
-      <label for="first_name">Title literal translitération</label><br/ >  
+      <label for="first_name">Title literal translation</label><br/ >  
         <%=  f.text_field :titleb, :style =>"width:99%" %>
     </li>
   </ol>
@@ -50,7 +50,7 @@
   
   <ol>
     <li>
-      <label for="first_name">Alternate title translitération</label><br/ >  
+      <label for="first_name">Alternate title transliteration</label><br/ >  
         <%=  f.text_field :titled, :style =>"width:99%" %>
     </li>
   </ol>
@@ -88,14 +88,14 @@
   <ol>
     <li>
       <label for="first_name">Date of first release original</label><br/ >  
-        <%= f.date_select :start_date, :order => [:day, :month, :year],:start_year=> 1925, :end_year => 1935, :include_blank => true %>
+        <%= f.date_select :start_date, :order =>  [:day, :month, :year],:start_year=> 1935, :end_year => 1900, :include_blank => true %>
     </li>
   </ol>
   
   <ol>
     <li>
       <label for="first_name">Year of production</label><br/ >  
-        <%= f.date_select :year_date ,:start_year=> 1925, :end_year => 1935,:discard_day => true, :discard_month => true, :include_blank => true %>
+        <%= f.date_select :year_date ,:start_year=> 1935, :end_year => 1900,:discard_day => true, :discard_month => true, :include_blank => true %>
     </li>
   </ol>
   
@@ -174,7 +174,7 @@
   <div class="buttoncountry">
   <%= button_to_function "Paris", "$('#pa').toggle()" %> 
   <%= button_to_function "Moscou", "$('#mos').toggle()" %> 
-  <%= button_to_function "Shangai", "$('#sha').toggle()" %>
+  <%= button_to_function "Shanghai", "$('#sha').toggle()" %>
   </div>
   <br/>
   <br/>
@@ -233,7 +233,7 @@
 
      <p class="done">
         <br/>
-       <%= link_to_function "I'm done with  Shangai", "$('#sha').toggle()" %> 
+       <%= link_to_function "I'm done with  Shanghai", "$('#sha').toggle()" %> 
      </p>
 
        <br/>
@@ -244,7 +244,7 @@
 <hr/>    
   
 <p class="done">
-   <%= link_to_function "I'm done with  Country/Theaters", "$('#sa').toggle()" %> 
+   <%= link_to_function "I'm done with  City/Theaters", "$('#sa').toggle()" %> 
 </p>
 <br/>
 </div>

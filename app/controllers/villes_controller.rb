@@ -44,7 +44,7 @@ class VillesController < ApplicationController
 
     respond_to do |format|
       if @ville.save
-        format.html { redirect_to(@ville, :notice => 'Ville was successfully created.') }
+        format.html { redirect_to(@ville, :notice => 'City was successfully created.') }
         format.xml  { render :xml => @ville, :status => :created, :location => @ville }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class VillesController < ApplicationController
 
     respond_to do |format|
       if @ville.update_attributes(params[:ville])
-        format.html { redirect_to(@ville, :notice => 'Ville was successfully updated.') }
+        format.html { redirect_to(@ville, :notice => 'City was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

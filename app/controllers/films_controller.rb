@@ -65,14 +65,16 @@ class FilmsController < ApplicationController
     @film = Film.new(params[:film])
     respond_to do |format|
       if @film.save
-        format.html { redirect_to(@film, :notice => 'Film was successfully created.') }
+        format.html { redirect_to(@film, :notice => 'Movie was successfully created.') }
         format.xml  { render :xml => @film, :status => :created, :location => @film }
         format.js { render :layout=>false }
         
       else
+        
         format.html { render :action => "new" }
         format.xml  { render :xml => @film.errors, :status => :unprocessable_entity }
         format.js { render 'fail_create.js.erb' } 
+        
       end
     end
   end
@@ -84,7 +86,7 @@ class FilmsController < ApplicationController
     jointure
     respond_to do |format|
       if @film.update_attributes(params[:film])
-        format.html { redirect_to(@film, :notice => 'Film was successfully updated.') }
+        format.html { redirect_to(@film, :notice => 'Movie was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

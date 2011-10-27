@@ -44,7 +44,7 @@
     <br />
     <br />
     
-    <%= f.label  "Theater adresse" %><br />
+    <%= f.label  "Theater adress" %><br />
     <%= f.text_field :adresse, :style =>"width:99%" %>
     
     <br />
@@ -62,7 +62,7 @@
     <br />
     <br />
     
-    <%= f.label  "Orchester" %><br />
+    <%= f.label  "Orchestra" %><br />
     <%= f.text_field :orchester, :style =>"width:99%" %>
     
     <br />
@@ -75,7 +75,8 @@
     <br />
     
     <%= f.label  "Comments" %><br />
-    <%= f.text_area :comment, :style =>"width:99%" %>
+    
+	<%= f.cktext_area("comment",  :input_html => {:cols => 10, :rows => 20}, :toolbar => 'Easy', :digest => false)%>
     
     <br />
     <br />
