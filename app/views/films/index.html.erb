@@ -1,25 +1,38 @@
-
+<% if user_signed_in? %>
 <div id="film-notice"></div>
 <div id="Left">
   
   <div id="Right">    
     <div class="submit"><%= link_to 'Add Movie', new_film_path, :class=>"submit" %></div>
-    
   </div>
-  
-<h1>Search Movies</h1>
+ 
 <%= form_tag films_path, :method => 'get', :id => "films_search" do %>
-<div id='search'>
-  <p>
-    <%= text_field_tag :search, params[:search],:style =>"width:50%" %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
+<div id='recherche'>
+<span class="re">SEARCH MOVIES</span>  
+    <%= text_field_tag :search, params[:search],:style =>"width:757px;" %>
+  	<span><%= image_submit_tag "ldh_recherche_icone.jpg"%></span>
 </div>
-
+</div>
   <div id="filmsearchs"><%= render 'filmsearchs' %></div>
 <% end %>
 
 
 
 </div> 
+
+<%else%>
+
+<div id="film-notice"></div>
+
+
+
+<div id="filmsearchs"><%= render 'filmsearchs' %></div>
+
+
+
+</div>
+
+<%end%>
+
+
 

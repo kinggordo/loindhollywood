@@ -1,0 +1,138 @@
+body{
+	background: url(/images/ldh_fond-page.jpg) repeat;
+    color: #222222;
+    font-family: 'Oswald', serif;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+	font-size:   12px;
+	line-height: 16px;
+
+}
+
+#Header {
+    
+    position: relative;
+    text-align: left;
+	margin-top:-50px;
+	width: 970px;
+ 	margin: 0 auto;
+	padding-bottom:10px;
+	border-right: 1px solid red;
+	border-left: 1px solid red;
+	border-bottom: 1px solid red;
+}
+
+#Wrapper {
+    
+    width: 980px;
+ 	margin: 0 auto;
+
+	
+}
+
+#footer {
+    position:relative;
+   	margin: 0 auto;
+    width: 970px;
+	height:50px;
+	margin-top:-32px;
+    text-align: left;
+	border-right: 1px solid red;
+	border-left: 1px solid red;
+	
+}
+#footer img {
+    float:left;margin-left:10px;margin-top:10px;
+}
+
+#footer span {
+    float:left;margin-left:10px;margin-top:18px;
+font-family:'Helvetica Neue', Arial;font-size:12px;
+}
+
+#footer span#linka {
+    float:right;margin-right:10px;margin-top:18px;
+}
+#footer span#linkb {
+    float:right;margin-right:10px;margin-top:18px;
+}
+
+#footer a {
+    color:red;font-family:'Helvetica Neue', Arial;font-size:12px;text-decoration:none;
+}
+
+#table{position:relative;width: 940px;margin-left:15px;background: url(/images/ldh_fond-page_01.jpg) repeat;margin-bottom:30px;margin-top:-12px;}
+#table p{font-family: 'Oswald', serif;font-size:10px;color:#807b73;}
+
+#recherche{width: 940px; height:55px; background:#bfb9ac; padding-top:20px; margin-left:15px;}
+#recherche input{padding:7px; width:720px;float:left;margin-right:-26px}
+#recherche #button{float:left;margin-left:30px;width:100px;margin-top:2px;padding:7px; background:#800015;color:#FFF; font-family: 'Oswald', serif;font-size:18px; }
+#recherche img{float:right;margin-top:2px;margin-right:30px;}
+li.filmtitle{
+  font-family:Helvetica, Arial, Sans serif; color:#bf0020;list-style:none;font-weight:bold;font-size:14px;
+	float:left; margin-left:-10px;
+}
+
+#hr{border-bottom: 1px solid #262626;margin-top:10px;margin-bottom:10px; margin-left:-10px;margin-right:30px}
+#hrr{border-bottom: 1px solid #403e39;margin-top:0px;margin-bottom:10px; margin-left:30px;margin-right:30px}
+#hrrr{border-bottom: 1px solid red;margin-top:0px;margin-bottom:10px; margin-left:30px;margin-right:30px}
+
+#result{width: 940px;background:#403e39;margin-left:-40px;position:relative;}
+#result legend{font-family: 'Oswald', serif;font-size:10px; color:#403e39;margin-left:30px; text-shadow:0px 0px 0px   #403e39;}
+#result_title{
+	width: 940px;background:#403e39;font-family:'Helvetica Neue', Arial;
+	text-rendering:optimizelegibility;text-shadow:1px 1px 0px  #403e39;
+	font-weight:100; color:#ffffff;font-size:24px;margin-left:-40px;padding-top:10px;padding-bottom:10px;margin-top:10px;
+}
+#result_title span{
+float:right;font-family: 'Oswald', serif;font-size:12px;color:#bfb9ac;background:#262626; padding-right:5px;padding-left:5px;padding-top:2px;
+padding-bottom:3px;letter-spacing:1px;margin-right:15px;margin-top:-2px;
+}
+
+#result_title_inter{height:15px;width: 940px;background: url(/images/ldh_fond-page_01.jpg) repeat; margin-bottom:10px;}
+#result_title_salle{
+	position:relative;margin-left:20px;width: 900px;background:#403e39;font-family:'Helvetica Neue', Arial;
+	text-rendering:optimizelegibility;text-shadow:1px 1px 0px  #403e39;
+	font-weight:100; color:#ffffff;font-size:24px;padding-top:10px;padding-bottom:10px;margin-top:-10px;
+}
+#result_title_salle span{
+float:right;font-family: 'Oswald', serif;font-size:12px;color:#bfb9ac;background:#262626; padding-right:5px;padding-left:5px;padding-top:2px;
+padding-bottom:3px;letter-spacing:1px;margin-right:15px;margin-top:-2px;
+}
+#result_content_left{
+	position:relative;width: 940px;background: url(/images/ldh_fond-page_04.jpg) repeat;font-family:'Helvetica Neue', Arial;
+	text-rendering:optimizelegibility; font-weight:300;color:#bfb9ac;font-size:12px;z-index: 5;margin-top:0px;margin-bottom:30px;
+	text-shadow:1px 1px 0px  #403e39;letter-spacing:1px;padding-bottom:15px;
+}
+#result_content_left span{color:#ffffff;}
+#result_content_left li{float:left; margin-left:30px;list-style:none;}
+#result_content_left span.title{float:left; margin-left:30px;font-weight:bold;}
+#result_content_left a{color:#ffffff;text-decoration:none;}
+#result_content_left a:hover{color:#bf0020}
+
+
+#result_content_left_salle{
+	position:relative;margin-left:20px;width: 900px;background:#403e39;font-family:'Helvetica Neue', Arial;
+	text-rendering:optimizelegibility; font-weight:300;color:#bfb9ac;font-size:12px;z-index: 5;margin-top:0px;margin-bottom:30px;
+	text-shadow:1px 1px 0px  #403e39;letter-spacing:1px;
+	
+}
+#result_content_left_salle span{color:#ffffff;}
+#result_content_left_salle li{float:left; margin-left:30px;list-style:none;}
+#result_content_left_salle span.title{float:left; margin-left:30px;font-weight:bold;}
+#result_content_left_salle a{color:#ffffff;text-decoration:none;}
+#result_content_left_salle a:hover{color:#bf0020}
+
+
+	
+span.consulter a{
+  font-family:Helvetica, Arial, Sans serif; color:#262626;font-size:14px;text-decoration:none;
+	float:right; margin-right:30px;
+}
+span.consulter a:hover{
+ color: #bf0020;text-decoration:none;
+	
+}
+
+#flash_notice {position:absolute;color: green;margin: 0 auto;text-align:center; margin-top:30px;margin-left:300px }

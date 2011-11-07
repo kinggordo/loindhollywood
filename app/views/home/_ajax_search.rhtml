@@ -1,0 +1,261 @@
+<br/>
+<% if @total == 0 %>
+
+<p>AUCUN DOCUMENT...</p>
+
+<% else %>
+
+<p><%= @total %> DOCUMENT(S) CORRESPONDENT À VOTRE RECHERCHE</p>
+
+<div id='hrrr'></div>
+
+
+<ul>
+    <% @films.each do |film| %>
+   
+      <li class='filmtitle'><%= film.name %></li><span class="consulter"><%= link_to_function "Consulter →", "$('#film_#{film.id}').toggle()" %></span><br/>
+   	
+
+	
+	<div id="film_<%=film.id%>" style="display:none;" >
+		
+		<div id='result_title'>
+			<%= film.name %> <span>FILM</span>
+		</div>
+		
+	<div id='result'>
+		
+		<div id='result_content_left'>
+		
+    	<br/>
+
+		  <legend>TITLE/TECHNICAL</legend> 
+		<div id='hrr'></div>
+		  
+		    <li>
+		        Originale title:<span> <%= film.name %></span><br/>   
+		    </li><br/>
+			<li>
+		        Title transliteration:<span> <%= film.titlea %></span>   
+		    </li><br/>
+			<li>
+		        Title literal translation:<span> <%=  film.titleb %></span>   
+		    </li><br/>
+			<li>
+		       Alternate title original:<span> <%= film.titlec %></span>   
+		    </li><br/>
+			<li>
+		        Alternate title transliteration:<span> <%= film.titled%></span>   
+		    </li><br/>
+			<li>
+		        Alternate title translation:<span> <%= film.titlef %></span>   
+		    </li><br/>
+			<li>
+		        Based on:<span> <%= film.based_on %></span>   
+		    </li><br/>
+			<li>
+		        from:<span> <%= film.autor %></span>   
+		    </li><br/>
+			<li>
+		        Company:<span> <%= film.company %></span>   
+		    </li><br/>
+			<li>
+		        Country:<span> <%= film.country %></span>   
+		    </li><br/>
+		<% if film.start_date %> 
+			<li>
+		        Date of first release original:<span> <%= film.start_date.strftime('%Y/''%m/''%d') %></span>   
+		    </li><br/>
+		<%end%>
+		<% if film.year_date %>  
+			<li>
+		        Year of production:<span> <%= film.year_date.strftime('%Y') %></span>   
+		    </li><br/>
+		<%end%>
+			<li>
+		        Length in minutes: <span> <%= film.lenght %></span>   
+		    </li><br/>
+			<li>
+		        Length in meters: <span> <%= film.meter %></span>   
+		    </li><br/>
+			<li>
+		        Length in feeds:<span> <%= film.feed %></span>   
+		    </li><br/>
+			<li>
+		        Sound:<span> <%= film.sound %></span>   
+		    </li><br/>
+			<li>
+		        Source:<span> <%= film.source %></span>   
+		    </li><br/>
+		  
+		<br/>
+		
+		<legend>FUNCTIONS/PEOPLE</legend> 
+		<div id='hrr'></div>
+	  
+	      <% film.functions.each do |f| %>
+	      <li> 
+	        <%=h f.name %>: <span> <%= f.people.collect(&:name).join(", ") %></span> 
+	      </li><br/>
+	      <% end %>
+	    
+		<br/>
+		
+		
+		<legend>COUNTRY/THEATER</legend> 
+		<div id='hrr'></div>
+		
+		<br/>
+		<% film.joints.each do |joint| %>
+		
+			<span class="title"><%= joint.ville.name %></span>
+			<br/>
+			
+			<li>
+				Theater: <span> <%=link_to_function joint.salle.name, "$('#joint_#{joint.salle_id}').toggle()"%> →</span>
+			</li><br/>
+			
+			<li>
+        		Realease title: <span><%= joint.titreoriginal %></span>
+			</li><br/>
+			
+			<li>
+        		Episode title release: <span><%= joint.titreoriginalb %></span>
+			</li><br/>
+			
+			
+			<li>
+        		Run date: <span><%= joint.start_date.strftime('%Y/''%m/''%d') %> to <%= joint.end_date.strftime('%Y/''%m/''%d') %></span>
+			</li><br/>
+        	
+
+			<li>
+        		Genre as advertise: <span><%= joint.genre %></span>
+			</li><br/>
+			
+			<li>
+        		Screening schedule: <span><%= joint.schedule %></span>
+			</li><br/>
+			
+			<li>
+        		Screening prices: <span><%= joint.price %></span>
+			</li><br/>
+       	
+			<li>
+          		Show: <%= link_to_function "see →", "$('#joint_#{joint.id}').toggle()" %>
+            </li><br/>
+          
+  <div id="joint_<%=joint.id%>" style="display:none;" >
+          
+          <li>      
+              Run date : <span><%= joint.start_date.strftime('%Y/''%m/''%d') %> to <%= joint.end_date.strftime('%Y/''%m/''%d') %></span>
+          </li><br/>
+       
+          <li> 
+           Other feature movies : <span><%= joint.featuremovattribs.collect(&:name).join(", ") %></span>
+          </li><br/>
+       
+          <li> 
+           Short movie : <span><%= joint.shortmovattribs.collect(&:name).join(", ") %></span>
+          </li><br/>
+      
+          <li> 
+           On stage : <span><%= joint.onstageattribs.collect(&:name).join(", ") %></span>
+          </li><br/>
+        
+          <li> 
+           Audience : <span><%= joint.audience %></span>
+          </li><br/>
+        
+          <li> 
+           Comments : <span><%= joint.comment %></span>
+          </li><br/>
+       
+          <li> 
+           Sources show : <span><%= joint.source %></span>
+          </li><br/>
+
+		<br/>
+  </div>
+<br/>
+
+  <div id="joint_<%=joint.salle_id%>" style="display:none;" >
+		
+		
+		
+		<div id='result_title_salle'>
+			<%=joint.salle.name %> <span>THEATER</span>
+		</div>
+		
+		<div id='result_content_left_salle'>
+			<br/>
+			<li>
+				Theater name: <span> <%=joint.salle.name%> →</span>
+			</li><br/>
+			
+			<li>
+        		Theater district: <span><%= joint.salle.district %></span>
+			</li><br/>
+			
+			<li>
+        		Theater adresse <span><%= joint.salle.adresse %></span>
+			</li><br/>
+			
+			
+			<li>
+        		Theater owner: <span><%= joint.salle.owner%></span>
+			</li><br/>
+			
+			<li>
+        		Place number: <span><%= joint.salle.place %></span>
+			</li><br/>
+			
+			<li>
+        		Orchester: <span><%= joint.salle.orchester %></span>
+			</li><br/>
+			
+			<li>
+        		Opening days: <span><%= joint.salle.open %></span>
+			</li><br/>
+			
+			<li>
+        		Comments: <span><%= joint.salle.comment %></span>
+			</li><br/>
+			
+			<li>
+        		Sources theater: <span><%= joint.salle.source %></span>
+			</li><br/>
+			<br/>
+			<div id='hrr'></div>
+		</div>
+		
+  </div>
+		
+
+		<%end%>
+			
+
+
+			
+				
+		</div>
+	</div>	
+	</div>  
+	<div id='hr'></div>
+	
+
+	
+	
+    <% end %>
+</ul>
+<br/>
+<br/>
+
+
+<% end %>
+
+
+
+ 
+
+

@@ -3,17 +3,18 @@
 
 <table>
   <tr class="pays">
-    <th><%= sortable "Name" %></th>
-    <th><%= sortable "District" %></th>
-    <th><%= sortable "Adresse" %></th>
+    <th class='title'><%= sortable "Name" %></th>
+    <th><%= sortable "City" %></th>
+    
      
   </tr>
   
   <% for salle in @salles %>
     <tr class="result">
-      <td><%= link_to salle.name, salle %></td>
-      <td class="price"><%= salle.district %></td>
-      <td><%=  salle.adresse %></td>
+      <td><%= link_to salle.name, salle %> →</td>
+      <td><%= salle.ville.name %></td>
+      
+      <td class="destroy"><%= link_to 'Edit', edit_salle_path(salle) %></td>
       <td class="destroy"><%= link_to 'Destroy', salle, :confirm => 'Are you sure?', :method => :delete %></td>
       
       

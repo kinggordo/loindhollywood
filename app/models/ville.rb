@@ -15,5 +15,5 @@ class Ville < ActiveRecord::Base
   
   has_many :salles
   
-  
+
 end

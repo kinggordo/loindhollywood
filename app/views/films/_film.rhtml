@@ -1,9 +1,9 @@
 <div id="Left">
-  
+  <% if user_signed_in? %>
   <div id="Right">    
     <div class="submit"><%= link_to "Edit movie", edit_film_path(film), :class => "submit"  %></div>
   </div>
-  
+  <%end%>
 
 
 <div id="spinner" style="display:none;"><%= image_tag "/images/loader-line.gif" %></div>
@@ -109,6 +109,31 @@
     </li>
   </ol>
   <%end%>
+
+  <% if @film.meter %> 
+  <ol>
+    <li>
+      <label for="first_name"></label>
+      Length in meters : 
+
+         <b><%= @film.meter %></b> 
+
+    </li>
+  </ol>
+  <%end%>
+
+  <% if @film.feed %> 
+  <ol>
+    <li>
+      <label for="first_name"></label>
+      Length in feeds : 
+
+         <b><%= @film.feed %></b> 
+
+    </li>
+  </ol>
+  <%end%>
+
   <ol>
     <li>
       <label for="first_name"></label>  
@@ -120,6 +145,13 @@
     <li>
       <label for="first_name"></label>  
         Sound : <b><%= @film.sound %></b>    
+    </li>
+  </ol>
+
+  <ol>
+    <li>
+      <label for="first_name"></label>  
+        Source : <b><%= @film.source %></b>    
     </li>
   </ol>
   

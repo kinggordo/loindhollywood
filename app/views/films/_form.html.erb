@@ -48,7 +48,7 @@
     </li>
   </ol>
 
-  <%= link_to_function "Alternate title transliteration", "$('#fd').toggle()" %>
+  <span><%= link_to_function "Alternate title transliteration  →", "$('#fd').toggle()" %></span>
   <div id="fd" style="display:none;" >
   <ol>
     <li>
@@ -65,7 +65,7 @@
     </li>
   </ol>
 
-  <%= link_to_function "Alternate title translation", "$('#f').toggle()" %>
+  <span><%= link_to_function "Alternate title translation  →", "$('#f').toggle()" %></span>
 
   <div id="f" style="display:none;" >
   <ol>
@@ -81,7 +81,7 @@
       <label for="first_name">Based on</label>  
         <%=  f.text_field :based_on, :style =>"width:40%" %> &nbsp;
       <label for="first_name">from</label>  
-        <%=  f.text_field :autor, :style =>"width:48%" %>
+        <%=  f.text_field :autor, :style =>"width:40%" %>
     </li>
   </ol>
   
@@ -113,12 +113,20 @@
     </li>
   </ol>
   
+  
+
   <ol>
     <li>
-      <label for="first_name">Length in minutes</label><br/ >  
-        <%= f.text_field :lenght, :style =>"width:99%" %> 
+	  <label for="first_name">Length in: minutes</label> 
+	     <%= f.text_field :lenght, :style =>"width:20%" %>&nbsp;
+      <label for="first_name">meters</label> 
+        <%= f.text_field :meter, :style =>"width:20%" %> &nbsp;
+	  <label for="first_name">feeds</label>
+	     <%= f.text_field :feed, :style =>"width:20%" %>
     </li>
   </ol>
+
+
   
   <ol>
     <li>
@@ -131,6 +139,13 @@
     <li>
       <label for="first_name">Sound</label><br/ >  
         <%= f.autocomplete_field :sound, films_autocomplete_film_sound_path,  :style =>"width:99%"%>
+    </li>
+  </ol>
+
+  <ol>
+    <li>
+      <label for="first_name">Source</label><br/ >  
+       <%= f.text_field :source, :style =>"width:99%" %>
     </li>
   </ol>
   

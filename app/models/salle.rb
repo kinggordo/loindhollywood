@@ -1,4 +1,5 @@
 class Salle < ActiveRecord::Base
+  attr_accessible :name
   
   has_many :joints, :dependent => :destroy
   has_many :villes, :through => :joints
@@ -17,6 +18,7 @@ class Salle < ActiveRecord::Base
   
   belongs_to :ville
   belongs_to :user
+  
   
   def self.search(search)
     if search

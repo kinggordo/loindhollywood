@@ -6,89 +6,56 @@
 
 /* Insignificant stuff, for demo purposes */
 
-	body { padding: 20px }
-	.panel h2.title { margin-bottom: 10px }
-	noscript div { background: #ccc; border: 1px solid #900; margin: 20px 0; padding: 15px }
+	body { padding: 0px;  }
+	.panel h2.title { margin-bottom: 10px; }
+	noscript div { background: #ccc; border: 1px solid #900; margin: 20px 0; padding: 0px }
 
 /* Most common stuff you'll need to change */
 
-	.coda-slider-wrapper { padding: 20px 0;margin-left:20px; }
-	.coda-slider { background: #ebebeb ;
-		/* -- CSS3 - define rounded corners for the form -- */	
-		-webkit-border-radius: 10px;
-		-moz-border-radius: 10px;
-		border-radius: 10px; 		
-
-		/* -- CSS3 - create a background graident -- */
-		background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#EEE), to(#FFFFFF)); 
-		background: -moz-linear-gradient(0% 40% 90deg,#FFF, #EEE); 
-
-		/* -- CSS3 - add a drop shadow -- */
-		-webkit-box-shadow:0px 0 20px #ccc;
-		-moz-box-shadow:5px 0 15px #ccc; 
-		box-shadow:0px 0 20px #ccc;
-}
+	.coda-slider-wrapper { padding: 0px 0 ;border-bottom: 1px solid red; border-right: 1px solid red;
+	border-left: 1px solid red;width: 970px; margin-left:4px;}
+	.coda-slider {background: url(/images/ldh_fond-page.jpg) repeat;}
 	
 	/* Use this to keep the slider content contained in a box even when JavaScript is disabled */
-	.coda-slider-no-js .coda-slider { height: 200px; overflow: auto !important; padding-right: 20px }
+	.coda-slider-no-js .coda-slider { height: 200px; overflow: auto !important; padding-right: 0px }
 	
 	/* Change the width of the entire slider (without dynamic arrows) */
-	.coda-slider, .coda-slider .panel { width: 830px } 
+	.coda-slider, .coda-slider .panel { } 
 	
 	/* Change margin and width of the slider (with dynamic arrows) */
-	.coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel { min-width: 830px ;margin-left:0px;}
-	.coda-slider-wrapper.arrows .coda-slider { margin: 0 0px }
+	.coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel { width: 970px; }
+	.coda-slider-wrapper.arrows .coda-slider { margin: 0 0px ; margin-right:0px;}
 	
-	
-	/* Arrow styling 
-	.coda-nav-left a, .coda-nav-right a { background: #000; color: #fff; padding: 5px; width: 100px }
-	*/
+	/* Arrow styling */
+	.coda-nav-left a  {position:absolute; margin-left:-21px; margin-top:245px;background: url("/images/ldh_fleche_gche.jpg") no-repeat; color: #fff; padding: 5px; width: 10px ;height:50px;  }
+	.coda-nav-right a {position:absolute; margin-left:1px; margin-top:245px;background: url("/images/ldh_fleche_dte.jpg") no-repeat; color: #fff; padding: 5px; width: 10px; height:50px; }
 	
 	/* Tab nav */
-	.coda-nav ul li a.current { background: #CCC; color:#fff;  }
+	.coda-nav ul li a.current { background: transparent;color:#800015; }
 	
 	/* Panel padding */
-	.coda-slider .panel-wrapper { padding: 20px }
-	
+	.coda-slider .panel-wrapper { padding-bottom: 50px;  min-height:300px !important; }
+	.coda-slider .panel-wrapper img{ margin-top:0px;}
+	.panel-wrapper h2.title{font-size:1px;  color:transparent; margin-top:-50px;  }
+	.panel-wrapper h1.title{font-family: 'Ultra', serif; font-size:50px; line-height:60px; color:#402025; text-shadow:1px 1px 0px #FFF;width: 970px;background:#bfb9ac;padding-top:30px;height:100px;border-top: 1px solid red; }
+	.panel{ width: 980px;}
 	/* Preloader */
-	.coda-slider p.loading { padding: 20px; text-align: center }
+	.coda-slider p.loading { padding: 0px; text-align: center }
 
 /* Don't change anything below here unless you know what you're doing */
 
 	/* Tabbed nav */
-	.coda-nav ul { clear: both;  margin: auto; overflow: hidden ;display: inline;}
-	.coda-nav ul li { display: inline; }
-	.coda-nav ul li a { 
-		background: #000; color: #000; display: block; float: left; margin-right: 0px; padding: 3px 6px; text-decoration: none;
-		color: #000; 
-		text-transform: uppercase; 
-		
-		border: none;
-
-		/* -- CSS3 Transition - define which property to animate (i.e. the shadow)  -- */
-		-webkit-transition: -webkit-box-shadow 0.3s linear;
-
-		/* -- CSS3 - Rounded Corners -- */
-		 -moz-border-radius-topleft: 5px;
-		 -moz-border-radius-topright:5px;
 	
-		 -webkit-border-top-left-radius:5px;
-		 -webkit-border-top-right-radius:5px;
-	
-		 border-top-left-radius:5px;
-		 border-top-right-radius:5px;
-		
-
-		/* -- CSS3 Shadow - create a shadow around each input element -- */ 
-		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#eee)); 
-		background: -moz-linear-gradient(25% 75% 90deg,#eee, #ccc);
-}
-	
+	.coda-nav ul {position:absolute; clear: both; display:block; margin-left:700px; margin-top:-200px;width:50px }
+	.coda-nav ul li { display:list-item; margin-bottom:10px;color:transparent;}
+	.coda-nav ul li a { background: transparent; color: #bf0020; display: block; float:left; padding: 3px 6px; text-decoration: none; font-size:12px;letter-spacing:2px; text-shadow:1px 1px 0px #FFF;}
+	.coda-nav ul li a:hover{ color:  #262626; display: block; float: left; margin-right: 1px; padding: 3px 6px; text-decoration: none; font-size:12px;letter-spacing:2px }
+	.coda-nav ul li a:active{ }
 	/* Miscellaneous */
 	.coda-slider-wrapper { clear: both; overflow: auto }
 	.coda-slider { float: left; overflow: hidden; position: relative }
 	.coda-slider .panel { display: block; float: left }
-	.coda-slider .panel-container { position: relative }
+	.coda-slider .panel-container { position: relative; }
 	.coda-nav-left, .coda-nav-right { float: left }
 	.coda-nav-left a, .coda-nav-right a { display: block; text-align: center; text-decoration: none }
 	

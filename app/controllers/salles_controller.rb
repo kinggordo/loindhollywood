@@ -6,11 +6,8 @@ class SallesController < ApplicationController
   
   def index
    
-    @salles = Salle.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
-   
-    respond_to do |format|
-        format.html
-    end
+    @salles = Salle.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 30, :page => params[:page])
+    
   end
 
   # GET /salles/1

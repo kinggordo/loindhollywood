@@ -1,5 +1,5 @@
 class FilmsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :only => [:new, :edit]
   autocomplete :function, :name
   autocomplete :person, :name
   autocomplete :film, :country
@@ -16,7 +16,8 @@ class FilmsController < ApplicationController
   # GET /films.xml
   
   def index
-    @films = Film.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
+    @films = Film.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 30, :page => params[:page])
+    
   end
   
   def all
