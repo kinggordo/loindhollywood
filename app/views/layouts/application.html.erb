@@ -36,22 +36,24 @@
 
 	    <% end %>
 	</div>
-	
+	<% if user_signed_in? %>
 	<div id="navigation">
 		<div id='span'><%= link_to "cinéma des années 30", films_path %> | <%= link_to "office du cinéma éducateur", offices_path %> | <%= link_to "participants", films_path %> | <%= link_to "partenaires", films_path %> | <%= link_to "mentions légales", films_path %></div>
 	</div>
+	
+	<% end %>
   </div>
   <!-- Header -->
     
     <!-- TABS -->
-    
+    <% if user_signed_in? %>
     <div id="navbar_wrapper"> 
       	<% flash.each do |name, msg|%>
 		  <%= content_tag :div, msg, :id=> "flash_#{name}" %>
 		<%end%>
 	
     </div>
-   
+   	<%end%>
     <!-- TABS -->
   	
   
