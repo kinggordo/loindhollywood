@@ -146,8 +146,7 @@ input, textarea, select{
 
 }
 
-input:hover, textarea:hover, 
-input:focus, textarea:focus {   border-color: #E5E5E5;  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;  
+ 
 }
 
 textarea {		
@@ -194,7 +193,8 @@ input.submit:hover {
 	font-family: 'Oswald', serif;
 	text-rendering:optimizelegibility;
 	text-shadow:0px 1px 1px   #000;
-	margin-left:-35px;
+	margin-left:-36px;
+	
 	cursor:  pointer; 
 
 		
@@ -420,11 +420,11 @@ div.autocomplete ul li {
 }
 #search{position:relative;height:23px;margin-left:0px; }
 
-#recherche{width: 970px;  background:#bfb9ac; padding-top:20px;padding-bottom:30px; margin-left:-20px;}
+#recherche{width: 940px;  background:#D9D4CB; padding-top:18px;padding-bottom:23px; margin-left:15px;margin-top:-5px; }
 #recherche form input{position:relative;padding:8px;height:32px;}
-#recherche span.re{float:left;margin-left:30px;margin-top:5px;padding:8px; background:#800015;color:#FFF; font-family: 'Oswald', serif;font-size:14px;
+#recherche span.re{float:left;margin-left:30px;margin-top:6px;padding:5px;padding-top:6px;padding-bottom:8px; background:#800015;color:#FFF; font-family: 'Oswald', serif;font-size:14px;
 text-rendering:optimizelegibility;text-shadow:1px 1px 1px  #403e39; }
-#recherche span input{float:right;margin-right:30px;margin-top:-33px;width:32px;border:none; padding:0px; }
+#recherche span input{float:right;margin-right:30px;margin-top:-32px;width:32px;border:none; padding:0px; }
 
 
 #close{

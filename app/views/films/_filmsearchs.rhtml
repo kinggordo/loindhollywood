@@ -1,6 +1,6 @@
 <%= hidden_field_tag :direction, params[:direction] %>
 <%= hidden_field_tag :sort, params[:sort] %>
-<% if user_signed_in? %>
+
 <table>
   <tr class="pays">
     <th class='title'><%= sortable "Original title" %></th>
@@ -26,26 +26,7 @@
 <br/>
 <br/>
 <span class='paginate'><%= will_paginate @films %></span>
-<%else%>
 
-<table>
-  <tr class="pays">
-     
-  </tr>
-  
-  <% for film in @films %>
-    <tr class="result">
-      <td><%= link_to film.name, film %></td>
-      
-      
-      
-    </tr>
-  <% end %>
-</table>
-
-<%= will_paginate @films %>
-
-<%end%>
 
 
 

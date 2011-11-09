@@ -15,7 +15,7 @@
       <td><%= salle.ville.name %></td>
       
       <td class="destroy"><%= link_to 'Edit', edit_salle_path(salle) %></td>
-      <td class="destroy"><%= link_to 'Destroy', salle, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td class="destroy"><%= link_to 'Delete', salle, :confirm => 'Are you sure?', :method => :delete %></td>
       
       
     </tr>
@@ -24,4 +24,4 @@
 
 <br/>
 <br/>
-<%= will_paginate @salles %>
+<span class='paginate'><%= will_paginate @salles %></span>

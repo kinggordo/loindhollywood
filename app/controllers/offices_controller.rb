@@ -4,7 +4,7 @@ class OfficesController < ApplicationController
   # GET /offices
   # GET /offices.xml
   def index
-    @offices = Office.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
+    @offices = Office.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

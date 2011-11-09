@@ -3,50 +3,28 @@
 
 <table>
   <tr class="pays">
-    <th><b>Titre</b></th>
-    <th><b>Titre original ou alternatif</b></th>
-    <th><b>Reéalisateur</b></th>
-    <th><b>Année</b></th>
-    <th><b>Pays</b></th>
-    <th><b>Métrage approx.</b></th>
-    <th><b>Son</b></th>
-    <th><b>Producteur/Distributeur</b></th>
+    <th class='title'>Titre</b></th>
+    <th><b>Réalisateur</b></th>
     <th><b>Lieu office</b></th>
-    <th><b>Format en mm</b></th>
-    <th><b>Support</b></th>
     <th><b>Genre</b></th>
-    <th><b>Theme 1</b></th>
-    <th><b>Theme 2</b></th>
-    <th><b>Notes</b></th>
-    <th></th>
-    <th></th>
-    <th></th>
+    
+   
+   
   </tr>
 
 <% @offices.each do |office| %>
   <tr class="result">
-    <td><%= link_to office.titre, office %></td>
-    <td><%= office.titreo %></td>
+    <td><%= link_to office.titre, office %>  →</td>
     <td><%= office.rea %></td>
-    <td><%= office.year %></td>
-    <td><%= office.country %></td>
-    <td><%= office.dure %></td>
-    <td><%= office.son %></td>
-    <td><%= office.producer %></td>
     <td><%= office.lieu %></td>
-    <td><%= office.format %></td>
-    <td><%= office.support %></td>
     <td><%= office.genre %></td>
-    <td><%= office.themea %></td>
-    <td><%= office.themeb %></td>
-    <td><%= office.note %></td>
-    <td><%= link_to 'Show', office %></td>
-    <td><%= link_to 'Edit', edit_office_path(office) %></td>
-    <td><%= link_to 'Destroy', office, :confirm => 'Are you sure?', :method => :delete %></td>
+   
+    <td class="destroy"><%= link_to 'Edit', edit_office_path(office) %></td>
+    <td class="destroy"><%= link_to 'Delete', office, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br/>
 <br/>
-<%= will_paginate @offices %>
+<span class='paginate'><%= will_paginate @offices %></span>

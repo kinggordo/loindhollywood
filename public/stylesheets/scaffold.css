@@ -11,6 +11,7 @@ body{
 }
 
 
+#hr{width:970px;border-bottom: 1px solid red;margin-top:10px;margin-bottom:10px;margin-top:15px; margin-left:0px;margin-right:0px}
 
 pre {
   background-color: #eee;
@@ -92,8 +93,9 @@ border-right: 1px solid red;
     position: relative;
     text-align: left;
 	margin-top:-15px;
-	height:35px;
-	padding-top:30px;
+	height:33px;
+	padding-top:31px;
+	
 	width: 970px;
 	border-right: 1px solid red;
 	border-left: 1px solid red;
@@ -101,14 +103,34 @@ border-right: 1px solid red;
 #Header h1 {
 	
     color: #FFF;
-    font-size:25px;
+    font-size:26px;
     font-weight: normal;
 	font-family: 'Ultra', serif; 
 	letter-spacing:1px;
 	margin-left:15px;
-	text-shadow:0px 1px 1px   #000;
+	text-shadow:1px 1px 1px   #000;
 }
 
+#navigation{
+	margin: 0 auto;position:absolute;height:48px; width:970px;margin-top:14px;
+	margin-left:-1px;border-right: 1px solid red;border-left: 1px solid red;
+	background: -webkit-gradient(linear, 50% 20%, 50% 100%, from(#2A0D10), to(#44191F)); 
+	background: -moz-linear-gradient(25% 75% 90deg,#2A0D10, #44191F);
+}
+#navigation a{
+	color:#FFF; text-transform: uppercase; text-decoration:none;	font-family: 'Oswald', serif;
+	text-rendering:optimizelegibility;text-shadow:1px 1px 1px   #000; letter-spacing:2px;margin-right:45px;
+	
+}
+#navigation a:hover{
+	color:red; 
+	
+}
+
+#navigation #span{position:relative;
+	margin-left:30px; margin-top:15px;font-size:12px;
+	
+}
 /*----------------------------------------------------------*/
 #Left {
     position:relative;
@@ -116,9 +138,9 @@ border-right: 1px solid red;
 	margin-left: 0px;
     padding: 0;
     text-align: left;
-    width: 930px;
+    width: 950px;
 	border-top: 1px solid red;
-	padding: 20px 20px 20px 20px; 
+	padding: 20px 20px 0px 0px; 
 	margin-top:0px;
 
 			
@@ -188,10 +210,10 @@ border-right: 1px solid red;
 
 /*----------------------------------------------------------*/
 
-#navbar_wrapper{ position:relative; margin: 0 auto;height:190px;width:970px;border-left: 1px solid red;
-border-right: 1px solid red;}
+#navbar_wrapper{ position:relative; margin: 0 auto;height:146px;width:970px;border-left: 1px solid red;
+border-right: 1px solid red;margin-top:45px;}
 
-#navbar ul{float:right; margin-top:165px;margin-right:157px;}
+#navbar ul{position:relative; margin-top:11px;margin-right:-103px;}
 #navbar ul li {
 
 padding:0; 
@@ -204,7 +226,7 @@ display:inline;
 
 #navbar a {
 margin-right:10px;
-padding-left:30px;	padding-right:30px; padding-top:5px; padding-bottom:5px;
+padding-left:10px;	padding-right:10px; padding-top:5px; padding-bottom:5px;
 color: #FFF; 
 text-transform: uppercase; 
 border: none;
@@ -216,6 +238,22 @@ font-size:18px;
 font-family: 'Oswald', serif;
 text-rendering:optimizelegibility;
 text-shadow:0px 1px 1px   #000;
+}
+#navbar li.add a {
+margin-right:10px;
+padding-left:10px;	padding-right:10px; padding-top:5px; padding-bottom:5px;
+color: #FFF; 
+text-transform: uppercase; 
+border: none;
+text-decoration:none;
+background-color: red;
+text-decoration:none;
+text-align: center;
+font-size:18px;
+font-family: 'Oswald', serif;
+text-rendering:optimizelegibility;
+text-shadow:0px 1px 1px   #000;
+}
 
 
 /* -- CSS3 Transition - define which property to animate (i.e. the shadow)  -- */
@@ -317,11 +355,12 @@ div.field, div.actions { margin-bottom: 10px;}
 
 table {
  	
-	
-    width:100%;
+	margin-left:15px;margin-right:15px;
+    width:940px;
 
 }
-table td a{padding:2px;}
+table td {padding:5px;padding-left:10px;}
+table td a{padding:5px;padding-left:10px;}
 table td a{
   border:none; 
   
@@ -331,6 +370,7 @@ text-rendering:optimizelegibility;
 text-decoration: none;
 color:#262626; 
 font-weight:bold;
+
 
 
   
@@ -351,12 +391,14 @@ table td.destroy a {
 table th {
   color: #000;
   font-weight: normal;
- 
+ padding-bottom:10px;
+padding-left:15px;
 }
 table th.title {
   color: #000;
   font-weight: normal;
 	width:430px; 
+	
 	
 }
 table th.comp {
@@ -383,21 +425,18 @@ table th a {
 table tr.pays {
   background:transparent; color:#262626; 
   border-bottom:1px solid #262626;
+ 
 	
 }
 
 table tr.result {
   background: #fff; color:#262626; 
-	-webkit-box-shadow: 0px 0px 15px #DBDDDC;	
-	-moz-box-shadow: 0px 0px 6px #DBDDDC;	
-	box-shadow: 0px 0px 6px #DBDDDC;
+	
 }
 
 table tr.result:hover {
-  background: #BFB9AC; color:#262626; 
-	-webkit-box-shadow: 0px 0px 15px #DBDDDC;	
-	-moz-box-shadow: 0px 0px 6px #DBDDDC;	
-	box-shadow: 0px 0px 6px #DBDDDC;
+  background: #F3F1EF; color:#262626; 
+	
 	cursor:pointer;	
 }
 
@@ -407,13 +446,13 @@ table tr.result:hover {
 	position:relative; text-align: right; margin-right:15px;margin-bottom:0px;color:#fff;margin-top:-15px;text-transform:uppercase;
 	font-family: 'Oswald', serif;
 	text-rendering:optimizelegibility;
-	text-shadow:0px 1px 1px   #000;
+	text-shadow:1px 1px 1px   #000;
 	font-size:10px;
 }
-#user_nav span { background:#000;color:#FFF; padding-top:6px; padding-bottom:2px; padding-left:3px; padding-right:3px;margin-left:10px;}
+#user_nav span { background:#000;color:#FFF; padding-top:4px; padding-bottom:2px; padding-left:3px; padding-right:3px;margin-left:10px;}
 #user_nav span a{ color:#FFF;text-decoration:none;text-rendering:optimizelegibility;
 font-family: 'Oswald', serif;
-text-shadow:0px 1px 1px   #000;
+text-shadow:1px 1px 1px   #000;
 font-size:12px;
 }
 
