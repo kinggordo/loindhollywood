@@ -89,7 +89,7 @@ border-right: 1px solid red;
 
 #Header {
 	margin: 0 auto;
-    background:#451a20;
+    background:#40000b;
     position: relative;
     text-align: left;
 	margin-top:-15px;
@@ -114,12 +114,13 @@ border-right: 1px solid red;
 #navigation{
 	margin: 0 auto;position:absolute;height:48px; width:970px;margin-top:14px;
 	margin-left:-1px;border-right: 1px solid red;border-left: 1px solid red;
-	background: -webkit-gradient(linear, 50% 20%, 50% 100%, from(#2A0D10), to(#44191F)); 
-	background: -moz-linear-gradient(25% 75% 90deg,#2A0D10, #44191F);
+	background: -webkit-gradient(linear, 50% 20%, 50% 100%, from(#261316), to(#402025)); 
+	background: -moz-linear-gradient(25% 75% 90deg,#261316, #402025);
 }
 #navigation a{
 	color:#FFF; text-transform: uppercase; text-decoration:none;	font-family: 'Oswald', serif;
-	text-rendering:optimizelegibility;text-shadow:1px 1px 1px   #000; letter-spacing:2px;margin-right:45px;
+	text-rendering:optimizelegibility;text-shadow:1px 1px 1px   #000; letter-spacing:3px;margin-right:7px;
+	font-size:12px;
 	
 }
 #navigation a:hover{
@@ -127,8 +128,10 @@ border-right: 1px solid red;
 	
 }
 
+#navigation img{margin-right:7px;}
+
 #navigation #span{position:relative;
-	margin-left:30px; margin-top:15px;font-size:12px;
+	margin-left:12px; margin-top:15px;font-size:12px;
 	
 }
 /*----------------------------------------------------------*/
@@ -163,6 +166,9 @@ border-right: 1px solid red;
 }
 
 
+#film_title{position:absolute; margin-top:5px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+   font-weight: 300;font-size:20px;color:#262626; margin-left:30px;}
 
 /*----------------------------------------------------------*/
 
@@ -443,7 +449,7 @@ table tr.result:hover {
 
 
 #user_nav{
-	position:relative; text-align: right; margin-right:15px;margin-bottom:0px;color:#fff;margin-top:-15px;text-transform:uppercase;
+	position:relative; text-align: right; margin-right:15px;margin-bottom:0px;color:#bfb9ac ;margin-top:-15px;text-transform:uppercase;
 	font-family: 'Oswald', serif;
 	text-rendering:optimizelegibility;
 	text-shadow:1px 1px 1px   #000;

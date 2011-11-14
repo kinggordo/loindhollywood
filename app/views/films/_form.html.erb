@@ -1,7 +1,9 @@
 <%= form_for @film do |f| %>
 
 <div id="Left">
-  
+	
+  <div id='film_title'><%= @film.name%></div>
+
 <div id="post_errors" style="display: none;"></div> 
 
 <div id="Right">    
@@ -9,15 +11,17 @@
 </div>
 
 <div class="button">
-<%= button_to_function "Title / Technical", "$('#ti').toggle()" %>
-<%= button_to_function "Functions / People", "$('#fp').toggle()" %>
 <%= button_to_function "City / Theaters", "$('#sa').toggle()" %>
+<%= button_to_function "Functions / People", "$('#fp').toggle()" %>
+<%= button_to_function "Title / Technical", "$('#ti').toggle()" %>
 </div>
+
+
 
 <div id="ti" style="display:none;" > 
 <fieldset id="title">
   
-  <%= f.label :name , "Kind of movie"%>
+  <%= f.label :name , "Kind of movie"%><br/>
   <%= f.collection_select :moviselect_id, Moviselect.find(:all), :id, :name %><br/>
   
   <ol>
@@ -162,9 +166,10 @@
   <br/>  
 </fieldset>
 
-<hr/>
+<br/>
+<br/>
 
-<p class="done"> 
+<p class="donedone"> 
  <%= link_to_function "I'm done with Title/Technical", "$('#ti').toggle()" %>
 </p>
 
@@ -179,17 +184,17 @@
   <%= render "films/function_fields", :f => builder %>      
 <% end %>
 
-<p class="add">
-  <%= link_to_add_fields "Add function", f, :functions %> 
+<p class="addfonction">
+   <%=image_tag'ldh_admin_ouverture.png'%><%= link_to_add_fields "Add function", f, :functions %> 
 </p>
 
 
 <br/>
+<br/>
+<br/>
 
 
-<hr/>
-
-<p class="done">
+<p class="donedone">
 <%= link_to_function "I'm done with functions/People", "$('#fp').toggle()" %> 
 </p>
 
@@ -200,7 +205,7 @@
 
 
 <div id="sa" style="display:none;" >
-  <div class="buttoncountry">
+  <div id="buttoncountry">
   <%= button_to_function "Paris", "$('#pa').toggle()" %> 
   <%= button_to_function "Moscou", "$('#mos').toggle()" %> 
   <%= button_to_function "Shanghai", "$('#sha').toggle()" %>
@@ -214,24 +219,33 @@
   
    
 <div id="pa" style="display:none;" >
+	<br/>
+	<br/>
+	<br/>
+	<br/>
      <%= f.fields_for :joints do |builder| %>
        <%= render "films/joint_fields", :f => builder %>      
      <% end %>
 
      <p class="add">
-       <%= link_to_add_fields "Add theater", f, :joints %> 
+        <%=image_tag'ldh_admin_ouverture.png'%><%= link_to_add_fields "Add theater", f, :joints %>
      </p>
  
      <p class="done">
       <%= link_to_function "I'm done with  Paris", "$('#pa').toggle()" %> 
      </p>
 
-      <br/>
+     
+
       
 </div>
 
 
 <div id="mos" style="display:none;" >
+	<br/>
+	<br/>
+	<br/>
+	<br/>
      <%= f.fields_for :jointbs do |builder| %>
        <%= render "films/jointb_fields", :f => builder %>      
      <% end %>
@@ -246,14 +260,20 @@
        <%= link_to_function "I'm done with  Moscou", "$('#mos').toggle()" %> 
      </p>
 
-       <br/>
+      
        
 </div>
 
 <div id="sha" style="display:none;" >
+	<br/>
+	<br/>
+	<br/>
+	<br/>
      <%= f.fields_for :jointcs do |builder| %>
        <%= render "films/jointc_fields", :f => builder %>      
      <% end %>
+
+
 
      <p class="add">
       <br/>
@@ -265,19 +285,20 @@
        <%= link_to_function "I'm done with  Shanghai", "$('#sha').toggle()" %> 
      </p>
 
-       <br/>
+       
     
 </div>
      
 <br/>     
-<hr/>    
   
-<p class="done">
+  
+<p class="donedone">
    <%= link_to_function "I'm done with  City/Theaters", "$('#sa').toggle()" %> 
 </p>
 <br/>
 </div>
 
+<br/>
 
 
 </div>  

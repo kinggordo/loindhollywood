@@ -38,7 +38,7 @@
 	</div>
 	<% if user_signed_in? %>
 	<div id="navigation">
-		<div id='span'><%= link_to "cinéma des années 30", films_path %> | <%= link_to "office du cinéma éducateur", offices_path %> | <%= link_to "participants", films_path %> | <%= link_to "partenaires", films_path %> | <%= link_to "mentions légales", films_path %></div>
+		<div id='span'><%=image_tag'ldh_admin_etoile_01.png'%><%= link_to "cinéma des années 30", films_path %> <%=image_tag'ldh_admin_etoile_01.png'%> <%= link_to "office du cinéma éducateur", offices_path %><%=image_tag'ldh_admin_etoile_01.png'%> <%= link_to "participants", films_path %><%=image_tag'ldh_admin_etoile_01.png'%> <%= link_to "partenaires", films_path %> <%=image_tag'ldh_admin_etoile_01.png'%> <%= link_to "mentions légales", films_path %><%=image_tag'ldh_admin_etoile_01.png'%></div>
 	</div>
 	
 	<% end %>
