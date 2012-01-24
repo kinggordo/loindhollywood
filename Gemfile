@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.4.rc1'
 gem 'sqlite3'
 gem 'rails3-jquery-autocomplete'
+gem 'pg' #for postgresql (same database as in heroku)
 
 gem 'jquery-rails'
 gem 'will_paginate', '3.0.pre2'
