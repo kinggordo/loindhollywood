@@ -17,13 +17,16 @@
 
   	
 	 <script type="text/javascript">
+             
 		$().ready(function() {
 			$('#coda-slider-1').codaSlider();
-			
-			
-		});
-		
-		
+                        $("#query").change(function() {
+                          // make a POST call and replace the content
+                          $.post("/", function(data) {
+                            $("#table").html(data);
+                          });
+                        });
+                });
 		
 	 </script>
 	
