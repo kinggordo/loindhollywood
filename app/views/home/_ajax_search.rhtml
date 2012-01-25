@@ -1,11 +1,11 @@
 <br/>
-<% if @total == 0 %>
+<% if @films.count == 0 %>
 
 <p>AUCUN DOCUMENT...</p>
 
 <% else %>
 
-<p><%= @total %> DOCUMENT(S) CORRESPONDENT À VOTRE RECHERCHE</p>
+<p><%= @films.count %> DOCUMENT(S) CORRESPONDENT À VOTRE RECHERCHE</p>
 
 <div id='hrrr'></div>
 
@@ -64,12 +64,12 @@
 		    </li><br/>
 		<% if film.start_date %> 
 			<li>
-		        Date of first release original:<span> <%= film.start_date.strftime('%Y/''%m/''%d') %></span>   
+		        Date of first release original:<span> <%= film.start_date.strftime('%Y/''%m/''%d') unless film.start_date.nil? %></span>   
 		    </li><br/>
 		<%end%>
 		<% if film.year_date %>  
 			<li>
-		        Year of production:<span> <%= film.year_date.strftime('%Y') %></span>   
+		        Year of production:<span> <%= film.year_date.strftime('%Y') unless film.year_date.nil? %></span>   
 		    </li><br/>
 		<%end%>
 			<li>
@@ -125,7 +125,7 @@
 			
 			
 			<li>
-        		Run date: <span><%= joint.start_date.strftime('%Y/''%m/''%d') %> to <%= joint.end_date.strftime('%Y/''%m/''%d') %></span>
+        		Run date: <span><%= joint.start_date.strftime('%Y/''%m/''%d') unless joint.start_date.nil? %> to <%= joint.end_date.strftime('%Y/''%m/''%d') unless joint.end_date.nil?  %></span>
 			</li><br/>
         	
 
@@ -148,7 +148,7 @@
   <div id="joint_<%=joint.id%>" style="display:none;" >
           
           <li>      
-              Run date : <span><%= joint.start_date.strftime('%Y/''%m/''%d') %> to <%= joint.end_date.strftime('%Y/''%m/''%d') %></span>
+              Run date : <span><%= joint.start_date.strftime('%Y/''%m/''%d') unless joint.start_date.nil? %> to <%= joint.end_date.strftime('%Y/''%m/''%d') unless joint.end_date.nil? %></span>
           </li><br/>
        
           <li> 

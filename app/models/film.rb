@@ -28,10 +28,10 @@ class Film < ActiveRecord::Base
   
  
   def self.search(search)
-    if search
-      where('name LIKE ?', "%#{search}%")
+    if (search)
+      find :all, :conditions => [ 'name LIKE ?', "%#{search}%" ]
     else
-      scoped
+      find :all
     end
   end
 

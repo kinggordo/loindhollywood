@@ -22,9 +22,9 @@
 			$('#coda-slider-1').codaSlider();
                         $("#query").change(function() {
                           // make a POST call and replace the content
-                          $.post("/", function(data) {
+                          $.post("/", { query: $('#query').val()}, function(data) {
                             $("#table").html(data);
-                          });
+                          } )
                         });
                 });
 		

@@ -4,7 +4,6 @@ class HomeController < ApplicationController
   
   def index
     
-    logger.info "index called, parameters: #{params[:query]}"
     films_per_page = 10
 
          sort = case params['sort']
@@ -12,10 +11,11 @@ class HomeController < ApplicationController
                 
                 end
 
-         conditions = ["name LIKE ?", "%#{params[:query]}%"] unless params[:query].nil?
+         #conditions = ["name LIKE ?", "%#{params[:query]}%"] unless params[:query].nil?
 
-         @total = Film.count(:conditions => conditions)
-         @films = Film.paginate(:per_page => 20, :page => params[:page], :order => sort, :conditions => conditions)
+         @films = Film.search(params[:query])
+         #@total = Film.count(:conditions => conditions)
+         #@films = Film.paginate(:per_page => 20, :page => params[:page], :order => sort, :conditions => conditions)
          if request.xml_http_request?
            render :partial => "ajax_search", :layout => false
          end
