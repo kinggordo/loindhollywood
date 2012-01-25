@@ -11,11 +11,7 @@ class HomeController < ApplicationController
                 
                 end
 
-         #conditions = ["name LIKE ?", "%#{params[:query]}%"] unless params[:query].nil?
-
-         @films = Film.search(params[:query])
-         #@total = Film.count(:conditions => conditions)
-         #@films = Film.paginate(:per_page => 20, :page => params[:page], :order => sort, :conditions => conditions)
+         @films = Film.search(params[:query]).paginate(:per_page => 20, :page => params[:page], :order => sort)
          if request.xml_http_request?
            render :partial => "ajax_search", :layout => false
          end
