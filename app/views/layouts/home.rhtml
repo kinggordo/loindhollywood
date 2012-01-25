@@ -70,6 +70,14 @@
   
   
   
+<% if Rails.env.phil? %>
+  <% (1..50).each do %>
+    <br>    
+  <% end %>
+  <%= debug(params) %>
+  <%= debug(session) %>
+<% end %>
+
 
 
 

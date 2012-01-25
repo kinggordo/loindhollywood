@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   
   def index
     
-   
+    logger.info "index called, parameters: #{params[:query]}"
     films_per_page = 10
 
          sort = case params['sort']
