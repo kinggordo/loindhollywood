@@ -20,19 +20,12 @@
              
 		$().ready(function() {
 			$('#coda-slider-1').codaSlider();
-                        
-                        var querycontent = $('#query').val();
-                        
-                        setInterval(updateSearch, 2000);
-                        
-                        function updateSearch() {
-                          if ($('#query').val() != querycontent) {
-                            querycontent = $('#query').val();
-                            $.post("/", { query: $('#query').val()}, function(data) {
-                              $("#table").html(data);
-                            } )
-                          }
-                        }
+                        $("#query").change(function() {
+                          // make a POST call and replace the content
+                          $.post("/", { query: $('#query').val()}, function(data) {
+                            $("#table").html(data);
+                          } )
+                        });
                 });
 		
 	 </script>
