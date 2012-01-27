@@ -9,7 +9,7 @@
 
 <% if @films.count > 1 %>
   <p>filtres additionnels:
-    <%= select "company", "id", @companies, { :prompt => 'Compagnie', :include_blank => true } %>
+    Compagnie: <%= select "company", "id", @companies, { :include_blank => true } %>
   </p>
 <% end %>
 
