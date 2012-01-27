@@ -12,6 +12,8 @@ class HomeController < ApplicationController
                 end
 
          @films = Film.search(params[:query]).paginate(:per_page => 20, :page => params[:page], :order => sort)
+         @companies = @films.collect { |film| film.company}.sort.uniq
+         logger.info(@companies)
          if request.xml_http_request?
            render :partial => "ajax_search", :layout => false
          end
