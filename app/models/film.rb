@@ -29,9 +29,9 @@ class Film < ActiveRecord::Base
  
   def self.search(search)
     if (search)
-      find :all, :conditions => [ 'name ILIKE ? OR titlea ILIKE ? OR titleb ILIKE ? OR titlec ILIKE ? OR titled ILIKE ? OR titlee ILIKE ? OR titlef ILIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"]
+      where 'name ILIKE ? OR titlea ILIKE ? OR titleb ILIKE ? OR titlec ILIKE ? OR titled ILIKE ? OR titlee ILIKE ? OR titlef ILIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"
     else
-      find :all
+      scoped
     end
   end
 
