@@ -16,8 +16,16 @@ class FilmsController < ApplicationController
   # GET /films.xml
   
   def index
-    @films = Film.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
-    
+    logger.info("debug: #{params[:company]}")
+    @found_films = Film.search(params[:search])
+    if (!params[:company].blank?)
+      if (!params[:company][:id].blank?)
+        @found_films = @found_films.where('company = ?', params[:company][:id])
+      end
+    end
+    @companies = @found_films.collect { |film| film.company}#.sort.uniq
+    @selected_company = @companies[0] unless @companies.count != 1
+    @films = @found_films.order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
   end
   
   def all
