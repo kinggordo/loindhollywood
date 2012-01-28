@@ -24,6 +24,9 @@ class FilmsController < ApplicationController
       end
     end
     @companies = @found_films.collect { |film| film.company}#.sort.uniq
+    #@companies = Film.all.collect { |film| film.company}
+    @companies.compact!
+    @companies.sort!.uniq! unless @companies.nil?
     @selected_company = @companies[0] unless @companies.count != 1
     @films = @found_films.order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
   end
