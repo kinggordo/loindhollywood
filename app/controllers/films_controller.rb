@@ -20,11 +20,13 @@ class FilmsController < ApplicationController
     found_films = Film.search(params[:search])
 
     #add criteria for company:
+    @companies = Film.all.collect { |film| film.company }.compact.sort.uniq
     found_films = found_films.where('company = ?', params[:company]) unless params[:company].blank?
 
-    #build companies list (to display)
-    @companies = Film.all.collect { |film| film.company }.compact.sort.uniq
-
+    #add criteria for country
+    @countries = Film.all.collect { |film| film.country }.compact.sort.uniq
+    found_films = found_films.where('country = ?', params[:country]) unless params[:country].blank?
+    
     #order and paginate:
     @films = found_films.order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
   end
