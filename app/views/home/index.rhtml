@@ -31,22 +31,7 @@
 				<h1 class="title">Cinéma des années 30</h1>
 				<div id="film-notice"></div>
 				
-
-					<div id='recherche'>
-					
-					<div id="button">RECHERCHER </div>
-					<%= text_field_tag("query", params['query'] ) %>
-					<%=image_tag 'ldh_recherche_icone.jpg'%>
-					
-					</div>
-
-					<%= image_tag("spinner.gif",
-					              :align => "absmiddle",
-					              :border => 0,
-					              :id => "spinner",
-					              :style =>"display: none;" ) %>
-					</p>
-
+                                        <%= render 'common/search_film', :url => '/#2' %>
 					<div id="table">
 					<%= render :partial => "ajax_search" %>
 					</div>

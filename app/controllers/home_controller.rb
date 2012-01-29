@@ -10,10 +10,7 @@ class HomeController < ApplicationController
                 when "name"  then "name"
                 
                 end
-
-         found_films = Film.search(params[:query])
-         @films = found_films.paginate(:per_page => 20, :page => params[:page], :order => sort)
-         @count = found_films.count
+         prepare_search
          if request.xml_http_request?
            render :partial => "ajax_search", :layout => false
          end
