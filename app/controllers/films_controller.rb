@@ -16,17 +16,16 @@ class FilmsController < ApplicationController
   # GET /films.xml
   
   def index
-    logger.info("debug: #{params[:company]}")
+    #general search:
     found_films = Film.search(params[:search])
-    if (!params[:company].blank?)
-      if (!params[:company][:id].blank?)
-        found_films = found_films.where('company = ?', params[:company][:id])
-      end
-    end
-    #@companies = found_films.collect { |film| film.company}
-    @companies = Film.all.collect { |film| film.company }
-    @companies.compact! #enleve les nils de la table, sinon sort fait un bug
-    @companies.sort!.uniq! unless @companies.nil?
+
+    #add criteria for company:
+    found_films = found_films.where('company = ?', params[:company]) unless params[:company].blank?
+
+    #build companies list (to display)
+    @companies = Film.all.collect { |film| film.company }.compact.sort.uniq
+
+    #order and paginate:
     @films = found_films.order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
   end
   
