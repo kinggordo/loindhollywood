@@ -19,6 +19,9 @@ class OfficesController < ApplicationController
     @lieux = Office.all.collect { |office| office.lieu }.compact.sort.uniq
     found_offices = found_offices.where('lieu = ?', params[:lieu]) unless params[:lieu].blank?
 
+    @lesformats = Office.all.collect { |office| office.format }.compact.sort.uniq
+    found_offices = found_offices.where('format = ?', params[:leformat]) unless params[:leformat].blank?
+
    @offices = found_offices.order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
 
     respond_to do |format|
