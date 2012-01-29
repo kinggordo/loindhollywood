@@ -13,7 +13,7 @@
     <%= text_field_tag :search, params[:search],:style =>"width:733px;" %>
   	<span><%= image_submit_tag "ldh_recherche_icone.jpg"%></span>
 <p>     
-  COMPAGNIE: <%= select "company", "id", @companies, { :include_blank => true, :selected => @selected_company } %>
+  COMPAGNIE: <%= select "company", "id", @companies, { :include_blank => true, :selected => params[:company][:id] } %><br>
 </p>    
 </div>
 <div id="hr"></div>
