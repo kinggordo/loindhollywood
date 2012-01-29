@@ -16,7 +16,7 @@
   PAYS: <%= select_tag( "country", options_for_select( @countries, params[:country] ) ) %>
   COULEUR: <%= select_tag( "color", options_for_select( @colors, params[:color] ) ) %>
   SON: <%= select_tag( "sound", options_for_select( @sounds, params[:sound] ) ) %><br>
-  <%= image_submit_tag "ldh_recherche_icone.jpg"%> ou <%= link_to "réinitialiser", films_path %>
+  <%= image_submit_tag "ldh_recherche_icone.jpg"%> - <%= link_to image_tag("ldh_recherche_fermeture.jpg"), films_path %>
 </p>    
 </div>
 <div id="hr"></div>
