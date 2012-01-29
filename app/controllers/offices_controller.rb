@@ -4,7 +4,13 @@ class OfficesController < ApplicationController
   # GET /offices
   # GET /offices.xml
   def index
-    @offices = Office.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
+    found_offices = Office.search(params[:search])
+    @count = found_offices.count
+
+    @countries = Office.all.collect { |film| film.country }.compact.sort.uniq
+    found_offices = found_offices.where('country = ?', params[:country]) unless params[:country].blank?
+
+    @offices = found_offices.order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
