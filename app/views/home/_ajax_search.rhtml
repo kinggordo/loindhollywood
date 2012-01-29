@@ -7,12 +7,6 @@
 
 <p><%= @films.count %> DOCUMENT(S) CORRESPONDENT À VOTRE RECHERCHE</p>
 
-<% if @films.count > 1 %>
-  <p>filtres additionnels:
-    Compagnie: <%= select "company", "id", @companies, { :include_blank => true } %>
-  </p>
-<% end %>
-
 <div id='hrrr'></div>
 
 
