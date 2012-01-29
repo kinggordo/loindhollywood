@@ -1,14 +1,12 @@
 <%= form_tag url, :method => 'get' do %>
-  <div id='recherche'>
     <span class="re">SEARCH MOVIES</span>
-    <%= text_field_tag :search, params[:search] %>
+    <%= text_field_tag :search, params[:search], :style => "width:733px;" %>
     <p>
       COMPAGNIE: <%= select_tag( "company", options_for_select( @companies, params[:company] ) ) %>
       PAYS: <%= select_tag( "country", options_for_select( @countries, params[:country] ) ) %>
       COULEUR: <%= select_tag( "color", options_for_select( @colors, params[:color] ) ) %>
-      SON: <%= select_tag( "sound", options_for_select( @sounds, params[:sound] ) ) %><br>
+      SON: <%= select_tag( "sound", options_for_select( @sounds, params[:sound] ) ) %>
       <%= image_submit_tag "ldh_recherche_icone.jpg"%> - <%= link_to image_tag("ldh_recherche_fermeture.jpg"), films_path %>
     </p>
-  </div>
 <% end %>
 
