@@ -16,7 +16,10 @@ class OfficesController < ApplicationController
     @producers = Office.all.collect { |office| office.producer }.compact.sort.uniq
     found_offices = found_offices.where('producer = ?', params[:producer]) unless params[:producer].blank?
 
-    @offices = found_offices.order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
+    @lieux = Office.all.collect { |office| office.lieu }.compact.sort.uniq
+    found_offices = found_offices.where('lieu = ?', params[:lieu]) unless params[:lieu].blank?
+
+   @offices = found_offices.order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
