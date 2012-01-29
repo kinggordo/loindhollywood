@@ -7,11 +7,14 @@ class OfficesController < ApplicationController
     found_offices = Office.search(params[:search])
     @count = found_offices.count
 
-    @countries = Office.all.collect { |film| film.country }.compact.sort.uniq
+    @countries = Office.all.collect { |office| office.country }.compact.sort.uniq
     found_offices = found_offices.where('country = ?', params[:country]) unless params[:country].blank?
 
-    @sons = Office.all.collect { |film| film.son }.compact.sort.uniq
+    @sons = Office.all.collect { |office| office.son }.compact.sort.uniq
     found_offices = found_offices.where('son = ?', params[:son]) unless params[:son].blank?
+
+    @producers = Office.all.collect { |office| office.producer }.compact.sort.uniq
+    found_offices = found_offices.where('producer = ?', params[:producer]) unless params[:producer].blank?
 
     @offices = found_offices.order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
 
