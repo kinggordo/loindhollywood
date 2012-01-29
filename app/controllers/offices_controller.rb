@@ -34,9 +34,6 @@ class OfficesController < ApplicationController
     @themebs = Office.all.collect { |office| office.themeb}.compact.sort.uniq
     found_offices = found_offices.where('themeb = ?', params[:themeb]) unless params[:themeb].blank?
 
-    @notes = Office.all.collect { |office| office.note}.compact.sort.uniq
-    found_offices = found_offices.where('note = ?', params[:note]) unless params[:note].blank?
-
     @offices = found_offices.order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
 
     respond_to do |format|

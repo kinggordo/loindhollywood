@@ -21,7 +21,6 @@
       SUPPORT: <%= select_tag( "support", options_for_select( @supports, params[:support] ), :include_blank => true ) %>
       THEME 1: <%= select_tag( "themea", options_for_select( @themeas, params[:themea] ), :include_blank => true ) %>
       THEME 2: <%= select_tag( "themeb", options_for_select( @themebs, params[:themeb] ), :include_blank => true ) %>
-      NOTE: <%= select_tag( "note", options_for_select( @notes, params[:note] ), :include_blank => true ) %>
 </div>
 <div id="hr"></div>
     <div id="officessearchs"><%= render 'officessearchs' %></div>
