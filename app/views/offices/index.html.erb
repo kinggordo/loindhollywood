@@ -18,6 +18,7 @@
       LIEU: <%= select_tag( "lieu", options_for_select( @lieux, params[:lieu] ), :include_blank => true ) %>
       FORMAT: <%= select_tag( "leformat", options_for_select( @lesformats, params[:leformat] ), :include_blank => true ) %>
       GENRE: <%= select_tag( "genre", options_for_select( @genres, params[:genre] ), :include_blank => true ) %>
+      SUPPORT: <%= select_tag( "support", options_for_select( @supports, params[:support] ), :include_blank => true ) %>
 </div>
 <div id="hr"></div>
     <div id="officessearchs"><%= render 'officessearchs' %></div>

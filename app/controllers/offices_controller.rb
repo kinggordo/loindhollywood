@@ -25,7 +25,10 @@ class OfficesController < ApplicationController
     @genres = Office.all.collect { |office| office.genre }.compact.sort.uniq
     found_offices = found_offices.where('genre = ?', params[:genre]) unless params[:genre].blank?
 
-   @offices = found_offices.order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
+    @supports = Office.all.collect { |office| office.support}.compact.sort.uniq
+    found_offices = found_offices.where('support = ?', params[:support]) unless params[:support].blank?
+
+    @offices = found_offices.order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
