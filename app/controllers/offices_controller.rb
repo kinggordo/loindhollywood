@@ -10,6 +10,9 @@ class OfficesController < ApplicationController
     @countries = Office.all.collect { |film| film.country }.compact.sort.uniq
     found_offices = found_offices.where('country = ?', params[:country]) unless params[:country].blank?
 
+    @sons = Office.all.collect { |film| film.son }.compact.sort.uniq
+    found_offices = found_offices.where('son = ?', params[:son]) unless params[:son].blank?
+
     @offices = found_offices.order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
 
     respond_to do |format|

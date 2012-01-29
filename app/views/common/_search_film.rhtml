@@ -2,10 +2,10 @@
     <span class="re">SEARCH MOVIES</span>
     <%= text_field_tag :search, params[:search], :style => "width:733px;" %>
     <p>
-      COMPAGNIE: <%= select_tag( "company", options_for_select( @companies, params[:company] ) ) %>
-      PAYS: <%= select_tag( "country", options_for_select( @countries, params[:country] ) ) %>
-      COULEUR: <%= select_tag( "color", options_for_select( @colors, params[:color] ) ) %>
-      SON: <%= select_tag( "sound", options_for_select( @sounds, params[:sound] ) ) %>
+      COMPAGNIE: <%= select_tag( "company", options_for_select( @companies, params[:company] ), :include_blank => true ) %>
+      PAYS: <%= select_tag( "country", options_for_select( @countries, params[:country] ), :include_blank => true ) %>
+      COULEUR: <%= select_tag( "color", options_for_select( @colors, params[:color] ), :include_blank => true ) %>
+      SON: <%= select_tag( "sound", options_for_select( @sounds, params[:sound] ), :include_blank => true ) %>
       <%= image_submit_tag "ldh_recherche_icone.jpg"%> - <%= link_to image_tag("ldh_recherche_fermeture.jpg"), url %>
     </p>
 <% end %>
