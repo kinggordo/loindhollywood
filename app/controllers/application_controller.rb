@@ -15,19 +15,19 @@ class ApplicationController < ActionController::Base
     @count = found_films.count
 
     #add criteria for company:
-    @companies = Film.all.collect { |film| film.company }.compact.sort.uniq
+    @companies = Film.all.collect { |film| film.company }.compact.sort{ |a,b| a.downcase <=> b.downcase }.uniq
     found_films = found_films.where('company = ?', params[:company]) unless params[:company].blank?
 
     #add criteria for country
-    @countries = Film.all.collect { |film| film.country }.compact.sort.uniq
+    @countries = Film.all.collect { |film| film.country }.compact.sort{ |a,b| a.downcase <=> b.downcase }.uniq
     found_films = found_films.where('country = ?', params[:country]) unless params[:country].blank?
 
     #add criteria for color 
-    @colors = Film.all.collect { |film| film.color }.compact.sort.uniq
+    @colors = Film.all.collect { |film| film.color }.compact.sort{ |a,b| a.downcase <=> b.downcase }.uniq
     found_films = found_films.where('color = ?', params[:color]) unless params[:color].blank?
 
     #add criteria for sound
-    @sounds = Film.all.collect { |film| film.sound }.compact.sort.uniq
+    @sounds = Film.all.collect { |film| film.sound }.compact.sort{ |a,b| a.downcase <=> b.downcase }.uniq
     found_films = found_films.where('sound = ?', params[:sound]) unless params[:sound].blank?
 
     #order and paginate:
