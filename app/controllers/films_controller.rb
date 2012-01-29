@@ -26,6 +26,10 @@ class FilmsController < ApplicationController
     #add criteria for country
     @countries = Film.all.collect { |film| film.country }.compact.sort.uniq
     found_films = found_films.where('country = ?', params[:country]) unless params[:country].blank?
+ 
+    #add criteria for colo 
+    @colors = Film.all.collect { |film| film.color }.compact.sort.uniq
+    found_films = found_films.where('color = ?', params[:color]) unless params[:color].blank?
     
     #order and paginate:
     @films = found_films.order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])

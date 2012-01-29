@@ -14,7 +14,8 @@
   	<span><%= image_submit_tag "ldh_recherche_icone.jpg"%></span>
 <p>     
   COMPAGNIE: <%= select_tag( "company", options_for_select( @companies, params[:company] ) ) %>
-  PAYS: <%= select_tag( "country", options_for_select( @countries, params[:country] ) ) %><br>
+  PAYS: <%= select_tag( "country", options_for_select( @countries, params[:country] ) ) %>
+  COULEUR: <%= select_tag( "color", options_for_select( @colors, params[:color] ) ) %>
 </p>    
 </div>
 <div id="hr"></div>
