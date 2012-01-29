@@ -28,6 +28,12 @@ class OfficesController < ApplicationController
     @supports = Office.all.collect { |office| office.support}.compact.sort.uniq
     found_offices = found_offices.where('support = ?', params[:support]) unless params[:support].blank?
 
+    @themeas = Office.all.collect { |office| office.themea}.compact.sort.uniq
+    found_offices = found_offices.where('themea = ?', params[:themea]) unless params[:themea].blank?
+
+    @themebs = Office.all.collect { |office| office.themeb}.compact.sort.uniq
+    found_offices = found_offices.where('themeb = ?', params[:themeb]) unless params[:themeb].blank?
+
     @offices = found_offices.order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
 
     respond_to do |format|
