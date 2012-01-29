@@ -6,20 +6,9 @@
 	<%= render 'navbar' %>    
     
   </div>
- 
-<%= form_tag films_path, :method => 'get' do %>
-  <div id='recherche'>
-  <span class="re">SEARCH MOVIES</span>  
-  <%= text_field_tag :search, params[:search],:style =>"width:733px;" %>
-  <p>     
-    COMPAGNIE: <%= select_tag( "company", options_for_select( @companies, params[:company] ) ) %>
-    PAYS: <%= select_tag( "country", options_for_select( @countries, params[:country] ) ) %>
-    COULEUR: <%= select_tag( "color", options_for_select( @colors, params[:color] ) ) %>
-    SON: <%= select_tag( "sound", options_for_select( @sounds, params[:sound] ) ) %><br>
-    <%= image_submit_tag "ldh_recherche_icone.jpg"%> - <%= link_to image_tag("ldh_recherche_fermeture.jpg"), films_path %>
-  </p>    
-  </div>
-<% end %>
+
+<%= render 'common/search_film' %>
+
 <div id="hr"></div>
 </div>
   <div id="filmsearchs"><%= render 'filmsearchs' %></div>
