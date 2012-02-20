@@ -9,7 +9,7 @@
       Country: <%= select_tag( "country", options_for_select( @countries, params[:country] ), :include_blank => true ) %>
       Theater: <%= select_tag( "id", options_for_select( @salles, params[:id] ), :include_blank => true ) %>
       Color: <%= select_tag( "color_id", options_for_select( @colors, params[:color_id] ), :include_blank => true ) %>
-      Sound: <%= select_tag( "sound", options_for_select( @sounds, params[:sound] ), :include_blank => true ) %>
+      Sound: <%= select_tag( "sound_id", options_for_select( @sounds, params[:sound_id] ), :include_blank => true ) %>
 	  
        - <%= link_to image_tag("ldh_recherche_fermeture.jpg"), url %>
     </p>

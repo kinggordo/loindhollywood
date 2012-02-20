@@ -27,8 +27,8 @@ class ApplicationController < ActionController::Base
     found_films =found_films.where('films.color_id = ?', params[:color_id]) unless params[:color_id].blank?
 
     #add criteria for sound
-    @sounds = Film.all.collect { |film| film.sound }.compact.sort{ |a,b| a.downcase <=> b.downcase }.uniq
-    found_films = found_films.where('sound = ?', params[:sound]) unless params[:sound].blank?
+    @sounds = Sound.all.collect { |sound| sound.name,sound.id }.compact.sort{ |a,b| a.downcase <=> b.downcase }.uniq
+    found_films = found_films.where('films.sound_id = ?', params[:sound_id]) unless params[:sound_id].blank?
     
     #add criteria for salle 
     @salles = Salle.all.collect { |salle| [salle.name, salle.id] }.compact.sort{ |a,b| a <=> b }.uniq
