@@ -1,0 +1,29 @@
+<div class="fields">
+ 
+<fieldset id="director">
+  
+    <ol>
+      <li>
+        <label for="first_name">Director</label><br/>  
+          <p class="remove">
+          <%= link_to_remove_fields "Remove Director", f %><%=image_tag'ldh_recherche_fermeture.jpg'%>  
+          </p> 
+      </li>
+    </ol> 
+    
+    <br/>
+    
+    <%= f.fields_for :people do |builder| %>
+      <%= render "films/person_fields", :f => builder %>
+    <% end %>
+
+    <p class="add_pers">
+      <%= link_to_add_fields "Add person", f, :people %>  
+    </p>
+
+    <br/>
+</fieldset>
+  
+  <br/>    
+  
+</div>
