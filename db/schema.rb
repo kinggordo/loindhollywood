@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120206174347) do
+ActiveRecord::Schema.define(:version => 20120220162626) do
 
   create_table "cinematographers", :force => true do |t|
     t.string   "name"
@@ -34,6 +34,12 @@ ActiveRecord::Schema.define(:version => 20120206174347) do
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
   create_table "colors", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "currencies", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -125,6 +131,26 @@ ActiveRecord::Schema.define(:version => 20120206174347) do
     t.text      "comment"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "day"
+    t.string    "daybis"
+    t.boolean   "holydays"
+    t.datetime  "time"
+    t.boolean   "and"
+    t.boolean   "to"
+    t.datetime  "timebis"
+    t.boolean   "andbis"
+    t.boolean   "tobis"
+    t.datetime  "timeter"
+    t.boolean   "andter"
+    t.boolean   "toter"
+    t.datetime  "timefour"
+    t.string    "dayextra"
+    t.datetime  "timeextra"
+    t.boolean   "andextra"
+    t.boolean   "toextra"
+    t.datetime  "timeextrabis"
+    t.integer   "currency_id"
+    t.string    "number"
   end
 
   create_table "jointcs", :force => true do |t|
@@ -147,6 +173,26 @@ ActiveRecord::Schema.define(:version => 20120206174347) do
     t.text      "comment"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "day"
+    t.string    "daybis"
+    t.boolean   "holydays"
+    t.datetime  "time"
+    t.boolean   "and"
+    t.boolean   "to"
+    t.datetime  "timebis"
+    t.boolean   "andbis"
+    t.boolean   "tobis"
+    t.datetime  "timeter"
+    t.boolean   "andter"
+    t.boolean   "toter"
+    t.datetime  "timefour"
+    t.string    "dayextra"
+    t.datetime  "timeextra"
+    t.boolean   "andextra"
+    t.boolean   "toextra"
+    t.datetime  "timeextrabis"
+    t.integer   "currency_id"
+    t.string    "number"
   end
 
   create_table "joints", :force => true do |t|
@@ -169,6 +215,26 @@ ActiveRecord::Schema.define(:version => 20120206174347) do
     t.text      "comment"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "day"
+    t.string    "daybis"
+    t.boolean   "holydays"
+    t.datetime  "time"
+    t.boolean   "and"
+    t.boolean   "to"
+    t.datetime  "timebis"
+    t.boolean   "andbis"
+    t.boolean   "tobis"
+    t.datetime  "timeter"
+    t.boolean   "andter"
+    t.boolean   "toter"
+    t.datetime  "timefour"
+    t.string    "dayextra"
+    t.datetime  "timeextra"
+    t.boolean   "andextra"
+    t.boolean   "toextra"
+    t.datetime  "timeextrabis"
+    t.integer   "currency_id"
+    t.string    "number"
   end
 
   create_table "malecasts", :force => true do |t|

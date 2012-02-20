@@ -2,6 +2,8 @@ Kinggordo::Application.routes.draw do
   
   
 
+  resources :currencies
+
   resources :sounds
 
   resources :colors
