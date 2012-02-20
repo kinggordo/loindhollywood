@@ -1,15 +1,6 @@
 <%= form_for(@sound) do |f| %>
-  <% if @sound.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@sound.errors.count, "error") %> prohibited this sound from being saved:</h2>
-
-      <ul>
-      <% @sound.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  	<label for="first_name">sound</label>
+	     <%= f.text_field :name, :style =>"width:20%" %>
 
   <div class="actions">
     <%= f.submit %>
