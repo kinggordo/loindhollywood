@@ -2,6 +2,10 @@ Kinggordo::Application.routes.draw do
   
   
 
+  resources :sounds
+
+  resources :colors
+
   devise_for :users
 
   get 'films/autocomplete_function_name'

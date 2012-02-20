@@ -20,12 +20,6 @@
              
 		$().ready(function() {
 			$('#coda-slider-1').codaSlider();
-                        $("#query").change(function() {
-                          // make a POST call and replace the content
-                          $.post("/", { query: $('#query').val()}, function(data) {
-                            $("#table").html(data);
-                          } )
-                        });
                 });
 		
 	 </script>
@@ -68,7 +62,7 @@
   <div id="footer">
     <%=image_tag'ldh_logo-ihtp.png'%> 
 	<span>Loin d'Hollywood © IHTP, Institut d'histoire du temps présent, 2011. Tous droits réservés.</span>
-	<span id='linkb'><%=link_to'Espace privé', url_for("http://cold-mist-834.heroku.com/users/sign_in") %></span><span id='linka'><%=link_to"Mentions légales"%></span> 
+	<span id='linkb'><%=link_to'Espace privé', new_user_session_path %></span><span id='linka'><%=link_to"Mentions légales"%></span> 
   </div>
   
   

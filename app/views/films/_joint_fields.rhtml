@@ -39,13 +39,7 @@
                     <%=  f.text_field :price, :style =>"width:80%" %><br/>
                 </li>
                 
-               
-              
-              <%= link_to_function "Edit show", "$('#{f}').toggle()" %>
-              
-              
-              <div id="<%=f%>" style="display:none;" >
-                
+                                  
                 <li>
                <label for="first_name"> Audience:</label> <br/>
                 <%=  f.text_field :audience, :style =>"width:80%" %> <br/>
@@ -100,11 +94,9 @@
                       
               <hr/>
              
-              <p class="done">
-               <%= link_to_function "I'm done with  this show", "$('#{f}').toggle()" %> 
-              </p>
+              
                             
-             </div>
+             
               <br/>
               <br/>
               <br/>
@@ -119,6 +111,4 @@
 </fieldset>
 
 </div>
-<script type="text/javascript">
-  jQuery.noConflict();
-</script>
+

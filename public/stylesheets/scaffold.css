@@ -228,7 +228,16 @@ display:inline;
  
 }
 
+#navbar ul,x:-moz-any-link, x:default {
+	position:relative; margin-top:11px;margin-right:-123px;
+}
 
+#navbar ul li,x:-moz-any-link, x:default {
+	padding:0; 
+	margin-right:10px;
+	margin-left:-20px;
+	display:inline;
+}
 
 #navbar a {
 margin-right:10px;
@@ -484,3 +493,8 @@ text-rendering:optimizelegibility;text-decoration:none;color:#cccccc;}
 span.paginate{float:right;text-transform: uppercase;font-family: 'Oswald', serif;
 text-rendering:optimizelegibility;color:grey;font-size:10px;margin-right:30px;}
 span.paginate a{color:grey; text-decoration:none}
+
+
+#film_submit,x:-moz-any-link, x:default {
+	margin-top:-10px;
+}

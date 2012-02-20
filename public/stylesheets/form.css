@@ -57,6 +57,19 @@ fieldset#title{
 	
 }
 
+fieldset#title ,x:-moz-any-link, x:default{
+	
+	background: url(/images/ldh_admin_fond_01.jpg) repeat;
+	margin-bottom: 15px;
+	margin-top:60px;
+	padding: 10px;
+	border:none;
+	width:948px;
+	
+	
+	
+}
+
 fieldset#title p {
     color: #666666;
     font-size: 11px;
@@ -182,9 +195,9 @@ input.submit {
 	cursor:  pointer; 	
 } 
 
-input.submit:hover { 		
-	
-}
+ 
+
+
 
 .submit a.submit{
 	position:absolute;
@@ -207,6 +220,8 @@ input.submit:hover {
 		
 } 
 
+
+
 .submit a.submit:hover { 		
 	-webkit-box-shadow: 0px 0px 5px #555;
 	-moz-box-shadow: 0px 0px 5px #aaa; 
@@ -218,6 +233,13 @@ input.submit:hover {
 float:left;width:955px;	  height:70px; margin-top:-20px;margin-bottom:0px; padding-left:15px;background: url(/images/ldh_admin_fond_02.jpg) repeat;
 border-bottom: 1px solid red;
 }
+
+.button ,x:-moz-any-link, x:default{
+float:left;width:955px;	  height:70px; margin-top:-20px;margin-bottom:0px; padding-left:15px;padding-bottom:9px;background: url(/images/ldh_admin_fond_02.jpg) repeat;
+border-bottom: 1px solid red;
+}
+
+
  
 .button input{ 
 		
@@ -426,6 +448,35 @@ p.addfonction a:hover {
 
 p.addfonction img{float:right;margin-top:0px;margin-right:840px;}
 
+p.addfonctionb{
+	position:relative;
+width:945px;
+height:30px;
+background:#f2f1ee;
+padding-top:30px;
+}
+p.addfonctionb a{ 
+	
+
+	color: #262626; 
+	text-decoration:none;	
+	border: none;
+	font-family: 'Oswald', serif;font-size:10px;
+	text-rendering:optimizelegibility;
+	text-transform:uppercase;
+	margin-left:15px;
+	
+	
+}
+
+p.addfonctionb a:hover {
+	color: #000; 				
+	cursor:  pointer; 
+}
+
+p.addfonctionb img{float:right;margin-top:0px;margin-right:600px;}
+
+
 
 p.add_pers a{ 
 	float:left;	
@@ -502,6 +553,13 @@ div.autocomplete ul li {
 text-rendering:optimizelegibility;text-shadow:1px 1px 1px  #403e39; }
 #recherche span input{float:right;margin-right:30px;margin-top:-32px;width:32px;border:none; padding:0px; }
 
+#recherche span input,x:-moz-any-link, x:default {
+	float:right;margin-right:31px;margin-top:6px;width:32px;border:none; padding:0px;
+}
+
+#recherche p{
+	margin-left:30px;
+}
 
 #close{
 	float:right;

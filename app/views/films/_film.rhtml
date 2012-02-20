@@ -175,6 +175,62 @@
     <legend>Functions / People</legend> 
     
     <hr/>
+
+	<ol>
+      <% @film.directors.each do |f| %>
+      <li> 
+        Director : <b><%= f.people.collect(&:name).join(", ") %></b>
+      </li>
+      <% end %>
+    </ol>
+
+	<ol>
+      <% @film.malecasts.each do |f| %>
+      <li> 
+        Male cast : <b><%= f.people.collect(&:name).join(", ") %></b>
+      </li>
+      <% end %>
+    </ol>
+
+	<ol>
+      <% @film.femalecasts.each do |f| %>
+      <li> 
+        Female cast : <b><%= f.people.collect(&:name).join(", ") %></b>
+      </li>
+      <% end %>
+    </ol>
+
+	<ol>
+      <% @film.producers.each do |f| %>
+      <li> 
+        Producer : <b><%= f.people.collect(&:name).join(", ") %></b>
+      </li>
+      <% end %>
+    </ol>
+
+	<ol>
+      <% @film.scriptwriters.each do |f| %>
+      <li> 
+        Scriptwriter : <b><%= f.people.collect(&:name).join(", ") %></b>
+      </li>
+      <% end %>
+    </ol>
+
+	<ol>
+      <% @film.cinematographers.each do |f| %>
+      <li> 
+        Cinematographor : <b><%= f.people.collect(&:name).join(", ") %></b>
+      </li>
+      <% end %>
+    </ol>
+
+	<ol>
+      <% @film.musicians.each do |f| %>
+      <li> 
+        Musician : <b><%= f.people.collect(&:name).join(", ") %></b>
+      </li>
+      <% end %>
+    </ol>
     
     <ol>
       <% @film.functions.each do |f| %>

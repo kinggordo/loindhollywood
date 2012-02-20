@@ -10,8 +10,7 @@ class HomeController < ApplicationController
                 when "name"  then "name"
                 
                 end
-
-         @films = Film.search(params[:query]).paginate(:per_page => 20, :page => params[:page], :order => sort)
+         prepare_search
          if request.xml_http_request?
            render :partial => "ajax_search", :layout => false
          end

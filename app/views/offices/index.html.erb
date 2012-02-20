@@ -11,8 +11,18 @@
   <span class="re">RECHERCHE</span>
    
       <%= text_field_tag :search, params[:search],:style =>"width:760px;"  %>
-      <span><%= image_submit_tag "ldh_recherche_icone.jpg"%></span>
-    
+	<span><%= image_submit_tag "ldh_recherche_icone.jpg"%></span>
+ <p>PAYS: <%= select_tag( "country", options_for_select( @countries, params[:country] ), :include_blank => true ) %>
+	PRODUCTEUR/DISTRIBUTEUR: <%= select_tag( "producer", options_for_select( @producers, params[:producer] ), :include_blank => true ) %></p>
+ <p>SON: <%= select_tag( "son", options_for_select( @sons, params[:son] ), :include_blank => true ) %>
+    LIEU: <%= select_tag( "lieu", options_for_select( @lieux, params[:lieu] ), :include_blank => true ) %>
+    FORMAT: <%= select_tag( "leformat", options_for_select( @lesformats, params[:leformat] ), :include_blank => true ) %>
+    GENRE: <%= select_tag( "genre", options_for_select( @genres, params[:genre] ), :include_blank => true ) %>
+    SUPPORT: <%= select_tag( "support", options_for_select( @supports, params[:support] ), :include_blank => true ) %></p>
+ <p>THEME 1: <%= select_tag( "themea", options_for_select( @themeas, params[:themea] ), :include_blank => true ) %>
+    THEME 2: <%= select_tag( "themeb", options_for_select( @themebs, params[:themeb] ), :include_blank => true ) %></p>
+      - <%= link_to image_tag("ldh_recherche_fermeture.jpg"), offices_path %>
+
 </div>
 <div id="hr"></div>
     <div id="officessearchs"><%= render 'officessearchs' %></div>

@@ -134,15 +134,15 @@
   
   <ol>
     <li>
-      <label for="first_name">Color</label><br/ >  
-        <%= f.autocomplete_field :color, films_autocomplete_film_color_path,  :style =>"width:99%"%>
+      	<%= f.label :name , "Color"%><br/>
+		  <%= f.collection_select :color_id, Color.find(:all), :id, :name %><br/>
     </li>
   </ol>
   
   <ol>
     <li>
-      <label for="first_name">Sound</label><br/ >  
-        <%= f.autocomplete_field :sound, films_autocomplete_film_sound_path,  :style =>"width:99%"%>
+      	<%= f.label :name , "Sound"%><br/>
+		  <%= f.collection_select :sound_id, Sound.find(:all), :id, :name %><br/>
     </li>
   </ol>
 
@@ -180,6 +180,59 @@
 <div id="fp" style="display:none;" >
   
 <fieldset id="title">  
+	
+	<%= f.fields_for :directors do |builder| %>
+	  <%= render "films/director_fields", :f => builder %>      
+	<% end %>
+	<p class="addfonctionb">
+	   <%=image_tag'ldh_admin_ouverture.png'%><%= link_to_add_fields "Add people to Directors", f, :directors %> 
+	</p>
+	
+	<%= f.fields_for :malecasts do |builder| %>
+	  <%= render "films/malecast_fields", :f => builder %>      
+	<% end %>
+	<p class="addfonctionb">
+	   <%=image_tag'ldh_admin_ouverture.png'%><%= link_to_add_fields "Add people to Male casts", f, :malecasts %> 
+	</p>
+	
+	<%= f.fields_for :femalecasts do |builder| %>
+	  <%= render "films/femalecast_fields", :f => builder %>      
+	<% end %>
+	<p class="addfonctionb">
+	   <%=image_tag'ldh_admin_ouverture.png'%><%= link_to_add_fields "Add people to Female casts", f, :femalecasts %> 
+	</p>
+	
+	<%= f.fields_for :producers do |builder| %>
+	  <%= render "films/producer_fields", :f => builder %>      
+	<% end %>
+	<p class="addfonctionb">
+	   <%=image_tag'ldh_admin_ouverture.png'%><%= link_to_add_fields "Add people to Producers", f, :producers %> 
+	</p>
+	
+	<%= f.fields_for :scriptwriters do |builder| %>
+	  <%= render "films/scriptwriter_fields", :f => builder %>      
+	<% end %>
+	<p class="addfonctionb">
+	   <%=image_tag'ldh_admin_ouverture.png'%><%= link_to_add_fields "Add people to Scriptwriters", f, :scriptwriters %> 
+	</p>
+	
+	<%= f.fields_for :cinematographers do |builder| %>
+	  <%= render "films/cinematographer_fields", :f => builder %>      
+	<% end %>
+	<p class="addfonctionb">
+	   <%=image_tag'ldh_admin_ouverture.png'%><%= link_to_add_fields "Add people to Cinematographers", f, :cinematographers %> 
+	</p>
+	
+	<%= f.fields_for :musicians do |builder| %>
+	  <%= render "films/musician_fields", :f => builder %>      
+	<% end %>
+	<p class="addfonctionb">
+	   <%=image_tag'ldh_admin_ouverture.png'%><%= link_to_add_fields "Add people to Musicians", f, :musicians %> 
+	</p>
+<br/>
+<br/>
+<br/>
+	
 <%= f.fields_for :functions do |builder| %>
   <%= render "films/function_fields", :f => builder %>      
 <% end %>

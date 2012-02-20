@@ -1,4 +1,4 @@
-class FilmsController < ApplicationController
+  class FilmsController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :edit]
   autocomplete :function, :name
   autocomplete :person, :name
@@ -16,8 +16,7 @@ class FilmsController < ApplicationController
   # GET /films.xml
   
   def index
-    @films = Film.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
-    
+    prepare_search
   end
   
   def all
@@ -87,7 +86,7 @@ class FilmsController < ApplicationController
     jointure
     respond_to do |format|
       if @film.update_attributes(params[:film])
-        format.html { redirect_to(@film, :notice => 'Movie was successfully updated.') }
+        format.html { redirect_to :back }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
