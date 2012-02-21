@@ -349,7 +349,7 @@ p.donedone .submit{
 	text-rendering:optimizelegibility;
 	text-shadow:1px 1px 1px   #806000;
 	margin-right:-6px;
-	margin-top:-40px;
+	margin-top:-46px;
 	
 }
 
@@ -393,14 +393,14 @@ p.donebis a:hover {
 
 p.add{
 position:relative;
-width:760px;
-height:26px;
+width:690px;
+height:24px;
 background:#f2f1ee;
 padding-top:10px;
+
 }
 p.add a{ 
 	
-
 	color: #262626; 
 	text-decoration:none;	
 	border: none;
@@ -417,15 +417,16 @@ p.add a:hover {
 	cursor:  pointer; 
 }
 
-p.add img{float:right;margin-top:-4px;margin-right:630px;}
+p.add img{float:right;margin-top:-4px;margin-right:580px;}
 
 
 p.addfonction{
 	position:relative;
-width:945px;
-height:30px;
-background:#f2f1ee;
-padding-top:30px;
+	width:690px;
+	height:32px;
+	background:#f2f1ee;
+	padding-top:20px;
+	margin-bottom:20px;
 }
 p.addfonction a{ 
 	
@@ -446,7 +447,7 @@ p.addfonction a:hover {
 	cursor:  pointer; 
 }
 
-p.addfonction img{float:right;margin-top:0px;margin-right:840px;}
+p.addfonction img{float:right;margin-top:-4px;margin-right:580px;}
 
 p.addfonctionb{
 	position:relative;
@@ -474,7 +475,7 @@ p.addfonctionb a:hover {
 	cursor:  pointer; 
 }
 
-p.addfonctionb img{float:right;margin-top:0px;margin-right:600px;}
+p.addfonctionb img{float:right;margin-top:0px;margin-right:730px;}
 
 
 
