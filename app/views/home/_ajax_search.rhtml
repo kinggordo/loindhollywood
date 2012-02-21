@@ -1,19 +1,20 @@
 <br/>
 <% if @count == 0 %>
 
-<p>AUCUN DOCUMENT...</p>
+<p>No movies...</p>
 
 <% else %>
 
-<p><%= @count %> DOCUMENT(S) CORRESPONDENT À VOTRE RECHERCHE</p>
+<p><%= @count %> movie(s) found</p>
 
 <div id='hrrr'></div>
 
 
 <ul>
+	
     <% @films.each do |film| %>
    
-      <li class='filmtitle'><%= film.name %></li><span class="consulter"><%= link_to_function "Consulter →", "$('#film_#{film.id}').toggle()" %></span><br/>
+      <li class='filmtitle'><%= film.name %></li><span class="consulter"><%= link_to_function "View →", "$('#film_#{film.id}').toggle()" %></span><br/>
    	
 
 	
@@ -254,7 +255,7 @@
 
 <% end %>
 
-
+<span class='paginate'><%= will_paginate @films %></span>
 
  
 

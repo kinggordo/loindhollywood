@@ -1,0 +1,22 @@
+
+<%= form_tag url, :method => 'get' do %>
+<div id='recherche'>
+	<span class="re">SEARCH MOVIES</span>
+    <%= text_field_tag :search, params[:search], :style => "width:733px;" %>
+	<span><%= image_submit_tag "ldh_recherche_icone.jpg"%></span>
+	
+    <p>
+      Company: <%= select_tag( "company", options_for_select( @companies, params[:company] ), :include_blank => true ) %>
+      Theater: <%= select_tag( "id", options_for_select( @salles, params[:id] ), :include_blank => true ) %>
+	</p>
+	<p>
+      Country: <%= select_tag( "country", options_for_select( @countries, params[:country] ), :include_blank => true ) %>
+      
+      Color: <%= select_tag( "color_id", options_for_select( @colors, params[:color_id] ), :include_blank => true ) %>
+      Sound: <%= select_tag( "sound_id", options_for_select( @sounds, params[:sound_id] ), :include_blank => true ) %>
+	  
+       <span class='ferm'><%= link_to image_tag("ldh_recherche_fermeture.jpg"), url %></span>
+    </p>
+</div>	
+<% end %>
+

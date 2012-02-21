@@ -1,5 +1,5 @@
   class FilmsController < ApplicationController
-  before_filter :authenticate_user!, :only => [:new, :edit]
+  before_filter :authenticate_user!
   autocomplete :function, :name
   autocomplete :person, :name
   autocomplete :film, :country

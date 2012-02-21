@@ -47,7 +47,15 @@
     
     <!-- TABS -->
     <% if user_signed_in? %>
-    <div id="navbar_wrapper"> 
+    <div id="navbar_wrapper">
+		<div id="back"> 
+		    <ul> 
+		      <li><%= link_to "<- Back", :back %></li>
+		      
+
+		    </ul> 
+		</div>
+	 
       	<% flash.each do |name, msg|%>
 		  <%= content_tag :div, msg, :id=> "flash_#{name}" %>
 		<%end%>

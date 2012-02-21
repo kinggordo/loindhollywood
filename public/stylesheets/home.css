@@ -64,11 +64,25 @@ font-family:'Helvetica Neue', Arial;font-size:12px;
 
 #table{position:relative;width: 940px;margin-left:15px;background: url(/images/ldh_fond-page_01.jpg) repeat;margin-bottom:30px;margin-top:-12px;}
 #table p{font-family: 'Oswald', serif;font-size:10px;color:#807b73;}
+#search{position:relative;height:25px;margin-right:65px;margin-top:6px; }
+#recherche{width: 940px;  background:#D9D4CB; padding-top:18px;padding-bottom:23px; margin-left:15px;margin-top:-5px; }
 
-#recherche{width: 940px; height:55px; background:#bfb9ac; padding-top:20px; margin-left:15px;}
-#recherche input{padding:7px; width:720px;float:left;margin-right:-26px}
-#recherche #button{float:left;margin-left:30px;width:100px;margin-top:2px;padding:7px; background:#800015;color:#FFF; font-family: 'Oswald', serif;font-size:18px; }
-#recherche img{float:right;margin-top:2px;margin-right:30px;}
+#recherche span.re{float:left;margin-left:30px;margin-top:6px;padding:5px;padding-top:7px;padding-bottom:9px; background:#800015;color:#FFF; font-family: 'Oswald', serif;font-size:14px;
+text-rendering:optimizelegibility;text-shadow:1px 1px 1px  #403e39; }
+#recherche span input{float:right;margin-right:30px;margin-top:-32px;width:32px;border:none; padding:0px; }
+
+#recherche span input,x:-moz-any-link, x:default {
+	float:right;margin-right:31px;margin-top:-33px;width:32px;border:none; padding:0px;
+}
+
+#recherche span.ferm{float:right;margin-right:30px;margin-top:0px;width:32px;border:none; padding:0px; }
+
+#recherche p{
+	margin-left:30px;text-align:left;
+}
+#close{
+	float:right;
+}
 li.filmtitle{
   font-family:Helvetica, Arial, Sans serif; color:#bf0020;list-style:none;font-weight:bold;font-size:14px;
 	float:left; margin-left:-10px;
