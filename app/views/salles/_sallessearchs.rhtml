@@ -5,6 +5,7 @@
   <tr class="pays">
     <th class='title'><%= sortable "Name" %></th>
     <th><%= sortable "City" %></th>
+    <th><%= sortable "District" %></th>
     
      
   </tr>
@@ -13,6 +14,7 @@
     <tr class="result">
       <td><%= link_to salle.name, salle %> →</td>
       <td><%= salle.ville.name %></td>
+	  <td><%= salle.district %></td>
       
       <td class="destroy"><%= link_to 'Edit', edit_salle_path(salle) %></td>
       <td class="destroy"><%= link_to 'Delete', salle, :confirm => 'Are you sure?', :method => :delete %></td>

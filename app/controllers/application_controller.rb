@@ -37,5 +37,19 @@ class ApplicationController < ActionController::Base
     #order and paginate:
     @films = found_films.order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
   end
+  
+  def prepare_search_bis
+    found_salles = Salle.search(params[:search])
+    @count = found_salles.count
+
+    #add criteria for company:
+    @cities = Ville.all.collect { |ville| [ville.name,ville.id] }.compact.sort{ |a,b| a<=> b}.uniq
+    found_salles = found_salles.where('salles.ville_id = ?', params[:ville_id]) unless params[:ville_id].blank?
+
+    
+
+    #order and paginate:
+    @salles = found_salles.order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
+  end
 
 end

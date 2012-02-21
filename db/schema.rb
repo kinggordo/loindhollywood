@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120220174601) do
+ActiveRecord::Schema.define(:version => 20120221151626) do
 
   create_table "cinematographers", :force => true do |t|
     t.string   "name"
@@ -435,6 +435,10 @@ ActiveRecord::Schema.define(:version => 20120220174601) do
     t.integer   "ville_id"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "exhib"
+    t.string    "soundsys"
+    t.integer   "currency_id"
+    t.string    "number"
   end
 
   create_table "scriptwriters", :force => true do |t|

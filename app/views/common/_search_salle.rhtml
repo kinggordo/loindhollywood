@@ -1,0 +1,12 @@
+<%= form_tag url, :method => 'get' do %>
+    <div id='recherche'>
+	<span class="re">SEARCH THEATERS</span>
+    <%= text_field_tag :search, params[:search], :style => "width:720px;" %>
+	<span><%= image_submit_tag "ldh_recherche_icone.jpg"%></span>
+	
+	  
+    <p>
+	City: <%= select_tag( "ville_id", options_for_select( @cities, params[:ville_id] ), :include_blank => true ) %>
+    </p>
+	</div>
+<% end %>

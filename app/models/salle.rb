@@ -26,11 +26,12 @@ class Salle < ActiveRecord::Base
   
   belongs_to :ville
   belongs_to :user
+  belongs_to :currency
   
   
   def self.search(search)
     if search
-      where('name LIKE ?', "%#{search}%")
+      where 'name LIKE ? OR district LIKE ?', "%#{search}%", "%#{search}%"
     else
       scoped
     end

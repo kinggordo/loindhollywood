@@ -3,44 +3,105 @@
   
 
 <fieldset id="people">
-        <legend></legend> 
+         
         <ol>
-          <li>
+          
             <label for="first_name"></label>
               <%= f.select :ville_id, options_for_select(Ville.all(:order=> 'name asc',:conditions => "(id) = #{2}").map {|o| [o.name, o.id]}, f.object.ville_id) %>
-              <%= f.select :salle_id, options_for_select(Salle.all(:order=> 'name asc',:conditions => "(ville_id) = #{2}").map {|p| [p.name, p.id]}, f.object.salle_id) %>
-             
-             
-              Run date :
+              <%= f.select :salle_id, options_for_select(Salle.all(:order=> 'name asc',:conditions => "(ville_id) = #{2}").map {|p| [p.name, p.id]}, f.object.salle_id) %><br/>
+              <br/>
+             <label for="first_name">Run date:</label><br/>
               <%= f.date_select :start_date, :order => [:day, :month, :year],
               									   :start_year=> 1925, :end_year=> 1935 , :include_blank=>true%> &nbsp;to&nbsp;
-              
+
               <%= f.date_select :end_date, :order => [:day, :month, :year],
                                    :start_year=>1925 , :end_year=> 1935, :include_blank=>true%>
-                <hr/>                  
-              
+
+ <hr/>
+                                <label for="first_name">Other feature movies:</label><br/>
+
+								<%= f.fields_for :featuremovattribs do |builder| %>
+					                <%= render "films/featuremovattrib_fields", :f => builder %>      
+					              <% end %>
+
+					              <p class="a">
+					                <%= link_to_add_fields "Add Other feature movies attribute", f, :featuremovattribs %> 
+					              </p>
+
+					              <hr/>
+
+								<label for="first_name">Other movies:</label><br/>
+
+					              <%= f.fields_for :shortmovattribs do |builder| %>
+					                <%= render "films/shortmovattrib_fields", :f => builder %>      
+					              <% end %>
+
+					              <p class="a">
+					                <%= link_to_add_fields "Add Other movie attribute", f, :shortmovattribs %> 
+					              </p>
+
+
+					              <hr/>
+
+								<label for="first_name">On stage:</label><br/>
+
+					              <%= f.fields_for :onstageattribs do |builder| %>
+					                <%= render "films/onstageattrib_fields", :f => builder %>      
+					              <% end %>
+
+					              <p class="a">
+					                <%= link_to_add_fields "Add On stage attribute", f, :onstageattribs %> 
+					              </p>
+
+					              <hr/>
+
+								<li>
+				               <label for="first_name"> Audience:</label> <br/>
+				                <%=  f.text_field :audience, :style =>"width:80%" %> <br/>
+				<hr/>
+
+								<label for="first_name">Comments:</label> <br/>
+
+				                <%=  f.text_area :comment, :style =>"width:80%" %> <br/>
+
+
+				                <hr/>
+
+								<label for="first_name">Source show:</label> <br/>
+				                <%=  f.text_field :source, :style =>"width:80%" %> <br/>
+				                </li>
+
+				                <hr/>
+
+
+
                 <li>
-                 Release title :
-                    <%=  f.text_field :titreoriginalb, :style =>"width:40%" %> &nbsp;
-                 
-                 Episode title release:
-                    <%=  f.text_field :episode, :style =>"width:35%" %>
+                 <label for="first_name">Release title:</label><br/>
+                    <%=  f.text_field :titreoriginalb, :style =>"width:80%" %> <br/>
+                <li>
+	<hr/>
+				</li>
+                 <label for="first_name">Episode title release:</label><br/>
+                    <%=  f.text_field :episode, :style =>"width:80%" %><br/>
                 </li>
-                
-                <hr/>
-                 
+
+               <hr/>
+
                 <li>
-                 Genre as advertised :
-                      <%=  f.text_field :genre, :style =>"width:18%" %> &nbsp;
-                </li>     
-                 	<li>
+                 <label for="first_name">Genre as advertised:</label><br/>
+                      <%=  f.text_field :genre, :style =>"width:80%" %> <br/>
+                </li>
+
+				  <hr/>	    
+
+     				<li>
 				      <label for="first_name">Screening days:</label> 
-				       Week:  <%=  f.select :day, Date::DAYNAMES.each_with_index  %> to <%=  f.select :daybis, Date::DAYNAMES.each_with_index  %>
+				       Week:  <%=  f.select :day, Date::DAYNAMES.each_with_index,:include_blank => true  %> to <%=  f.select :daybis, Date::DAYNAMES.each_with_index ,:include_blank => true %>
 
 				       Sundays and holidays : <%= f.check_box :holydays  %>
 				    </li>
 
-
+<hr/>
 
 
      			<li>
@@ -53,93 +114,45 @@
 					and <%= f.check_box :andter  %> to <%= f.check_box :toter  %>
 					<%= f.time_select :timefour, {  :minute_step => 15, :ampm => true,:include_blank => true  } %> <br/>
               	</li>
-
+<hr/>
 				<li>
                  <label for="first_name">Extra screening:</label>
-					<%=  f.select :dayextra, Date::DAYNAMES.each_with_index  %>
+					<%=  f.select :dayextra, Date::DAYNAMES.each_with_index,:include_blank => true  %>
                     <%= f.time_select :timeextra, {  :minute_step => 15, :ampm => true,:include_blank => true  } %>
 					and <%= f.check_box :andextra  %> to <%= f.check_box :toextra %>
 					<%= f.time_select :timeextrabis, {  :minute_step => 15, :ampm => true,:include_blank => true  } %>
 					 <br/>
               	</li>
+<hr/>
 				<li>
                  <label for="first_name">Screening prices:</label>
                    <%= f.collection_select :currency_id, Currency.find(:all), :id, :name, :include_blank => true %>
 				<%= f.select(:number, (1..10).to_a.map{|i| [i,i]}) %>
                 </li>
-              
-              
-                
-                <li>
-                Audience :
-                <%=  f.text_field :audience, :style =>"width:40%" %> &nbsp;
 
-                Source show :
-                <%=  f.text_field :source, :style =>"width:41%" %>
-                </li>
-                
-                <hr/>
-                
-                Comment :
-                
-                <%=  f.text_area :comment, :style =>"width:98%" %>
-                
-                
-                <hr/>
-                
-             
-             
-              <%= f.fields_for :featuremovattribs do |builder| %>
-                <%= render "films/featuremovattrib_fields", :f => builder %>      
-              <% end %>
-            
-              <p class="a">
-                <%= link_to_add_fields "Add Other feature movies attribute", f, :featuremovattribs %> 
-              </p>
-              
-              <hr/>
-               
-             
-              
-              <%= f.fields_for :shortmovattribs do |builder| %>
-                <%= render "films/shortmovattrib_fields", :f => builder %>      
-              <% end %>
 
-              <p class="a">
-                <%= link_to_add_fields "Add Short movie attribute", f, :shortmovattribs %> 
-              </p>
 
-               
-              <hr/>
-                            
-             
-                      
-              <%= f.fields_for :onstageattribs do |builder| %>
-                <%= render "films/onstageattrib_fields", :f => builder %>      
-              <% end %>
 
-              <p class="a">
-                <%= link_to_add_fields "Add On stage attribute", f, :onstageattribs %> 
-              </p>
-                      
-              <hr/>
-             
 
-                            
-             
+
+
+
+
+
+
+
+
               <br/>
               <br/>
               <br/>
               <br/>
-              <hr/>
+
              <p class="remove">
              <%= link_to_remove_fields "Remove this theater", f %><%=image_tag'ldh_recherche_fermeture.jpg'%>
              </p>
-          </li>
+
+
         </ol> 
 </fieldset>
-
- 
-
 
 </div>
