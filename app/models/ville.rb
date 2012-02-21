@@ -11,6 +11,14 @@ class Ville < ActiveRecord::Base
   has_many :films, :through => :jointcs
   has_many :salles, :through => :jointcs
   
+  has_many :jointds, :dependent => :destroy
+  has_many :films, :through => :jointds
+  has_many :salles, :through => :jointds
+  
+  has_many :jointes, :dependent => :destroy
+  has_many :films, :through => :jointes
+  has_many :salles, :through => :jointes
+  
   belongs_to :film
   
   has_many :salles

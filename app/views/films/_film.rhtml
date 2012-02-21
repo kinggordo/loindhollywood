@@ -258,6 +258,8 @@
   <%= button_to_function "Paris", "$('#pa').toggle()" %> 
   <%= button_to_function "Moscou", "$('#mos').toggle()" %> 
   <%= button_to_function "Shanghai", "$('#sha').toggle()" %>
+  <%= button_to_function "Berlin", "$('#be').toggle()" %>
+  <%= button_to_function "Tokyo", "$('#to').toggle()" %>
   </div>  
   
   <br/>
@@ -559,6 +561,210 @@
             <ol>
               <li> 
                Sources show : <b><%= jointc.source %></b>
+              </li>
+            </ol>
+            
+            </div>
+            </div>
+          <%end%>
+          <br/>
+          </table>
+  		
+  	  <% end %>
+</div>
+
+<div id="be" style="display:none;" >
+  
+  <div id='close'>
+  <%= button_to_function "close", "$('#be').toggle()" %>
+  </div>	
+  
+  <br/>
+  <br/>
+  <br/>  	  
+  	  <% @rea_jointds.each do |grouper, jointds| %>	 
+  		
+  			  
+  			  <table>
+  			  <tr class="pays">
+            <th>Theater</th>
+            <th>Release title</th>
+            <th>Episode title release</th>
+            <th>Run date</th>
+            <th>Genre as advertised</th>
+            <th>Screening schedule</th>
+            <th>Screening prices</th>
+            <th>Show</th>
+          </tr>
+  				<% jointds.each do |jointd| %>
+          <p>
+            <tr class="result">
+              <th><%=link_to jointd.salle.name,  salle_path(jointd.salle.id)%></th>
+              <th><%= jointd.titreoriginalb %></th>
+              <th><%= jointd.episode %></th>
+              <% if jointd.start_date %>
+              <th><%= jointd.start_date.strftime('%Y/''%m/''%d') %> to 
+              <%end%>
+              <% if jointd.end_date %>
+              <%= jointd.end_date.strftime('%Y/''%m/''%d') %>
+              <%end%>
+              </th>
+              <th><%= jointd.genre %></th>
+              <th><%= jointd.schedule %></th>
+              <th><%= jointd.price %></th>
+              <th><%= link_to_function "see", "$('#jointd_#{jointd.id}').toggle()" %></th>
+            </tr>
+            <div id="jointd_<%=jointd.id%>" style="display:none;" >
+            <div id="Rightr">
+              <div id='close'>
+              <%= button_to_function "close", "$('#jointd_#{jointd.id}').toggle()" %>
+              </div>
+            <ol>
+              <li>  
+                  Theater : <b><%=link_to jointd.salle.name,  salle_path(jointd.salle.id)%></b>
+              </li>
+            </ol>
+            <ol>
+              <li>      
+                  Run date :
+                  <% if jointd.start_date %>
+                  <b><%= jointd.start_date.strftime('%Y/''%m/''%d') %> to
+                  <% end %>
+                  <% if jointd.end_date %>
+                   <%= jointd.end_date.strftime('%Y/''%m/''%d') %> 
+                  <% end %></b>    
+              </li>
+            </ol>
+            <ol>
+              <li> 
+               Other feature movies : <b><%= jointd.featuremovattribs.collect(&:name).join(", ") %></b>
+              </li>
+            </ol>
+            <ol>
+              <li> 
+               Short movie : <b><%= jointd.shortmovattribs.collect(&:name).join(", ") %></b>
+              </li>
+            </ol>
+            <ol>
+              <li> 
+               On stage : <b><%= jointd.onstageattribs.collect(&:name).join(", ") %></b>
+              </li>
+            </ol>
+            <ol>
+              <li> 
+               Audience : <b><%= jointd.audience %></b>
+              </li>
+            </ol>
+            <ol>
+              <li> 
+               Comments : <b><%= jointd.comment %></b>
+              </li>
+            </ol>
+            <ol>
+              <li> 
+               Sources show : <b><%= jointd.source %></b>
+              </li>
+            </ol>
+            
+            </div>
+            </div>
+          <%end%>
+          <br/>
+          </table>
+  		
+  	  <% end %>
+</div>
+
+<div id="to" style="display:none;" >
+  
+  <div id='close'>
+  <%= button_to_function "close", "$('#to').toggle()" %>
+  </div>	
+  
+  <br/>
+  <br/>
+  <br/>  	  
+  	  <% @rea_jointes.each do |grouper, jointes| %>	 
+  		
+  			  
+  			  <table>
+  			  <tr class="pays">
+            <th>Theater</th>
+            <th>Release title</th>
+            <th>Episode title release</th>
+            <th>Run date</th>
+            <th>Genre as advertised</th>
+            <th>Screening schedule</th>
+            <th>Screening prices</th>
+            <th>Show</th>
+          </tr>
+  				<% jointes.each do |jointe| %>
+          <p>
+            <tr class="result">
+              <th><%=link_to jointe.salle.name,  salle_path(jointe.salle.id)%></th>
+              <th><%= jointe.titreoriginalb %></th>
+              <th><%= jointe.episode %></th>
+              <% if jointe.start_date %>
+              <th><%= jointe.start_date.strftime('%Y/''%m/''%d') %> to 
+              <%end%>
+              <% if jointe.end_date %>
+              <%= jointe.end_date.strftime('%Y/''%m/''%d') %>
+              <%end%>
+              </th>
+              <th><%= jointe.genre %></th>
+              <th><%= jointe.schedule %></th>
+              <th><%= jointe.price %></th>
+              <th><%= link_to_function "see", "$('#jointe_#{jointe.id}').toggle()" %></th>
+            </tr>
+            <div id="jointe_<%=jointe.id%>" style="display:none;" >
+            <div id="Rightr">
+              <div id='close'>
+              <%= button_to_function "close", "$('#jointe_#{jointe.id}').toggle()" %>
+              </div>
+            <ol>
+              <li>  
+                  Theater : <b><%=link_to jointe.salle.name,  salle_path(jointe.salle.id)%></b>
+              </li>
+            </ol>
+            <ol>
+              <li>      
+                  Run date :
+                  <% if jointe.start_date %>
+                  <b><%= jointe.start_date.strftime('%Y/''%m/''%d') %> to
+                  <% end %>
+                  <% if jointe.end_date %>
+                   <%= jointe.end_date.strftime('%Y/''%m/''%d') %> 
+                  <% end %></b>    
+              </li>
+            </ol>
+            <ol>
+              <li> 
+               Other feature movies : <b><%= jointe.featuremovattribs.collect(&:name).join(", ") %></b>
+              </li>
+            </ol>
+            <ol>
+              <li> 
+               Short movie : <b><%= jointe.shortmovattribs.collect(&:name).join(", ") %></b>
+              </li>
+            </ol>
+            <ol>
+              <li> 
+               On stage : <b><%= jointe.onstageattribs.collect(&:name).join(", ") %></b>
+              </li>
+            </ol>
+            <ol>
+              <li> 
+               Audience : <b><%= jointe.audience %></b>
+              </li>
+            </ol>
+            <ol>
+              <li> 
+               Comments : <b><%= jointe.comment %></b>
+              </li>
+            </ol>
+            <ol>
+              <li> 
+               Sources show : <b><%= jointe.source %></b>
               </li>
             </ol>
             

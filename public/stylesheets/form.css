@@ -302,7 +302,7 @@ border-bottom: 1px solid red;
 	cursor:  pointer; 
 }
 
-#pa, #mos, #sha{
+#pa, #mos, #sha, #be, #to{
 	background: url(/images/ldh_admin_fond_01.jpg) repeat;
 	margin-bottom: 15px;
 	margin-top:-130px;
@@ -334,11 +334,11 @@ p.done a:hover {
 	cursor:  pointer; 
 }
 
-p.donedone a{ 
+p.donedone .submit{ 
 	float:right;	
-	float:right;
 	padding-left:5px;	padding-right:5px; padding-top:10px; padding-bottom:10px;
 	color: #fff; 
+	width:250px;
 	text-transform: uppercase; 
 	background:  #d9a300;
 	border: none;
@@ -392,8 +392,8 @@ p.donebis a:hover {
 
 
 p.add{
-	position:relative;
-width:797px;
+position:relative;
+width:760px;
 height:26px;
 background:#f2f1ee;
 padding-top:10px;
@@ -417,7 +417,7 @@ p.add a:hover {
 	cursor:  pointer; 
 }
 
-p.add img{float:right;margin-top:-4px;margin-right:700px;}
+p.add img{float:right;margin-top:-4px;margin-right:630px;}
 
 
 p.addfonction{

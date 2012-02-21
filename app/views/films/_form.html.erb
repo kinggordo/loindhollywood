@@ -169,8 +169,8 @@
 <br/>
 <br/>
 
-<p class="donedone"> 
- <%= link_to_function "I'm done with Title/Technical", "$('#ti').toggle()" %>
+<p class="donedone">  
+<%= f.submit "I'm done with Title/Technical",:class => "submit"%>
 </p>
 
 <br/>
@@ -248,7 +248,7 @@
 
 
 <p class="donedone">
-<%= link_to_function "I'm done with functions/People", "$('#fp').toggle()" %> 
+<%= f.submit "I'm done with functions/People",:class => "submit"%>
 </p>
 
 <br/>
@@ -260,8 +260,10 @@
 <div id="sa" style="display:none;" >
   <div id="buttoncountry">
   <%= button_to_function "Paris", "$('#pa').toggle()" %> 
-  <%= button_to_function "Moscou", "$('#mos').toggle()" %> 
+  <%= button_to_function "Moscow", "$('#mos').toggle()" %> 
   <%= button_to_function "Shanghai", "$('#sha').toggle()" %>
+  <%= button_to_function "Berlin", "$('#be').toggle()" %>
+  <%= button_to_function "Tokyo", "$('#to').toggle()" %>
   </div>
   <br/>
   <br/>
@@ -285,7 +287,8 @@
      </p>
  
      <p class="done">
-      <%= link_to_function "I'm done with  Paris", "$('#pa').toggle()" %> 
+     
+		<%= f.submit "I'm done with  Paris",:class => "submit"%>
      </p>
 
      
@@ -304,13 +307,12 @@
      <% end %>
 
      <p class="add">
-      <br/>
-       <%= link_to_add_fields "Add theater", f, :jointbs %> 
+       <%=image_tag'ldh_admin_ouverture.png'%><%= link_to_add_fields "Add theater", f, :jointbs %> 
      </p>
 
      <p class="done">
-        <br/>
-       <%= link_to_function "I'm done with  Moscou", "$('#mos').toggle()" %> 
+       
+		<%= f.submit "I'm done with  Moscow",:class => "submit"%> 
      </p>
 
       
@@ -329,13 +331,60 @@
 
 
      <p class="add">
-      <br/>
-       <%= link_to_add_fields "Add theater", f, :jointcs %> 
+       <%=image_tag'ldh_admin_ouverture.png'%><%= link_to_add_fields "Add theater", f, :jointcs %> 
      </p>
 
      <p class="done">
-        <br/>
-       <%= link_to_function "I'm done with  Shanghai", "$('#sha').toggle()" %> 
+        
+		<%= f.submit "I'm done with  Shanghai",:class => "submit"%>
+     </p>
+
+       
+    
+</div>
+
+<div id="be" style="display:none;" >
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+     <%= f.fields_for :jointds do |builder| %>
+       <%= render "films/jointd_fields", :f => builder %>      
+     <% end %>
+
+
+
+     <p class="add">
+      <%=image_tag'ldh_admin_ouverture.png'%> <%= link_to_add_fields "Add theater", f, :jointds %> 
+     </p>
+
+     <p class="done">
+   
+	<%= f.submit "I'm done with  Berlin",:class => "submit"%>
+     </p>
+
+       
+    
+</div>
+
+<div id="to" style="display:none;" >
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+     <%= f.fields_for :jointes do |builder| %>
+       <%= render "films/jointe_fields", :f => builder %>      
+     <% end %>
+
+
+
+     <p class="add">
+       <%=image_tag'ldh_admin_ouverture.png'%><%= link_to_add_fields "Add theater", f, :jointes %> 
+     </p>
+
+     <p class="done">
+       
+<%= f.submit "I'm done with  Tokyo",:class => "submit"%>
      </p>
 
        

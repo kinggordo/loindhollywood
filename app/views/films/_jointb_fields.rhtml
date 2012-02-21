@@ -34,7 +34,7 @@
                       <%=  f.text_field :genre, :style =>"width:18%" %> &nbsp;
                 </li>     
                  	<li>
-				      <label for="first_name">Screening days:</label><br/ >  
+				      <label for="first_name">Screening days:</label> 
 				       Week:  <%=  f.select :day, Date::DAYNAMES.each_with_index  %> to <%=  f.select :daybis, Date::DAYNAMES.each_with_index  %>
 
 				       Sundays and holidays : <%= f.check_box :holydays  %>
@@ -44,26 +44,26 @@
 
 
      			<li>
-                 <label for="first_name">Screening schedule:</label><br/>
-                    <%= f.time_select :time, {  :minute_step => 15, :ampm => true  } %>
+                 <label for="first_name">Screening schedule:</label>
+                    <%= f.time_select :time, {  :minute_step => 15, :ampm => true ,:include_blank => true } %>
 					and <%= f.check_box :and  %> to <%= f.check_box :to %>
-					<%= f.time_select :timebis, {  :minute_step => 15, :ampm => true  } %>
+					<%= f.time_select :timebis, {  :minute_step => 15, :ampm => true,:include_blank => true  } %>
 					and <%= f.check_box :andbis  %> to <%= f.check_box :tobis  %>
-					<%= f.time_select :timeter, {  :minute_step => 15, :ampm => true  } %>
+					<%= f.time_select :timeter, {  :minute_step => 15, :ampm => true,:include_blank => true  } %>
 					and <%= f.check_box :andter  %> to <%= f.check_box :toter  %>
-					<%= f.time_select :timefour, {  :minute_step => 15, :ampm => true  } %> <br/>
+					<%= f.time_select :timefour, {  :minute_step => 15, :ampm => true,:include_blank => true  } %> <br/>
               	</li>
 
 				<li>
-                 <label for="first_name">Extra screening:</label><br/>
+                 <label for="first_name">Extra screening:</label>
 					<%=  f.select :dayextra, Date::DAYNAMES.each_with_index  %>
-                    <%= f.time_select :timeextra, {  :minute_step => 15, :ampm => true  } %>
+                    <%= f.time_select :timeextra, {  :minute_step => 15, :ampm => true,:include_blank => true  } %>
 					and <%= f.check_box :andextra  %> to <%= f.check_box :toextra %>
-					<%= f.time_select :timeextrabis, {  :minute_step => 15, :ampm => true  } %>
+					<%= f.time_select :timeextrabis, {  :minute_step => 15, :ampm => true,:include_blank => true  } %>
 					 <br/>
               	</li>
 				<li>
-                 <label for="first_name">Screening prices:</label><br/>
+                 <label for="first_name">Screening prices:</label>
                    <%= f.collection_select :currency_id, Currency.find(:all), :id, :name, :include_blank => true %>
 				<%= f.select(:number, (1..10).to_a.map{|i| [i,i]}) %>
                 </li>
@@ -124,9 +124,7 @@
                       
               <hr/>
              
-              <p class="done">
-               <%= link_to_function "I'm done with  this show", "$('#{f}').toggle()" %> 
-              </p>
+
                             
              
               <br/>

@@ -1,5 +1,5 @@
 class Salle < ActiveRecord::Base
-  attr_accessible :name
+  
   
   has_many :joints, :dependent => :destroy
   has_many :villes, :through => :joints
@@ -12,6 +12,14 @@ class Salle < ActiveRecord::Base
   has_many :jointcs, :dependent => :destroy
   has_many :villes, :through => :jointcs
   has_many :films, :through => :jointcs
+  
+  has_many :jointds, :dependent => :destroy
+  has_many :villes, :through => :jointds
+  has_many :films, :through => :jointds
+  
+  has_many :jointes, :dependent => :destroy
+  has_many :villes, :through => :jointes
+  has_many :films, :through => :jointes
   
   has_many :salleinfos, :dependent => :destroy
   accepts_nested_attributes_for :salleinfos, :reject_if => :all_blank,  :allow_destroy => true
