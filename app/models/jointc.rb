@@ -13,4 +13,6 @@ class Jointc < ActiveRecord::Base
   
   has_many :featuremovattribs, :dependent => :destroy
   accepts_nested_attributes_for :featuremovattribs, :reject_if => :all_blank,  :allow_destroy => true
+  
+  
 end

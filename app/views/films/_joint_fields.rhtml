@@ -103,21 +103,21 @@
 
      			<li>
                  <label for="first_name">Screening schedule:</label>
-                    <%= f.time_select :time, {  :minute_step => 15, :ampm => true ,:include_blank => true } %>
+                    <%= f.time_select :time, {  :minute_step => 15, :ampm => true  } %>
 					and <%= f.check_box :and  %> to <%= f.check_box :to %>
-					<%= f.time_select :timebis, {  :minute_step => 15, :ampm => true,:include_blank => true  } %>
+					<%= f.time_select :timebis, {  :minute_step => 15, :ampm => true  } %>
 					and <%= f.check_box :andbis  %> to <%= f.check_box :tobis  %>
-					<%= f.time_select :timeter, {  :minute_step => 15, :ampm => true,:include_blank => true  } %>
+					<%= f.time_select :timeter, {  :minute_step => 15, :ampm => true  } %>
 					and <%= f.check_box :andter  %> to <%= f.check_box :toter  %>
-					<%= f.time_select :timefour, {  :minute_step => 15, :ampm => true,:include_blank => true  } %> <br/>
+					<%= f.time_select :timefour, {  :minute_step => 15, :ampm => true } %> <br/>
               	</li>
 <hr/>
 				<li>
                  <label for="first_name">Extra screening:</label>
-					<%=  f.select :dayextra, Date::DAYNAMES.each_with_index  %>
-                    <%= f.time_select :timeextra, {  :minute_step => 15, :ampm => true,:include_blank => true  } %>
+					<%=  f.select :dayextra, Date::DAYNAMES.each_with_index,:include_blank => true  %>
+                    <%= f.time_select :timeextra, {  :minute_step => 15, :ampm => true  } %>
 					and <%= f.check_box :andextra  %> to <%= f.check_box :toextra %>
-					<%= f.time_select :timeextrabis, {  :minute_step => 15, :ampm => true,:include_blank => true  } %>
+					<%= f.time_select :timeextrabis, {  :minute_step => 15, :ampm => true  } %>
 					 <br/>
               	</li>
 <hr/>
