@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120221151626) do
+ActiveRecord::Schema.define(:version => 20120308162555) do
 
   create_table "cinematographers", :force => true do |t|
     t.string   "name"
@@ -388,6 +388,7 @@ ActiveRecord::Schema.define(:version => 20120221151626) do
     t.integer   "scripwriter_id"
     t.integer   "cinematographer_id"
     t.integer   "musician_id"
+    t.integer   "scriptwriter_id"
   end
 
   create_table "producers", :force => true do |t|
