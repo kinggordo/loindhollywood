@@ -134,19 +134,22 @@
   </ol>
   <%end%>
 
+  <% if @film.color %>
   <ol>
     <li>
       <label for="first_name"></label>  
-        Color : <b><%= @film.color %></b>    
+        Color : <b><%= @film.color.name %></b>    
     </li>
   </ol>
-  
+  <%end%>
+  <% if @film.sound %>
   <ol>
     <li>
       <label for="first_name"></label>  
-        Sound : <b><%= @film.sound %></b>    
+        Sound : <b><%= @film.sound.name %></b>    
     </li>
   </ol>
+  <%end%>
 
   <ol>
     <li>
@@ -284,7 +287,10 @@
             <th>Episode title release</th>
             <th>Run date</th>
             <th>Genre as advertised</th>
+			<th>Screening days</th>
+			<th>Sundays and holidays</th>
             <th>Screening schedule</th>
+			<th>Extra screening</th>
             <th>Screening prices</th>
             <th>Show</th>
           </tr>
@@ -302,7 +308,37 @@
               <%end%>
               </th>
               <th><%= joint.genre %></th>
-              <th><%= joint.schedule %></th>
+			  <th><%= joint.day %></th>
+			  <% if joint.holydays == true %>
+			  <th>yes</th>
+			  <%else%>
+			  <th>no</th>
+			  <%end%>
+              <th>
+				<%= joint.time.strftime('%I:''%M''%p') %> 
+				<% if joint.and == true %>
+				and
+				<%end%> 
+				<% if joint.to == true %>
+				to
+				<%end%>
+				<%= joint.timebis.strftime('%I:''%M''%p') %> 
+				<% if joint.andbis == true %>
+				and
+				<%end%> 
+				<% if joint.tobis == true %>
+				to
+				<%end%>
+				<%= joint.timeter.strftime('%I:''%M''%p') %> 
+				<% if joint.andter == true %>
+				and
+				<%end%> 
+				<% if joint.toter == true %>
+				to
+				<%end%> 
+				<%= joint.timeter.strftime('%I:''%M''%p') %>
+			  </th>
+			  <th><%= joint.schedule %></th>
               <th><%= joint.price %></th>
               <th><%= link_to_function "see", "$('#joint_#{joint.id}').toggle()" %></th>
             </tr>

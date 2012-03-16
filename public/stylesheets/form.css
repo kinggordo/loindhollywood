@@ -305,7 +305,8 @@ border-bottom: 1px solid red;
 #pa, #mos, #sha, #be, #to{
 	background: url(/images/ldh_admin_fond_01.jpg) repeat;
 	margin-bottom: 15px;
-	margin-top:-130px;
+	margin-top:0px;
+	margin-left:-2px;
 	padding: 10px;
 	border:none;
 	width:950px;
