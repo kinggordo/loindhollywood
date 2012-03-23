@@ -64,8 +64,8 @@ class Film < ActiveRecord::Base
  
   def self.search(search)
     if (search)
-      where 'name LIKE :search OR titlea LIKE :search OR titleb LIKE :search OR titlec LIKE :search OR titled LIKE :search OR titlee LIKE :search OR titlef LIKE :search OR based_on LIKE :search OR autor LIKE :search OR company LIKE :search OR country LIKE :search OR lenght LIKE :search OR based_on LIKE :search', 
-            { :search => "%#{search}%" }
+      where 'LOWER(name) LIKE :search OR LOWER(titlea) LIKE :search OR LOWER(titleb) LIKE :search OR LOWER(titlec) LIKE :search OR LOWER(titled) LIKE :search OR LOWER(titlee) LIKE :search OR LOWER(titlef) LIKE :search OR LOWER(based_on) LIKE :search OR LOWER(autor) LIKE :search OR LOWER(company) LIKE :search OR LOWER(country) LIKE :search OR LOWER(lenght) LIKE :search OR LOWER(based_on) LIKE :search', 
+            { :search => "%#{search.downcase}%" }
     else
       scoped
     end
