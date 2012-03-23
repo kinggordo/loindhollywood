@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120323154446) do
+ActiveRecord::Schema.define(:version => 20120323154818) do
 
   create_table "cinematographers", :force => true do |t|
     t.string   "name"
@@ -310,7 +310,6 @@ ActiveRecord::Schema.define(:version => 20120323154446) do
     t.boolean  "tobis"
     t.boolean  "andter"
     t.boolean  "toter"
-    t.datetime "timefour"
     t.string   "dayextra"
     t.datetime "timeextra"
     t.boolean  "andextra"
@@ -321,6 +320,7 @@ ActiveRecord::Schema.define(:version => 20120323154446) do
     t.string   "time"
     t.string   "timebis"
     t.string   "timeter"
+    t.string   "timefour"
   end
 
   create_table "malecasts", :force => true do |t|
