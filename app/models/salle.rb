@@ -31,7 +31,8 @@ class Salle < ActiveRecord::Base
   
   def self.search(search)
     if search
-      where 'name LIKE ? OR district LIKE ?', "%#{search}%", "%#{search}%"
+      where 'LOWER(name) LIKE :search OR LOWER(district) LIKE :search OR LOWER(adresse) LIKE :search OR LOWER(owner) LIKE :search OR LOWER(place) LIKE :search OR LOWER(orchester) LIKE :search OR LOWER(open) LIKE :search OR LOWER(source) LIKE :search OR LOWER(comment) LIKE :search OR LOWER(exhib) LIKE :search OR LOWER(soundsys) LIKE :search OR LOWER(number) LIKE :search',
+        { :search => "%#{search}%" }
     else
       scoped
     end
