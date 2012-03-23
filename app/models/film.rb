@@ -61,6 +61,7 @@ class Film < ActiveRecord::Base
   belongs_to :color
   
   
+  validates_uniqueness_of :name
  
   def self.search(search)
     if (search)
@@ -79,8 +80,6 @@ class Film < ActiveRecord::Base
     end
   end
 
-  
-  validates_uniqueness_of :name
   
   
 end
