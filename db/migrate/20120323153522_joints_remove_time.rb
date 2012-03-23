@@ -6,6 +6,6 @@ class JointsRemoveTime < ActiveRecord::Migration
 
   def self.down
     rename_column :joints, :time, :timenextgen
-    add_column :joints, :time
+    add_column :joints, :time, :datetime
   end
 end

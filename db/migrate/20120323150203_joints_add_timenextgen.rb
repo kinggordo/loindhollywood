@@ -6,7 +6,7 @@ class JointsAddTimenextgen < ActiveRecord::Migration
       Joint.all.each do |j|
         if !j.time.nil?
           hourstring = "%02d" % j.time.hour
-          minutestring = "%02d" % j.time.minute
+          minutestring = "%02d" % j.time.min
           j.update_attribute :timenextgen, "#{hourstring}:#{minutestring}"
         end
       end
