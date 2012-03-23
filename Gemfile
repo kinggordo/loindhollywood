@@ -3,7 +3,6 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.4.rc1'
 gem 'sqlite3'
 gem 'rails3-jquery-autocomplete'
-#gem 'pg' #for postgresql (same database as in heroku)
 
 gem 'jquery-rails'
 gem 'will_paginate', '3.0.pre2'
@@ -21,6 +20,11 @@ gem "meta_search"
 
 gem 'devise' # Devise must be required before RailsAdmin
 #gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+
+group :phil do
+  gem 'pg' #for postgresql (same database as in heroku)
+end
+
 
 # Use unicorn as the web server
 # gem 'unicorn'

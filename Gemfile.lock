@@ -65,6 +65,7 @@ GEM
       activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
       mime-types
+    pg (0.12.2)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -106,6 +107,7 @@ DEPENDENCIES
   meta_search
   meta_where
   paperclip
+  pg
   rails (= 3.0.4.rc1)
   rails3-jquery-autocomplete
   sqlite3
