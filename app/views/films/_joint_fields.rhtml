@@ -103,13 +103,13 @@
 
      			<li>
                  <label for="first_name">Screening schedule:</label>
-                    <%= f.select :time, options_for_select(list_hours_each_quarter()), { :include_blank => true } %>
+                                        <%= f.select :time, options_for_select(list_hours_each_quarter()), { :include_blank => true } %>
 					and <%= f.check_box :and  %> to <%= f.check_box :to %>
-					<%= f.time_select :timebis, {  :minute_step => 15, :ampm => true  } %>
+                                        <%= f.select :timebis, options_for_select(list_hours_each_quarter()), { :include_blank => true } %>
 					and <%= f.check_box :andbis  %> to <%= f.check_box :tobis  %>
-					<%= f.time_select :timeter, {  :minute_step => 15, :ampm => true  } %>
+                                        <%= f.select :timeter, options_for_select(list_hours_each_quarter()), { :include_blank => true } %>
 					and <%= f.check_box :andter  %> to <%= f.check_box :toter  %>
-					<%= f.time_select :timefour, {  :minute_step => 15, :ampm => true } %> <br/>
+                                        <%= f.select :timefour, options_for_select(list_hours_each_quarter()), { :include_blank => true } %>
               	</li>
 <hr/>
 				<li>

@@ -315,28 +315,28 @@
 			  <th>no</th>
 			  <%end%>
               <th>
-				<%= joint.time.strftime('%I:''%M''%p') %> 
+				<%= joint.time %> 
 				<% if joint.and == true %>
 				and
 				<%end%> 
 				<% if joint.to == true %>
 				to
 				<%end%>
-				<%= joint.timebis.strftime('%I:''%M''%p') %> 
+				<%= joint.timebis %> 
 				<% if joint.andbis == true %>
 				and
 				<%end%> 
 				<% if joint.tobis == true %>
 				to
 				<%end%>
-				<%= joint.timeter.strftime('%I:''%M''%p') %> 
+				<%= joint.timeter %> 
 				<% if joint.andter == true %>
 				and
 				<%end%> 
 				<% if joint.toter == true %>
 				to
 				<%end%> 
-				<%= joint.timeter.strftime('%I:''%M''%p') %>
+				<%= joint.timefour %>
 			  </th>
 			  <th><%= joint.schedule %></th>
               <th><%= joint.price %></th>
