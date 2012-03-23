@@ -64,8 +64,8 @@ class Film < ActiveRecord::Base
  
   def self.search(search)
     if (search)
-      where 'name LIKE ? OR titlea LIKE ? OR titleb LIKE ? OR titlec LIKE ? OR titled LIKE ? OR titlee LIKE ? OR titlef LIKE ? OR based_on LIKE ? OR autor LIKE ?', 
-            "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"
+      where 'name LIKE :search OR titlea LIKE :search OR titleb LIKE :search OR titlec LIKE :search OR titled LIKE :search OR titlee LIKE :search OR titlef LIKE :search OR based_on LIKE :search OR autor LIKE :search', 
+            { :search => "%#{search}%" }
     else
       scoped
     end
