@@ -65,18 +65,5 @@
 	<span id='linkb'><%=link_to'Espace privé', new_user_session_path %></span><span id='linka'><%=link_to"Mentions légales"%></span> 
   </div>
   
-  
-  
-<% if Rails.env.phil? %>
-  <% (1..50).each do %>
-    <br>    
-  <% end %>
-  <%= debug(params) %>
-  <%= debug(session) %>
-<% end %>
-
-
-
-
 </body>
 </html>

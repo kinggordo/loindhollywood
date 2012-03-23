@@ -1,5 +1,19 @@
 module ApplicationHelper
-  
+
+
+  def list_hours_each_quarter()
+    hours = (0..23)
+    minutes = 0.step(45, 15)
+    final = []
+    hours.each do |hour|
+      minutes.each do |minute|
+        hourstring = "%02d" % hour
+        minutestring = "%02d" % minute
+        final << "#{hourstring}:#{minutestring}"
+      end
+    end
+    final
+  end
   
   def link_to_remove_fields(name, f)
       f.hidden_field(:_destroy) +

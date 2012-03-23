@@ -26,5 +26,4 @@ class Joint < ActiveRecord::Base
     end
   end
 
- 
 end
