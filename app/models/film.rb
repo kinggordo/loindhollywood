@@ -67,8 +67,13 @@ class Film < ActiveRecord::Base
       function_ids = Function.search(search).all
       additional_ids_from_functions = function_ids.select{ |x| !x.film.nil?}.collect { |x| x.film.id }
 
-      where 'LOWER(name) LIKE :search OR LOWER(titlea) LIKE :search OR LOWER(titleb) LIKE :search OR LOWER(titlec) LIKE :search OR LOWER(titled) LIKE :search OR LOWER(titlee) LIKE :search OR LOWER(titlef) LIKE :search OR LOWER(based_on) LIKE :search OR LOWER(autor) LIKE :search OR LOWER(company) LIKE :search OR LOWER(country) LIKE :search OR LOWER(lenght) LIKE :search OR LOWER(based_on) LIKE :search OR id IN (:additional_ids_from_functions)', 
-            { :search => "%#{search.downcase}%", :additional_ids_from_functions => additional_ids_from_functions }
+      joint_ids = Joint.search(search).all
+      additional_ids_from_joints = joint_ids.select{ |x| !x.film.nil?}.collect { |x| x.film.id }
+
+      additional_ids = additional_ids_from_functions + additional_ids_from_joints
+
+      where 'LOWER(name) LIKE :search OR LOWER(titlea) LIKE :search OR LOWER(titleb) LIKE :search OR LOWER(titlec) LIKE :search OR LOWER(titled) LIKE :search OR LOWER(titlee) LIKE :search OR LOWER(titlef) LIKE :search OR LOWER(based_on) LIKE :search OR LOWER(autor) LIKE :search OR LOWER(company) LIKE :search OR LOWER(country) LIKE :search OR LOWER(lenght) LIKE :search OR LOWER(based_on) LIKE :search OR id IN (:additional_ids)', 
+            { :search => "%#{search.downcase}%", :additional_ids => additional_ids }
     else
       scoped
     end
