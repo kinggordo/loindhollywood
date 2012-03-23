@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  
+ 
+  #before_filter :set_user_language
+
+
   
   def after_sign_in_path_for(resource)
       if resource.is_a?(User)
@@ -49,6 +52,11 @@ class ApplicationController < ActionController::Base
 
     #order and paginate:
     @salles = found_salles.order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
+  end
+
+private
+  def set_user_language
+    I18n.locale = 'fr'
   end
 
 end

@@ -5,8 +5,9 @@
 
 <%= form_for @film do |f| %>
 <div id="Left">
-<div id="post_errors" ></div> 
-
+<div id="post_errors" >
+  <%= render "common/error_messages", :target => @film %>
+</div>
 <div id="Right">
   <div class="submit">
     <%= f.submit "Create movie",:class => "submit" %>

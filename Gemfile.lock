@@ -103,6 +103,7 @@ PLATFORMS
 DEPENDENCIES
   ckeditor
   devise
+  i18n
   jquery-rails
   meta_search
   meta_where

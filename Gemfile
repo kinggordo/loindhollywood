@@ -13,6 +13,8 @@ gem "paperclip"
 gem "meta_where"
 gem "meta_search"
 
+gem 'i18n'
+
 #gem "ransack"
 
 # Bundle edge Rails instead:
