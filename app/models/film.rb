@@ -65,10 +65,9 @@ class Film < ActiveRecord::Base
   def self.search(search)
     if (search)
       function_ids = Function.search(search).all
-      additional_ids = function_ids.collect { |x| x.film }
-      logger.debug "additional_ids = #{additional_ids.to_yaml}"
-      where 'LOWER(name) LIKE :search OR LOWER(titlea) LIKE :search OR LOWER(titleb) LIKE :search OR LOWER(titlec) LIKE :search OR LOWER(titled) LIKE :search OR LOWER(titlee) LIKE :search OR LOWER(titlef) LIKE :search OR LOWER(based_on) LIKE :search OR LOWER(autor) LIKE :search OR LOWER(company) LIKE :search OR LOWER(country) LIKE :search OR LOWER(lenght) LIKE :search OR LOWER(based_on) LIKE :search', 
-            { :search => "%#{search.downcase}%" }
+      additional_ids = function_ids.select{ |x| !x.film.nil?}.collect { |x| x.film.id }
+      where 'LOWER(name) LIKE :search OR LOWER(titlea) LIKE :search OR LOWER(titleb) LIKE :search OR LOWER(titlec) LIKE :search OR LOWER(titled) LIKE :search OR LOWER(titlee) LIKE :search OR LOWER(titlef) LIKE :search OR LOWER(based_on) LIKE :search OR LOWER(autor) LIKE :search OR LOWER(company) LIKE :search OR LOWER(country) LIKE :search OR LOWER(lenght) LIKE :search OR LOWER(based_on) LIKE :search OR id IN (:additional_ids)', 
+            { :search => "%#{search.downcase}%", :additional_ids => additional_ids }
     else
       scoped
     end
