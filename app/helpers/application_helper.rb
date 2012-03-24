@@ -22,6 +22,17 @@ module ApplicationHelper
     final << ["to", 2]
     final
   end
+
+  def and_or_to_to_s(value)
+    case value
+    when 1
+        "and"
+    when 2
+        "to"
+    else
+        ""
+    end
+  end
   
   def link_to_remove_fields(name, f)
       f.hidden_field(:_destroy) +

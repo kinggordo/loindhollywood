@@ -316,26 +316,11 @@
 			  <%end%>
               <th>
 				<%= joint.time %> 
-				<% if joint.and == true %>
-				and
-				<%end%> 
-				<% if joint.to == true %>
-				to
-				<%end%>
+                                <%= and_or_to_to_s(joint.and_or_to) %>
 				<%= joint.timebis %> 
-				<% if joint.andbis == true %>
-				and
-				<%end%> 
-				<% if joint.tobis == true %>
-				to
-				<%end%>
+                                <%= and_or_to_to_s(joint.and_or_to_bis) %>
 				<%= joint.timeter %> 
-				<% if joint.andter == true %>
-				and
-				<%end%> 
-				<% if joint.toter == true %>
-				to
-				<%end%> 
+                                <%= and_or_to_to_s(joint.and_or_to_ter) %>
 				<%= joint.timefour %>
 			  </th>
 			  <th><%= joint.schedule %></th>
