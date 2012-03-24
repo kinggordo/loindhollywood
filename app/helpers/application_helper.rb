@@ -14,6 +14,14 @@ module ApplicationHelper
     end
     final
   end
+
+  def list_and_or_to()
+    final = []
+    final << ["", 0]
+    final << ["and", 1]
+    final << ["to", 2]
+    final
+  end
   
   def link_to_remove_fields(name, f)
       f.hidden_field(:_destroy) +

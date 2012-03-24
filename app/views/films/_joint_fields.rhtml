@@ -104,11 +104,11 @@
      			<li>
                  <label for="first_name">Screening schedule:</label>
                                         <%= f.select :time, list_hours_each_quarter(), { :include_blank => true } %>
-					and <%= f.check_box :and  %> to <%= f.check_box :to %>
+                                        <%= f.select :and_or_to, list_and_or_to() %>
                                         <%= f.select :timebis, list_hours_each_quarter(), { :include_blank => true } %>
-					and <%= f.check_box :andbis  %> to <%= f.check_box :tobis  %>
+                                        <%= f.select :and_or_to_bis, list_and_or_to() %>
                                         <%= f.select :timeter, list_hours_each_quarter(), { :include_blank => true } %>
-					and <%= f.check_box :andter  %> to <%= f.check_box :toter  %>
+                                        <%= f.select :and_or_to_ter, list_and_or_to() %>
                                         <%= f.select :timefour, list_hours_each_quarter(), { :include_blank => true } %>
               	</li>
 <hr/>
