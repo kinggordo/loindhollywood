@@ -17,7 +17,7 @@
  <hr/>
                                 <label for="first_name">Other feature movies:</label><br/>
               
-								<%= f.fields_for :featuremovattribs do |builder| %>
+						      <%= f.fields_for :featuremovattribs do |builder| %>
 					                <%= render "films/featuremovattrib_fields", :f => builder %>      
 					              <% end %>
 
@@ -27,7 +27,7 @@
 
 					              <hr/>
 
-								<label for="first_name">Other movies:</label><br/>
+						      <label for="first_name">Other movies:</label><br/>
 
 					              <%= f.fields_for :shortmovattribs do |builder| %>
 					                <%= render "films/shortmovattrib_fields", :f => builder %>      
@@ -40,7 +40,7 @@
 
 					              <hr/>
 
-								<label for="first_name">On stage:</label><br/>
+						      <label for="first_name">On stage:</label><br/>
 
 					              <%= f.fields_for :onstageattribs do |builder| %>
 					                <%= render "films/onstageattrib_fields", :f => builder %>      
@@ -103,13 +103,13 @@
 
      			<li>
                  <label for="first_name">Screening schedule:</label>
-                                        <%= f.select :time, options_for_select(list_hours_each_quarter()), { :include_blank => true } %>
+                                        <%= f.select :time, list_hours_each_quarter(), { :include_blank => true } %>
 					and <%= f.check_box :and  %> to <%= f.check_box :to %>
-                                        <%= f.select :timebis, options_for_select(list_hours_each_quarter()), { :include_blank => true } %>
+                                        <%= f.select :timebis, list_hours_each_quarter(), { :include_blank => true } %>
 					and <%= f.check_box :andbis  %> to <%= f.check_box :tobis  %>
-                                        <%= f.select :timeter, options_for_select(list_hours_each_quarter()), { :include_blank => true } %>
+                                        <%= f.select :timeter, list_hours_each_quarter(), { :include_blank => true } %>
 					and <%= f.check_box :andter  %> to <%= f.check_box :toter  %>
-                                        <%= f.select :timefour, options_for_select(list_hours_each_quarter()), { :include_blank => true } %>
+                                        <%= f.select :timefour, list_hours_each_quarter(), { :include_blank => true } %>
               	</li>
 <hr/>
 				<li>
