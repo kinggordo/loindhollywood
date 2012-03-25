@@ -124,7 +124,7 @@
 				<li>
                  <label for="first_name">Screening prices:</label>
                    <%= f.collection_select :currency_id, Currency.find(:all), :id, :name, :include_blank => true %>
-				<%= f.select(:number, (1..10).to_a.map{|i| [i,i]}) %>
+				<%= f.select(:number, (1..10).to_a.map{|i| [i,i]}, { :include_blank => true }) %>
                 </li>
                 
                                   
