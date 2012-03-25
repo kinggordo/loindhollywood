@@ -1,6 +1,16 @@
 module ApplicationHelper
 
 
+  def timetohoursandminutes(thetime)
+    if !thetime.nil?
+      hourstring = "%02d" % thetime.hour
+      minutestring = "%02d" % thetime.min
+      "#{hourstring}:#{minutestring}"
+    else
+      ""
+    end
+  end
+
   def list_hours_each_quarter()
     hours = (0..23)
     minutes = 0.step(45, 15)
