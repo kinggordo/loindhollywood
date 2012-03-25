@@ -276,67 +276,62 @@
   <br/>
   <br/>
   <br/>
-  	  <% @rea_joints.each do |grouper, joints| %>
-  	  	 
-  	
-  			  
-  			  <table>
-  			  <tr class="pays">
-            <th>Theater</th>
-            <th>Release title</th>
-            <th>Episode title release</th>
-            <th>Run date</th>
-            <th>Genre as advertised</th>
-			<th>Screening days</th>
-			<th>Sundays and holidays</th>
-            <th>Screening schedule</th>
-			<th>Extra screening</th>
-            <th>Screening prices</th>
-            <th>Show</th>
-          </tr>
-  				<% joints.each do |joint| %>
+  	<% @rea_joints.each do |grouper, joints| %>
+          <table>
+  	    <tr class="pays">
+              <th>Theater</th>
+              <th>Release title</th>
+              <th>Episode title release</th>
+              <th>Run date</th>
+              <th>Genre as advertised</th>
+	      <th>Screening days</th>
+	      <th>Sundays and holidays</th>
+              <th>Screening schedule</th>
+	      <th>Extra screening</th>
+              <th>Screening prices</th>
+              <th>Show</th>
+            </tr>
+  	<% joints.each do |joint| %>
           <p>
             <tr class="result">
               <th><%=link_to joint.salle.name,  salle_path(joint.salle.id)%></th>
               <th><%= joint.titreoriginalb %></th>
               <th><%= joint.episode %></th>
               <% if joint.start_date %>
-              <th><%= joint.start_date.strftime('%Y/''%m/''%d') %> to 
+                <th><%= joint.start_date.strftime('%Y/''%m/''%d') %> to 
               <%end%>
               <% if joint.end_date %>
-              <%= joint.end_date.strftime('%Y/''%m/''%d') %>
+                <%= joint.end_date.strftime('%Y/''%m/''%d') %>
               <%end%>
               </th>
               <th><%= joint.genre %></th>
-			  <th><%= joint.day %></th>
-			  <% if joint.holydays == true %>
-			  <th>yes</th>
-			  <%else%>
-			  <th>no</th>
-			  <%end%>
+	      <th><%= joint.day %></th>
+	      <% if joint.holydays == true %>
+	        <th>yes</th>
+	      <%else%>
+	        <th>no</th>
+	      <%end%>
               <th>
-				<%= joint.time %> 
-                                <%= and_or_to_to_s(joint.and_or_to) %>
-				<%= joint.timebis %> 
-                                <%= and_or_to_to_s(joint.and_or_to_bis) %>
-				<%= joint.timeter %> 
-                                <%= and_or_to_to_s(joint.and_or_to_ter) %>
-				<%= joint.timefour %>
-			  </th>
-			  <th><%= joint.schedule %></th>
+	      <%= joint.time %> 
+              <%= and_or_to_to_s(joint.and_or_to) %>
+	      <%= joint.timebis %> 
+              <%= and_or_to_to_s(joint.and_or_to_bis) %>
+	      <%= joint.timeter %> 
+              <%= and_or_to_to_s(joint.and_or_to_ter) %>
+	      <%= joint.timefour %>
+	      </th>
+              <th><%= joint.schedule %></th>
               <th><%= joint.price %></th>
               <th><%= link_to_function "see", "$('#joint_#{joint.id}').toggle()" %></th>
             </tr>
             
             <div id="joint_<%=joint.id%>" style="display:none;" >
             <div id="Rightr">
-              <div id='close'>
-              <%= button_to_function "close", "$('#joint_#{joint.id}').toggle()" %>
-              </div>
+            <div id='close'>
+            <%= button_to_function "close", "$('#joint_#{joint.id}').toggle()" %>
+          </div>
             <ol>
-              <li>  
-                  Theater : <b><%=link_to joint.salle.name,  salle_path(joint.salle.id)%></b>
-              </li>
+              <li>Theater : <b><%=link_to joint.salle.name,  salle_path(joint.salle.id)%></b></li>
             </ol>
             <ol>
               <li>      
@@ -380,14 +375,12 @@
               </li>
             </ol>
             
-            </div>
-            </div>
-          <%end%>
-          <br/>
-          </table>
-          
-  	
-  	  <% end %>
+        </div>
+      </div>
+    <%end%>
+    <br/>
+  </table>
+  <% end %>
 </div>
 
 <div id="mos" style="display:none;" >
