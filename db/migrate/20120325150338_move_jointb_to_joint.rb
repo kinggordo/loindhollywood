@@ -80,5 +80,7 @@ class MoveJointbToJoint < ActiveRecord::Migration
   end
   
   def self.down
+    #this migration is pretty complicated to revert. would need to copy the code in reverse, or do it manually
+    raise ActiveRecord::IrreversibleMigration
   end
 end
