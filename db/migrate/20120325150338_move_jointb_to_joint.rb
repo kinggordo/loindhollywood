@@ -64,6 +64,17 @@ class MoveJointbToJoint < ActiveRecord::Migration
                                   :film_id => onstage.film_id,
                                   :joint_id => onstage.jointb_id )
         end
+        j.shortmovattribs.each do |shortmove|
+          Shortmovattrib.create!( :name => shortmove.name,
+                                  :based_on => shortmove.based_on,
+                                  :film_id => shortmove.film_id,
+                                  :joint_id => shortmove.jointb_id)
+        end
+        j.featuremovattribs.each do |featured|
+          Featuremovattrib.create!( :name => featured.name,
+                                    :film_id => featured.film_id,
+                                    :joint_id => featured.jointb_id )
+        end
       end
     end   
   end
