@@ -5,26 +5,6 @@ class Film < ActiveRecord::Base
   has_many :salles, :through => :joints
   accepts_nested_attributes_for :joints, :reject_if => proc { |a| a['salle_id'].blank? }, :allow_destroy => true
   
-  has_many :jointbs, :dependent => :destroy
-  has_many :villes, :through => :jointbs
-  has_many :salles, :through => :jointbs
-  accepts_nested_attributes_for :jointbs, :reject_if => proc { |a| a['salle_id'].blank? }, :allow_destroy => true
-  
-  has_many :jointcs, :dependent => :destroy
-  has_many :villes, :through => :jointcs
-  has_many :salles, :through => :jointcs
-  accepts_nested_attributes_for :jointcs, :reject_if => proc { |a| a['salle_id'].blank? }, :allow_destroy => true
-  
-  has_many :jointds, :dependent => :destroy
-  has_many :villes, :through => :jointds
-  has_many :salles, :through => :jointds
-  accepts_nested_attributes_for :jointds, :reject_if => proc { |a| a['salle_id'].blank? }, :allow_destroy => true
-  
-  has_many :jointes, :dependent => :destroy
-  has_many :villes, :through => :jointes
-  has_many :salles, :through => :jointes
-  accepts_nested_attributes_for :jointes, :reject_if => proc { |a| a['salle_id'].blank? }, :allow_destroy => true
-  
   has_many :functions, :dependent => :destroy
   accepts_nested_attributes_for :functions, :reject_if => :all_blank,  :allow_destroy => true
   
