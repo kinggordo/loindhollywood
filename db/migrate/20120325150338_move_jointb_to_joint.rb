@@ -59,6 +59,11 @@ class MoveJointbToJoint < ActiveRecord::Migration
                         :and_or_to => andortotonewcolumn( j.and, j.to),
                         :and_or_to_bis => andortotonewcolumn( j.andbis, j.tobis),
                         :and_or_to_ter => andortotonewcolumn( j.andter, j.toter) )
+        j.onstageattribs.each do |onstage|
+          Onstageattrib.create!(  :name => onstage.name,
+                                  :film_id => onstage.film_id,
+                                  :joint_id => onstage.jointb_id )
+        end
       end
     end   
   end
