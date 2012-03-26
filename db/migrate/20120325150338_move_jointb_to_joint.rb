@@ -11,6 +11,16 @@ class MoveJointbToJoint < ActiveRecord::Migration
     end
   end
 
+  def self.andortotonewcolumn(andvalue, tovalue)
+    if andvalue
+      1
+    elsif tovalue
+      2
+    else
+      0
+    end
+  end
+
 
   def self.up
     say_with_time "moving jointb into joint" do
@@ -45,12 +55,14 @@ class MoveJointbToJoint < ActiveRecord::Migration
                         :time => timetohoursandminutes(j.time),
                         :timebis => timetohoursandminutes(j.timebis),
                         :timeter => timetohoursandminutes(j.timeter),
-                        :timefour => timetohoursandminutes(j.timefour) )
-                        MISSING THE MIGRATION OF THE AND OR TO
+                        :timefour => timetohoursandminutes(j.timefour),
+                        :and_or_to => andortotonewcolumn( j.and, j.to),
+                        :and_or_to_bis => andortotonewcolumn( j.andbis, j.tobis),
+                        :and_or_to_ter => andortotonewcolumn( j.andter, j.toter) )
       end
     end   
   end
-
+  
   def self.down
   end
 end
