@@ -135,18 +135,7 @@
     params[:group] ||= "ville"
     @rea = Film.find(params[:id], :include => {:joints => [:salle, :ville, :film ]})
     @rea_joints = @rea.joints.find(:all).group_by {|j| j.send(params[:group])}
-    
-    @reab = Film.find(params[:id], :include => {:jointbs => [:salle, :ville ]})
-    @rea_jointbs = @reab.jointbs.find(:all).group_by {|j| j.send(params[:group])}
-    
-    @reac = Film.find(params[:id], :include => {:jointcs => [:salle, :ville ]})
-    @rea_jointcs = @reac.jointcs.find(:all).group_by {|j| j.send(params[:group])}
-    
-    @read = Film.find(params[:id], :include => {:jointds => [:salle, :ville ]})
-    @rea_jointds = @read.jointds.find(:all).group_by {|j| j.send(params[:group])}
-    
-    @reae = Film.find(params[:id], :include => {:jointes => [:salle, :ville ]})
-    @rea_jointes = @reae.jointes.find(:all).group_by {|j| j.send(params[:group])}
+    @villes = Ville.all
   end
   
   private
