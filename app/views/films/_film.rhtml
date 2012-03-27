@@ -1,322 +1,283 @@
 <div id="Left">
   <% if user_signed_in? %>
-  <div id="Right">    
-    <div class="submit"><%= link_to "Edit movie", edit_film_path(film), :class => "submit"  %></div>
-  </div>
-  <%end%>
-
-
-<div id="spinner" style="display:none;"><%= image_tag "/images/loader-line.gif" %></div>
-<fieldset>
-  <legend>Title / Technical</legend> 
-  <hr/>
-  <ol>
-    <li>
-      <label for="first_name"></label>  
-        Originale title : <b><%= @film.name %></b>    
-    </li>
-  </ol> 
-  <ol>
-    <li>
-      <label for="first_name"></label>  
-       Title transliteration : <b><%= @film.titlea %></b>    
-    </li>
-  </ol>
-  <ol>
-    <li>
-      <label for="first_name"></label>  
-        Title literal translation : <b><%= @film.titleb %></b>    
-    </li>
-  </ol>
-  <ol>
-    <li>
-      <label for="first_name"></label>  
-        Alternate title original : <b><%= @film.titlec %></b>  
-    </li>
-  </ol>
-  <ol>
-    <li>
-      <label for="first_name"></label>  
-        Alternate title transliteration : <b><%= @film.titled %></b>    
-    </li>
-  </ol>
-  <ol>
-    <li>
-      <label for="first_name"></label>  
-        Episode title original : <b><%= @film.titlee %></b>    
-    </li>
-  </ol>
-
-  <ol>
-    <li>
-      <label for="first_name"></label>  
-        Alternate title translation : <b><%= @film.titlef %></b>    
-    </li>
-  </ol>
-  <ol>
-  
-  <ol>
-    <li>
-      <label for="first_name"></label>  
-        Based on : <b><%= @film.based_on %></b> &nbsp;
-        from : <b><%= @film.autor %></b>    
-    </li>
-  </ol>
-  
- 
-  
-  <ol>
-    <li>
-      <label for="first_name"></label>  
-        Company : <b><%= @film.company %></b>    
-    </li>
-  </ol>
-  
-  <ol>
-    <li>
-      <label for="first_name"></label>  
-        Country : <b><%= @film.country %></b>    
-    </li>
-  </ol>
-  
-  <ol>
-    <li>
-      <label for="first_name"></label> 
-      Date of first release original :
-      <% if @film.start_date %> 
-         <b><%= @film.start_date.strftime('%Y/''%m/''%d') %></b>
-      <%end%>    
-    </li>
-  </ol>
-  
-  <ol>
-    <li>
-      <label for="first_name"></label>
-      Year of production :
-      <% if @film.year_date %>  
-         <b><%= @film.year_date.strftime('%Y')%></b>
-      <%end%>    
-    </li>
-  </ol>
-  <% if @film.lenght %> 
-  <ol>
-    <li>
-      <label for="first_name"></label>
-      Length in minutes : 
-      
-         <b><%= @film.lenght %></b> 
-         
-    </li>
-  </ol>
-  <%end%>
-
-  <% if @film.meter %> 
-  <ol>
-    <li>
-      <label for="first_name"></label>
-      Length in meters : 
-
-         <b><%= @film.meter %></b> 
-
-    </li>
-  </ol>
-  <%end%>
-
-  <% if @film.feed %> 
-  <ol>
-    <li>
-      <label for="first_name"></label>
-      Length in feeds : 
-
-         <b><%= @film.feed %></b> 
-
-    </li>
-  </ol>
-  <%end%>
-
-  <% if @film.color %>
-  <ol>
-    <li>
-      <label for="first_name"></label>  
-        Color : <b><%= @film.color.name %></b>    
-    </li>
-  </ol>
-  <%end%>
-  <% if @film.sound %>
-  <ol>
-    <li>
-      <label for="first_name"></label>  
-        Sound : <b><%= @film.sound.name %></b>    
-    </li>
-  </ol>
-  <%end%>
-
-  <ol>
-    <li>
-      <label for="first_name"></label>  
-        Source : <b><%= @film.source %></b>    
-    </li>
-  </ol>
-  
-   <ol>
-      <% @film.tecnicals.each do |f| %>
-      <li> 
-        <%=h f.name %> : <b><%= f.tecnicalattribs.collect(&:name).join(", ") %></b>
-      </li>
-      <% end %>
-   </ol>
-  
-  
-  
-  
-</fieldset> 
- 
-  <br/>
-  <br/>
-  
-<fieldset>
-    <legend>Functions / People</legend> 
-    
-    <hr/>
-
-	<ol>
-      <% @film.directors.each do |f| %>
-      <li> 
-        Director : <b><%= f.people.collect(&:name).join(", ") %></b>
-      </li>
-      <% end %>
-    </ol>
-
-	<ol>
-      <% @film.malecasts.each do |f| %>
-      <li> 
-        Male cast : <b><%= f.people.collect(&:name).join(", ") %></b>
-      </li>
-      <% end %>
-    </ol>
-
-	<ol>
-      <% @film.femalecasts.each do |f| %>
-      <li> 
-        Female cast : <b><%= f.people.collect(&:name).join(", ") %></b>
-      </li>
-      <% end %>
-    </ol>
-
-	<ol>
-      <% @film.producers.each do |f| %>
-      <li> 
-        Producer : <b><%= f.people.collect(&:name).join(", ") %></b>
-      </li>
-      <% end %>
-    </ol>
-
-	<ol>
-      <% @film.scriptwriters.each do |f| %>
-      <li> 
-        Scriptwriter : <b><%= f.people.collect(&:name).join(", ") %></b>
-      </li>
-      <% end %>
-    </ol>
-
-	<ol>
-      <% @film.cinematographers.each do |f| %>
-      <li> 
-        Cinematographor : <b><%= f.people.collect(&:name).join(", ") %></b>
-      </li>
-      <% end %>
-    </ol>
-
-	<ol>
-      <% @film.musicians.each do |f| %>
-      <li> 
-        Musician : <b><%= f.people.collect(&:name).join(", ") %></b>
-      </li>
-      <% end %>
-    </ol>
-    
-    <ol>
-      <% @film.functions.each do |f| %>
-      <li> 
-        <%=h f.name %> : <b><%= f.people.collect(&:name).join(", ") %></b>
-      </li>
-      <% end %>
-    </ol>
-    
-    
-</fieldset>
-
-  <br/>
-  <br/>
-  
-<fieldset>
-      <legend>City / Theaters</legend>  
-
-<hr/>
-  
-  
-  <br/>
-
-  <div class="buttoncountry">
-  <% @villes.each do |ville| %>
-    <%= button_to_function ville.name, "$('##{ville.name}').toggle()" %> 
-  <% end %>
-  </div> 
-
-  
-  <% @villes.each do |ville| %>
-    <div id="<%= ville.name %>" style="display:none;" >
-      <div id='close'>
-      <%= button_to_function "close", "$('##{ville.name}').toggle()" %>
-      </div>
+    <div id="Right">    
+      <div class="submit"><%= link_to "Edit movie", edit_film_path(film), :class => "submit"  %></div>
     </div>
-  <% end %> 
-  <br/>
-  <br/>
-  <br/>
-  	<% @rea_joints.each do |grouper, joints| %>
-          <table>
-  	    <tr class="pays">
-              <th>Theater</th>
-              <th>Release title</th>
-              <th>Episode title release</th>
-              <th>Run date</th>
-              <th>Genre as advertised</th>
-	      <th>Screening days</th>
-	      <th>Sundays and holidays</th>
-              <th>Screening schedule</th>
-	      <th>Extra screening</th>
-              <th>Screening prices</th>
-              <th>Show</th>
-            </tr>
-  	<% joints.each do |joint| %>
-          <p>
-            <tr class="result">
-              <th><%=link_to joint.salle.name,  salle_path(joint.salle.id)%></th>
-              <th><%= joint.titreoriginalb %></th>
-              <th><%= joint.episode %></th>
-              <% if joint.start_date %>
-                <th><%= joint.start_date.strftime('%Y/''%m/''%d') %> to 
-              <%end%>
-              <% if joint.end_date %>
-                <%= joint.end_date.strftime('%Y/''%m/''%d') %>
-              <%end%>
-              </th>
-              <th><%= joint.genre %></th>
-	      <th><%= joint.day %></th>
-	      <% if joint.holydays == true %>
-	        <th>yes</th>
-	      <%else%>
-	        <th>no</th>
-	      <%end%>
+  <%end%>
+
+
+  <div id="spinner" style="display:none;"><%= image_tag "/images/loader-line.gif" %></div>
+    <fieldset>
+      <legend>Title / Technical</legend> 
+      <hr/>
+      <ol>
+        <li>
+          <label for="first_name"></label>  
+          Originale title : <b><%= @film.name %></b>    
+        </li>
+      </ol> 
+      <ol>
+        <li>
+          <label for="first_name"></label>  
+          Title transliteration : <b><%= @film.titlea %></b>    
+        </li>
+      </ol>
+      <ol>
+        <li>
+          <label for="first_name"></label>  
+          Title literal translation : <b><%= @film.titleb %></b>    
+        </li>
+      </ol>
+      <ol>
+        <li>
+          <label for="first_name"></label>  
+          Alternate title original : <b><%= @film.titlec %></b>  
+        </li>
+      </ol>
+      <ol>
+        <li>
+          <label for="first_name"></label>  
+          Alternate title transliteration : <b><%= @film.titled %></b>    
+        </li>
+      </ol>
+      <ol>
+        <li>
+          <label for="first_name"></label>  
+          Episode title original : <b><%= @film.titlee %></b>    
+        </li>
+      </ol>
+
+      <ol>
+        <li>
+          <label for="first_name"></label>  
+          Alternate title translation : <b><%= @film.titlef %></b>    
+        </li>
+      </ol>
+      <ol>
+      <ol>
+        <li>
+          <label for="first_name"></label>  
+            Based on : <b><%= @film.based_on %></b> &nbsp;
+            from : <b><%= @film.autor %></b>    
+        </li>
+      </ol>
+      <ol>
+        <li>
+          <label for="first_name"></label>  
+          Company : <b><%= @film.company %></b>    
+        </li>
+      </ol>
+      <ol>
+        <li>
+          <label for="first_name"></label>  
+          Country : <b><%= @film.country %></b>    
+        </li>
+      </ol>
+      <ol>
+        <li>
+          <label for="first_name"></label> 
+          Date of first release original :
+          <% if @film.start_date %> 
+            <b><%= @film.start_date.strftime('%Y/''%m/''%d') %></b>
+          <%end%>    
+        </li>
+      </ol>
+      <ol>
+        <li>
+          <label for="first_name"></label>
+          Year of production :
+          <% if @film.year_date %>  
+            <b><%= @film.year_date.strftime('%Y')%></b>
+          <%end%>    
+        </li>
+      </ol>
+      <% if @film.lenght %> 
+        <ol>
+          <li>
+            <label for="first_name"></label>
+            Length in minutes : 
+            <b><%= @film.lenght %></b> 
+          </li>
+        </ol>
+      <%end%>
+      <% if @film.meter %> 
+        <ol>
+          <li>
+            <label for="first_name"></label>
+            Length in meters : 
+            <b><%= @film.meter %></b> 
+          </li>
+        </ol>
+      <%end%>
+      <% if @film.feed %> 
+        <ol>
+          <li>
+            <label for="first_name"></label>
+            Length in feeds : 
+            <b><%= @film.feed %></b> 
+          </li>
+        </ol>
+      <%end%>
+      <% if @film.color %>
+        <ol>
+          <li>
+            <label for="first_name"></label>  
+            Color : <b><%= @film.color.name %></b>    
+          </li>
+        </ol>
+      <%end%>
+      <% if @film.sound %>
+        <ol>
+          <li>
+            <label for="first_name"></label>  
+            Sound : <b><%= @film.sound.name %></b>    
+          </li>
+        </ol>
+      <%end%>
+      <ol>
+        <li>
+          <label for="first_name"></label>  
+          Source : <b><%= @film.source %></b>    
+        </li>
+      </ol>
+      <ol>
+        <% @film.tecnicals.each do |f| %>
+          <li> 
+            <%=h f.name %> : <b><%= f.tecnicalattribs.collect(&:name).join(", ") %></b>
+          </li>
+        <% end %>
+      </ol>
+    </fieldset> 
+    <br/>
+    <br/>
+    <fieldset>
+      <legend>Functions / People</legend> 
+      <hr/>
+      <ol>
+        <% @film.directors.each do |f| %>
+          <li> 
+            Director : <b><%= f.people.collect(&:name).join(", ") %></b>
+          </li>
+        <% end %>
+      </ol>
+      <ol>
+        <% @film.malecasts.each do |f| %>
+          <li> 
+            Male cast : <b><%= f.people.collect(&:name).join(", ") %></b>
+          </li>
+        <% end %>
+      </ol>
+
+      <ol>
+        <% @film.femalecasts.each do |f| %>
+          <li> 
+            Female cast : <b><%= f.people.collect(&:name).join(", ") %></b>
+          </li>
+        <% end %>
+      </ol>
+      <ol>
+        <% @film.producers.each do |f| %>
+          <li> 
+            Producer : <b><%= f.people.collect(&:name).join(", ") %></b>
+          </li>
+        <% end %>
+      </ol>
+      <ol>
+        <% @film.scriptwriters.each do |f| %>
+          <li> 
+            Scriptwriter : <b><%= f.people.collect(&:name).join(", ") %></b>
+          </li>
+        <% end %>
+      </ol>
+      <ol>
+        <% @film.cinematographers.each do |f| %>
+          <li> 
+            Cinematographor : <b><%= f.people.collect(&:name).join(", ") %></b>
+          </li>
+        <% end %>
+      </ol>
+      <ol>
+        <% @film.musicians.each do |f| %>
+          <li> 
+            Musician : <b><%= f.people.collect(&:name).join(", ") %></b>
+          </li>
+        <% end %>
+      </ol>
+      <ol>
+        <% @film.functions.each do |f| %>
+          <li> 
+            <%=h f.name %> : <b><%= f.people.collect(&:name).join(", ") %></b>
+          </li>
+        <% end %>
+      </ol>
+    </fieldset>
+    <br/>
+    <br/>
+    <fieldset>
+      <legend>City / Theaters</legend>  
+      <hr/>
+      <br/>
+      <div class="buttoncountry">
+        <% @villes.each do |ville| %>
+          <%= button_to_function ville.name, "$('##{ville.name}').toggle()" %> 
+        <% end %>
+      </div> 
+      <% @villes.each do |ville| %>
+        <div id="<%= ville.name %>" style="display:none;" >
+          <div id='close'>
+            <%= button_to_function "close", "$('##{ville.name}').toggle()" %>
+          </div>
+        </div>
+      <% end %> 
+      <br/>
+      <br/>
+      <br/>
+      <% @rea_joints.each do |grouper, joints| %>
+        <table>
+  	  <tr class="pays">
+            <th>Theater</th>
+            <th>Release title</th>
+            <th>Episode title release</th>
+            <th>Run date</th>
+            <th>Genre as advertised</th>
+	    <th>Screening days</th>
+	    <th>Sundays and holidays</th>
+            <th>Screening schedule</th>
+	    <th>Extra screening</th>
+            <th>Screening prices</th>
+            <th>Show</th>
+          </tr>
+  	  <% joints.each do |joint| %>
+            <p>
+              <tr class="result">
+                <th><%=link_to joint.salle.name,  salle_path(joint.salle.id)%></th>
+                <th><%= joint.titreoriginalb %></th>
+                <th><%= joint.episode %></th>
+                <th>
+                  <% if joint.start_date %>
+                    <%= joint.start_date.strftime('%Y/''%m/''%d') %> to 
+                  <%end%>
+                  <% if joint.end_date %>
+                    <%= joint.end_date.strftime('%Y/''%m/''%d') %>
+                  <%end%>
+                </th>
+                <th><%= joint.genre %></th>
+	        <th><%= joint.day %></th>
+                <th>
+	          <% if joint.holydays == true %>
+	            yes
+	          <%else%>
+	            no
+	          <%end%>
+                </th>
               <th>
-	      <%= joint.time %> 
-              <%= and_or_to_to_s(joint.and_or_to) %>
-	      <%= joint.timebis %> 
-              <%= and_or_to_to_s(joint.and_or_to_bis) %>
-	      <%= joint.timeter %> 
-              <%= and_or_to_to_s(joint.and_or_to_ter) %>
-	      <%= joint.timefour %>
+	        <%= joint.time %> 
+                <%= and_or_to_to_s(joint.and_or_to) %>
+	        <%= joint.timebis %> 
+                <%= and_or_to_to_s(joint.and_or_to_bis) %>
+	        <%= joint.timeter %> 
+                <%= and_or_to_to_s(joint.and_or_to_ter) %>
+	        <%= joint.timefour %>
 	      </th>
               <th><%= joint.schedule %></th>
               <th><%= joint.price %></th>
@@ -324,66 +285,62 @@
             </tr>
             
             <div id="joint_<%=joint.id%>" style="display:none;" >
-            <div id="Rightr">
-            <div id='close'>
-            <%= button_to_function "close", "$('#joint_#{joint.id}').toggle()" %>
-          </div>
-            <ol>
-              <li>Theater : <b><%=link_to joint.salle.name,  salle_path(joint.salle.id)%></b></li>
-            </ol>
-            <ol>
-              <li>      
-                  Run date :
-                  <% if joint.start_date %>
-                  <b><%= joint.start_date.strftime('%Y/''%m/''%d') %> to
-                  <% end %>
-                  <% if joint.end_date %>
-                   <%= joint.end_date.strftime('%Y/''%m/''%d') %> 
-                  <% end %></b>    
-              </li>
-            </ol>
-            <ol>
-              <li> 
-               Other feature movies : <b><%= joint.featuremovattribs.collect(&:name).join(", ") %></b>
-              </li>
-            </ol>
-            <ol>
-              <li> 
-               Short movie : <b><%= joint.shortmovattribs.collect(&:name).join(", ") %></b>
-              </li>
-            </ol>
-            <ol>
-              <li> 
-               On stage : <b><%= joint.onstageattribs.collect(&:name).join(", ") %></b>
-              </li>
-            </ol>
-            <ol>
-              <li> 
-               Audience : <b><%= joint.audience %></b>
-              </li>
-            </ol>
-            <ol>
-              <li> 
-               Comments : <b><%= joint.comment %></b>
-              </li>
-            </ol>
-            <ol>
-              <li> 
-               Sources show : <b><%= joint.source %></b>
-              </li>
-            </ol>
-            
-        </div>
+              <div id="Rightr">
+                <div id='close'>
+                  <%= button_to_function "close", "$('#joint_#{joint.id}').toggle()" %>
+                </div>
+                <ol>
+                  <li>Theater : <b><%=link_to joint.salle.name,  salle_path(joint.salle.id)%></b></li>
+                  </ol>
+                  <ol>
+                    <li>      
+                      Run date :
+                      <% if joint.start_date %>
+                        <b><%= joint.start_date.strftime('%Y/''%m/''%d') %> to
+                      <% end %>
+                      <% if joint.end_date %>
+                        <%= joint.end_date.strftime('%Y/''%m/''%d') %> 
+                      <% end %></b>    
+                    </li>
+                  </ol>
+                  <ol>
+                    <li> 
+                      Other feature movies : <b><%= joint.featuremovattribs.collect(&:name).join(", ") %></b>
+                    </li>
+                  </ol>
+                  <ol>
+                    <li> 
+                      Short movie : <b><%= joint.shortmovattribs.collect(&:name).join(", ") %></b>
+                    </li>
+                  </ol>
+                  <ol>
+                    <li> 
+                      On stage : <b><%= joint.onstageattribs.collect(&:name).join(", ") %></b>
+                    </li>
+                  </ol>
+                  <ol>
+                    <li> 
+                      Audience : <b><%= joint.audience %></b>
+                    </li>
+                  </ol>
+                  <ol>
+                    <li> 
+                      Comments : <b><%= joint.comment %></b>
+                    </li>
+                  </ol>
+                  <ol>
+                    <li> 
+                      Sources show : <b><%= joint.source %></b>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            <%end%>
+            <br/>
+          </table>
+        <% end %>
       </div>
-    <%end%>
-    <br/>
-  </table>
-  <% end %>
+    </div>  
+  </fieldset>
 </div>
 
-
-</div>  
-</fieldset>
-
-
-</div>
