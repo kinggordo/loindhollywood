@@ -25,6 +25,7 @@ gem 'devise' # Devise must be required before RailsAdmin
 
 group :phil do
   gem 'pg' #for postgresql (same database as in heroku)
+  gem 'ruby-debug19'
 end
 
 
