@@ -218,30 +218,29 @@
         <% @villes.each do |ville| %>
           <%= button_to_function ville.name, "$('##{ville.name}').toggle()" %> 
         <% end %>
-        <% @villes.each do |ville| %>
-          <div id="<%= ville.name %>" style="display:none;" >
+        <% @rea_joints.each do |grouper, joints| %>
+          <div id="<%= grouper.name %>" style="display:none;" >
             <div id='close'>
-              <%= button_to_function "close", "$('##{ville.name}').toggle()" %>
+              <%= button_to_function "close", "$('##{grouper.name}').toggle()" %>
             </div>
             <br/>
             <br/>
             <br/>
-            <% @rea_joints.each do |grouper, joints| %>
-              <table>
-                <tr class="pays">
-                  <th>Theater</th>
-                  <th>Release title</th>
-                  <th>Episode title release</th>
-                  <th>Run date</th>
-                  <th>Genre as advertised</th>
-                  <th>Screening days</th>
-                  <th>Sundays and holidays</th>
-                  <th>Screening schedule</th>
-                  <th>Extra screening</th>
-                  <th>Screening prices</th>
-                  <th>Show</th>
-                </tr>
-                <% joints.each do |joint| %>
+            <table>
+              <tr class="pays">
+                <th>Theater</th>
+                <th>Release title</th>
+                <th>Episode title release</th>
+                <th>Run date</th>
+                <th>Genre as advertised</th>
+                <th>Screening days</th>
+                <th>Sundays and holidays</th>
+                <th>Screening schedule</th>
+                <th>Extra screening</th>
+                <th>Screening prices</th>
+                <th>Show</th>
+              </tr>
+              <% joints.each do |joint| %>
                   <p>
                   <tr class="result">
                     <th><%=link_to joint.salle.name,  salle_path(joint.salle.id)%></th>
@@ -327,11 +326,10 @@
                         </li>
                       </ol>
                   </div>
-                 </div>
-                <%end%>
-                <br/>
-                </table>
-             <% end %>
+                  </div>
+              <%end%>
+              <br/>
+            </table>
           </div>
         <% end %>
       </div>
