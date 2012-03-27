@@ -197,32 +197,32 @@
         </div>
         <div id="sa" style="display:none;" >
           <div id="buttoncountry">
-            <%= button_to_function "Paris", "$('#pa').toggle()" %> 
-            <%= button_to_function "Moscow", "$('#mos').toggle()" %> 
-            <%= button_to_function "Shanghai", "$('#sha').toggle()" %>
-            <%= button_to_function "Berlin", "$('#be').toggle()" %>
-            <%= button_to_function "Tokyo", "$('#to').toggle()" %>
+            <% @villes.each do |ville| %>
+              <%= button_to_function ville.name, "$('##{ville.name}').toggle()" %> 
+            <% end %>
           </div>
           <br/>
           <br/>
           <br/>
           <br/>
           <br/>
-          <div id="pa" style="display:none;" >
-            <br/>
-            <br/>
-            <br/>
-            <br/> 
-            <%= f.fields_for :joints do |builder| %>
-              <%= render "films/joint_fields", :f => builder %>      
-            <% end %>
-            <p class="add">
-              <%=image_tag'ldh_admin_ouverture.png'%><%= link_to_add_fields "Add theater", f, :joints %>
-            </p>
-            <p class="donedone">
-              <%= f.submit "I'm done with  Paris",:class => "submit"%>
-            </p>
-        </div>
+          <% @rea_joints.each do |grouper, joints| %>
+            <div id="<%= grouper.name %>" style="display:none;" >
+              <br/>
+              <br/>
+              <br/>
+              <br/> 
+              <%= f.fields_for :joints do |builder| %>
+                <%= render "films/joint_fields", :f => builder %>      
+              <% end %>
+              <p class="add">
+                <%=image_tag'ldh_admin_ouverture.png'%><%= link_to_add_fields "Add theater", f, :joints %>
+              </p>
+              <p class="donedone">
+                <%= f.submit "I'm done with  Paris",:class => "submit"%>
+             </p>
+            </div>
+          <% end %>
         <br/>     
         <br/>
       </div>
