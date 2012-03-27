@@ -212,8 +212,10 @@
               <br/>
               <br/>
               <br/> 
-              <%= f.fields_for :joints do |builder| %>
-                <%= render "films/joint_fields", :f => builder %>      
+              <% joints.each do |joint| %>
+                <%= f.fields_for :joint, joint do |builder| %>
+                  <%= render "films/joint_fields", :f => builder %>      
+                <% end %>
               <% end %>
               <p class="add">
                 <%=image_tag'ldh_admin_ouverture.png'%><%= link_to_add_fields "Add theater", f, :joints %>
