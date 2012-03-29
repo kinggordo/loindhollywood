@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "Home" do
-  
+
   describe "GET /" do
     
     it "works" do
@@ -22,6 +22,12 @@ describe "Home" do
     
     before(:each) do
       visit "#{root_path}#2"
+      response.status.should be(200)
+    end
+
+    it "finds a record" do
+      fill_in "search", :with => "hello world"
+      click_button
       response.status.should be(200)
     end
 

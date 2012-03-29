@@ -32,6 +32,7 @@ group :development, :test, :phil do
   gem 'rspec-rails'
   gem 'simplecov'
   gem 'webrat'
+  gem 'factory_girl_rails'
 end
 
 # Use unicorn as the web server
