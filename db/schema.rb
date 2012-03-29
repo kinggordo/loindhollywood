@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(:version => 20120326055138) do
     t.string   "country"
     t.date     "start_date"
     t.date     "year_date"
-    t.string   "lenght"
+    t.text     "lenght"
     t.string   "color"
     t.string   "sound"
     t.string   "based_on"
@@ -328,7 +328,7 @@ ActiveRecord::Schema.define(:version => 20120326055138) do
   end
 
   create_table "moviselects", :force => true do |t|
-    t.string   "name"
+    t.text     "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -394,6 +394,17 @@ ActiveRecord::Schema.define(:version => 20120326055138) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "relationships", :force => true do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "relationships", ["followed_id"], :name => "index_relationships_on_followed_id"
+  add_index "relationships", ["follower_id", "followed_id"], :name => "index_relationships_on_follower_id_and_followed_id", :unique => true
+  add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
 
   create_table "salleinfoattribs", :force => true do |t|
     t.string   "name"
