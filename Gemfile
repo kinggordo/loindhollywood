@@ -28,6 +28,10 @@ group :phil do
   gem 'ruby-debug19'
 end
 
+group :development, :test, :phil do
+  gem 'rspec-rails'
+  gem 'simplecov'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'
