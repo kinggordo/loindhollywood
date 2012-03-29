@@ -31,6 +31,14 @@ describe "Home" do
       response.status.should be(200)
     end
 
+    it "searches through free text"
+    it "searches nothing"
+    it "searches through a company"
+    it "searches through a country"
+    it "searches through a color"
+    it "searches through a sound"
+
+
   end
 
   it "shall not have #...:... strings in the content"

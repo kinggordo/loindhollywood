@@ -135,7 +135,7 @@
         <%= f.submit "I'm done with Title/Technical",:class => "submit"%>
       </p>
       <br/>
-      </div>
+    </div>
         <div id="fp" style="display:none;" >
           <fieldset id="title">  
             <%= f.fields_for :directors do |builder| %>
@@ -206,28 +206,32 @@
           <br/>
           <br/>
           <br/>
-          <% @rea_joints.each do |grouper, joints| %>
-            <div id="<%= grouper.name %>" style="display:none;" >
+          <% @villes.each do |ville| %>
+            <div id="<%= ville.name %>" style="display:none;" >
               <br/>
               <br/>
               <br/>
               <br/> 
-              <% joints.each do |joint| %>
-                <%= f.fields_for :joints, joint do |builder| %>
-                  <%= render "films/joint_fields", :f => builder, :forced_ville_id => grouper.id %>      
+              <% @rea_joints.each do |grouper, joints| %>
+                <% joints.each do |joint| %>
+                  <% if joints.ville_id == ville.id %>
+                    <%= f.fields_for :joints, joint do |builder| %>
+                      <%= render "films/joint_fields", :f => builder, :forced_ville_id => grouper.id %>      
+                    <% end %>
+                  <% end %>
                 <% end %>
               <% end %>
               <p class="add">
-                <%=image_tag'ldh_admin_ouverture.png'%><%= link_to_add_fields "Add theater", f, :joints, { :forced_ville_id => grouper.id } %>
+                <%=image_tag'ldh_admin_ouverture.png'%><%= link_to_add_fields "Add theater", f, :joints, { :forced_ville_id => ville.id } %>
               </p>
               <p class="donedone">
-                <%= f.submit "I'm done with #{grouper.name}",:class => "submit"%>
-             </p>
+                <%= f.submit "I'm done with #{ville.name}",:class => "submit"%>
+              </p>
             </div>
           <% end %>
-        <br/>     
-        <br/>
-      </div>
+          <br/>     
+          <br/>
+        </div>
       <br/>
-    </div>  
+  </div>  
 <%end%>
