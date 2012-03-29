@@ -213,15 +213,15 @@
               <br/>
               <br/> 
               <% joints.each do |joint| %>
-                <%= f.fields_for :joint, joint do |builder| %>
-                  <%= render "films/joint_fields", :f => builder %>      
+                <%= f.fields_for joint do |builder| %>
+                  <%= render "films/joint_fields", :f => builder, :forced_ville_id => grouper.id %>      
                 <% end %>
               <% end %>
               <p class="add">
-                <%=image_tag'ldh_admin_ouverture.png'%><%= link_to_add_fields "Add theater", f, :joints %>
+                <%=image_tag'ldh_admin_ouverture.png'%><%= link_to_add_fields "Add theater", f, :joints, { :forced_ville_id => grouper.id } %>
               </p>
               <p class="donedone">
-                <%= f.submit "I'm done with  Paris",:class => "submit"%>
+                <%= f.submit "I'm done with #{grouper.name}",:class => "submit"%>
              </p>
             </div>
           <% end %>

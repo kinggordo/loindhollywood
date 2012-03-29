@@ -1,11 +1,8 @@
 <div class="fields">
-  
 <fieldset id="people"> 
         <ol>
-          
-            
-              <%= f.select :ville_id, options_for_select(Ville.all(:order=> 'name asc',:conditions => "(id) = #{1}").map {|o| [o.name, o.id]}, f.object.ville_id) %> &nbsp;
-              <%= f.select :salle_id, options_for_select(Salle.all(:order=> 'name asc',:conditions => "(ville_id) = #{1}").map {|p| [p.name, p.id]}, f.object.salle_id) %><br/>
+              <%= f.select :ville_id, options_for_select(Ville.all(:order=> 'name asc',:conditions => "(id) = #{forced_ville_id}").map {|o| [o.name, o.id]}, f.object.ville_id) %> &nbsp;
+              <%= f.select :salle_id, options_for_select(Salle.all(:order=> 'name asc',:conditions => "(ville_id) = #{forced_ville_id}").map {|p| [p.name, p.id]}, f.object.salle_id) %><br/>
               <br/>
               <label for="first_name">Run date:</label><br/>
               <%= f.date_select :start_date, :order => [:day, :month, :year],
@@ -126,19 +123,6 @@
                    <%= f.collection_select :currency_id, Currency.find(:all), :id, :name, :include_blank => true %>
 				<%= f.select(:number, (1..10).to_a.map{|i| [i,i]}, { :include_blank => true }) %>
                 </li>
-                
-                                  
-                
-
-                
-                
-             
-             
-              
-             
-              
-                            
-             
               <br/>
               <br/>
               <br/>
@@ -153,4 +137,3 @@
 </fieldset>
 
 </div>
-
