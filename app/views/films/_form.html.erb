@@ -213,7 +213,7 @@
               <br/>
               <br/> 
               <% joints.each do |joint| %>
-                <%= f.fields_for joint do |builder| %>
+                <%= f.fields_for :joints, joint do |builder| %>
                   <%= render "films/joint_fields", :f => builder, :forced_ville_id => grouper.id %>      
                 <% end %>
               <% end %>
