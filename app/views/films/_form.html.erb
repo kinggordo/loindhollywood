@@ -214,7 +214,7 @@
               <br/> 
               <% @rea_joints.each do |grouper, joints| %>
                 <% joints.each do |joint| %>
-                  <% if joints.ville_id == ville.id %>
+                  <% if joint.ville_id == ville.id %>
                     <%= f.fields_for :joints, joint do |builder| %>
                       <%= render "films/joint_fields", :f => builder, :forced_ville_id => grouper.id %>      
                     <% end %>
