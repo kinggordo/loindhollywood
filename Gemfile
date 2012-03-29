@@ -31,6 +31,7 @@ end
 group :development, :test, :phil do
   gem 'rspec-rails'
   gem 'simplecov'
+  gem 'webrat'
 end
 
 # Use unicorn as the web server

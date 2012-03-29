@@ -65,6 +65,7 @@ GEM
       arel (~> 2.0.7)
     mime-types (1.16)
     multi_json (1.2.0)
+    nokogiri (1.5.2)
     orm_adapter (0.0.5)
     paperclip (2.4.2)
       activerecord (>= 2.3.0)
@@ -128,6 +129,10 @@ GEM
     tzinfo (0.3.24)
     warden (1.0.3)
       rack (>= 1.0.0)
+    webrat (0.7.3)
+      nokogiri (>= 1.2.0)
+      rack (>= 1.0)
+      rack-test (>= 0.5.3)
     will_paginate (3.0.pre2)
 
 PLATFORMS
@@ -148,4 +153,5 @@ DEPENDENCIES
   ruby-debug19
   simplecov
   sqlite3
+  webrat
   will_paginate (= 3.0.pre2)
