@@ -16,8 +16,16 @@ class Joint < ActiveRecord::Base
 
   has_many :joint_prices
   has_many :prices, :through => :joint_prices
-  accepts_nested_attributes_for :prices, :reject_if => lambda { |a| a[:currency_id].nil? || a[:number].blank? }, :allow_destroy => true
-  
+  accepts_nested_attributes_for :prices, :allow_destroy => true
+ 
+  before_save :mark_prices_for_removal
+
+  def mark_prices_for_removal
+    prices.each do |price|
+      price.mark_for_destruction if ( price.currency_id.nil? || price.number.blank? ) 
+    end
+  end
+
   def self.search(search)
     if (search)
       ville_ids = Ville.search(search).all.collect{ |x| x.id }
