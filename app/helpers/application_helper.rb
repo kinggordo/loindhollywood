@@ -1,6 +1,10 @@
 module ApplicationHelper
 
 
+  def list_prices
+    (1..10).to_a.map{|i| [i,i]}
+  end
+
   def timetohoursandminutes(thetime)
     if !thetime.nil?
       hourstring = "%02d" % thetime.hour

@@ -111,7 +111,7 @@
 <hr/>
 				<li>
                  <label for="first_name">Extra screening:</label>
-					<%=  f.select :dayextra, Date::DAYNAMES.each_with_index,:include_blank => true  %>
+					<%= f.select :dayextra, Date::DAYNAMES.each_with_index,:include_blank => true  %>
                                         <%= f.select :extratime, list_hours_each_quarter(), { :include_blank => true } %>
                                         <%= f.select :extra_and_or_to, list_and_or_to() %>
                                         <%= f.select :extratimebis, list_hours_each_quarter(), { :include_blank => true } %>
@@ -120,8 +120,8 @@
 <hr/>
 				<li>
                  <label for="first_name">Screening prices:</label>
-                   <%= f.collection_select :currency_id, Currency.find(:all), :id, :name, :include_blank => true %>
-				<%= f.select(:number, (1..10).to_a.map{|i| [i,i]}, { :include_blank => true }) %>
+                                        <%= f.collection_select :currency_id, Currency.find(:all), :id, :name, :include_blank => true %>
+				        <%= f.select(:number, list_prices(), { :include_blank => true }) %>
                 </li>
               <br/>
               <br/>
