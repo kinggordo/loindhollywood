@@ -120,12 +120,10 @@
 <hr/>
 				<li>
                  <label for="first_name">Screening prices:</label>
-                      <% f.fields_for :prices do |builder| %>
-                        <%= render :price_fields, :f => builder %>
+                      <%= f.fields_for :prices do |builder| %>
+                        <%= render "price_fields", :f => builder %>
                       <% end %>
                       <%= link_to_add_fields "+", f, :prices %>
-                      <%# f.collection_select :currency_id, Currency.find(:all), :id, :name, :include_blank => true %>
-		      <%# f.select(:number, list_prices(), { :include_blank => true }) %>
                 </li>
               <br/>
               <br/>
