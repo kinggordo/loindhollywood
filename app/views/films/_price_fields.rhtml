@@ -1,1 +1,2 @@
-<%= f.select :currency_id, Currency.all.collect { |x| x.name }.sort, { :include_blank => true } %> <%= f.select(:number, list_prices(), { :include_blank => true }) %>
+<%= f.select :currency_id, options_for_select(Currency.all.collect { |x| [x.name, x.id] }.sort, f.object.currency_id), { :include_blank => true } %> <%= f.select(:number, list_prices(), { :include_blank => true }) %>
+
