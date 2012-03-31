@@ -112,7 +112,7 @@
 				<li>
                  <label for="first_name">Extra screening:</label>
 					<%=  f.select :dayextra, Date::DAYNAMES.each_with_index,:include_blank => true  %>
-                                        <%= f.time_select :timeextra, {  :minute_step => 15, :ampm => true  } %>
+                                        <%= f.select :extratime, list_hours_each_quarter(), { :include_blank => true } %>
                                         <%= f.select :extra_and_or_to, list_and_or_to() %>
 					<%= f.time_select :timeextrabis, {  :minute_step => 15, :ampm => true  } %>
 					 <br/>
