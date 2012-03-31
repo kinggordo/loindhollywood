@@ -13,6 +13,10 @@ class Joint < ActiveRecord::Base
   
   has_many :featuremovattribs, :dependent => :destroy
   accepts_nested_attributes_for :featuremovattribs, :reject_if => :all_blank,  :allow_destroy => true
+
+  has_many :joint_prices
+  has_many :prices, :through => :joint_prices
+  accepts_nested_attributes_for :prices, :reject_if => lambda { |a| a[:currency_id].nil? }, :allow_destroy => true
   
   def self.search(search)
     if (search)
