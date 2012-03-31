@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120331063452) do
+ActiveRecord::Schema.define(:version => 20120331162212) do
 
   create_table "cinematographers", :force => true do |t|
     t.string   "name"
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(:version => 20120331063452) do
     t.string   "country"
     t.date     "start_date"
     t.date     "year_date"
-    t.text     "lenght"
+    t.string   "lenght"
     t.string   "color"
     t.string   "sound"
     t.string   "based_on"
@@ -162,7 +162,7 @@ ActiveRecord::Schema.define(:version => 20120331063452) do
   end
 
   create_table "moviselects", :force => true do |t|
-    t.text     "name"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -231,17 +231,6 @@ ActiveRecord::Schema.define(:version => 20120331063452) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "relationships", :force => true do |t|
-    t.integer  "follower_id"
-    t.integer  "followed_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "relationships", ["followed_id"], :name => "index_relationships_on_followed_id"
-  add_index "relationships", ["follower_id", "followed_id"], :name => "index_relationships_on_follower_id_and_followed_id", :unique => true
-  add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
 
   create_table "salleinfoattribs", :force => true do |t|
     t.string   "name"
