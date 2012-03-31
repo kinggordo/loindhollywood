@@ -3,7 +3,6 @@ class Joint < ActiveRecord::Base
   belongs_to :film
   belongs_to :salle
   belongs_to :ville
-  belongs_to :currency
   
   has_many :onstageattribs, :dependent => :destroy
   accepts_nested_attributes_for :onstageattribs, :reject_if => :all_blank,  :allow_destroy => true
