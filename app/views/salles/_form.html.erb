@@ -73,7 +73,7 @@
       <%= f.fields_for :prices do |builder| %>
         <%= render "films/price_fields", :f => builder %>
       <% end %>
-      <%= link_to_add_fields "+", f, :prices, {}, "films/" %>
+      <span><%= link_to_add_fields "+", f, :prices, {}, "films/" %></span>
      
        <%# f.collection_select :currency_id, Currency.find(:all), :id, :name, :include_blank => true %>
 	<%# f.select(:number, list_prices()) %>
