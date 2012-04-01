@@ -123,7 +123,7 @@
                       <%= f.fields_for :prices do |builder| %>
                         <%= render "price_fields", :f => builder %>
                       <% end %>
-                      <%= link_to_add_fields "+", f, :prices %>
+                      <span><%= link_to_add_fields "+", f, :prices %></span>
                 </li>
               <br/>
               <br/>
