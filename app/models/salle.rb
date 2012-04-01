@@ -12,7 +12,19 @@ class Salle < ActiveRecord::Base
   belongs_to :user
   belongs_to :currency
   
-  
+  has_many :salle_prices
+  has_many :prices, :through => :salle_prices
+  accepts_nested_attributes_for :prices, :allow_destroy => true
+ 
+  before_save :mark_prices_for_removal
+
+  def mark_prices_for_removal
+    prices.each do |price|
+      price.mark_for_destruction if ( price.currency_id.nil? || price.number.blank? ) 
+    end
+  end
+
+
   def self.search(search)
     if search
       ville_ids  = Ville.search(search).all

@@ -70,8 +70,13 @@
 
 
      <label for="first_name">Screening prices:</label>
-       <%= f.collection_select :currency_id, Currency.find(:all), :id, :name, :include_blank => true %>
-	<%= f.select(:number, list_prices()) %>
+      <%= f.fields_for :prices do |builder| %>
+        <%= render "films/price_fields", :f => builder %>
+      <% end %>
+      <%= link_to_add_fields "+", f, :prices, {}, "films/" %>
+     
+       <%# f.collection_select :currency_id, Currency.find(:all), :id, :name, :include_blank => true %>
+	<%# f.select(:number, list_prices()) %>
 	
 	<br />
     <br />

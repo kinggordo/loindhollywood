@@ -55,10 +55,11 @@ module ApplicationHelper
   
   
   #localvariables: example: { :forced_ville_id => 2 } #used for joint_fields partial for now 
-  def link_to_add_fields(name, f, association, localvariables = {})
+  #whereisthepartial: example "films/" because the partial is reused...
+  def link_to_add_fields(name, f, association, localvariables = {}, whereisthepartial = "")
     new_object = f.object.class.reflect_on_association(association).klass.new
     fields = f.fields_for(association, new_object, :child_index => "new_#{association}") do |builder|
-      render :partial => association.to_s.singularize + "_fields", :locals => localvariables.merge( {:f => builder} )
+      render :partial => whereisthepartial + association.to_s.singularize + "_fields", :locals => localvariables.merge( {:f => builder} )
     end
     link_to_function(name, ("add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")"))
   end
