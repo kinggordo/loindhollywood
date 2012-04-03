@@ -5,7 +5,8 @@
         <ol>
           <li>
             <label for="first_name"></label>
-              <%= f.autocomplete_field :film_id, autocomplete_film_name_films_path, :update_elements => {:id => "#ooo_featuremovattributes_film_id"} %>
+              <%= f.text_field "name" %>
+              <%= f.autocomplete_field :film_id, autocomplete_film_name_films_path, :id_element => "##{field_id_for_js(f, :name)}" %> <%#, { :id => "#ooo_featuremovattributes_film_id" } %>
               <%# f.select :film_id, options_for_select(Film.all(:order=> 'name asc',:conditions => "(moviselect_id) = #{1}").map {|o| [o.name, o.id]}, f.object.film_id) %>
               <p class="remove">
               <%= link_to_remove_fields "Remove", f %><%=image_tag'ldh_recherche_fermeture.jpg'%>

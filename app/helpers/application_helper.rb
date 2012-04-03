@@ -1,5 +1,12 @@
 module ApplicationHelper
 
+  def field_id_for_js(builder, attribute)
+    "#{builder.object_name}[#{attribute.to_s.sub(/\?$/,"")}]".gsub(/\]\[|[^-a-zA-Z0-9:.]/, "_").sub(/_$/, "")
+  end
+
+  def field_name_for_js(builder, attribute)
+    "#{builder.object_name}[#{attribute.to_s.sub(/\?$/,"")}]"
+  end
 
   def list_prices
     (1..10).to_a.map{|i| [i,i]}
