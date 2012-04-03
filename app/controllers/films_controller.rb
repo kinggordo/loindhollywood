@@ -6,6 +6,7 @@
   autocomplete :film, :company
   autocomplete :film, :color
   autocomplete :film, :sound
+  autocomplete :film, :name
   
   helper_method :sort_column, :sort_direction
   
