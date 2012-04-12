@@ -11,7 +11,7 @@ class Joint < ActiveRecord::Base
   accepts_nested_attributes_for :shortmovattribs, :reject_if => :all_blank,  :allow_destroy => true
   
   has_many :featuremovattribs, :dependent => :destroy
-  accepts_nested_attributes_for :featuremovattribs, :reject_if => :all_blank,  :allow_destroy => true
+  accepts_nested_attributes_for :featuremovattribs, :reject_if => proc { |a| a['film_id'].blank? },  :allow_destroy => true
 
   has_many :joint_prices
   has_many :prices, :through => :joint_prices

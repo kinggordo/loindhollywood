@@ -7,7 +7,7 @@
             <label for="first_name"></label>
               <%= f.hidden_field :film_id %>
               <% if (f.object.film.nil?) then film_name = ""; else film_name = f.object.film.name; end %>
-              <%= autocomplete_field_tag :film_id_name, film_name, autocomplete_film_name_films_path, :id_element => "##{field_id_for_js(f, :film_id)}" %> <%#, { :id => "#ooo_featuremovattributes_film_id" } %>
+              <%= autocomplete_field_tag :film_id_name, film_name, autocomplete_film_name_films_path, :id_element => "##{field_id_for_js(f, :film_id)}" %> 
               <p class="remove">
               <%= link_to_remove_fields "Remove", f %><%=image_tag'ldh_recherche_fermeture.jpg'%>
               </p>   
