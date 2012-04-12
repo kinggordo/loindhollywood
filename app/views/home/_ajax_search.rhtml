@@ -83,7 +83,7 @@
 		        Length in feeds:<span> <%= film.feed %></span>   
 		    </li><br/>
 			<li>
-		        Sound:<span> <%= film.sound %></span>   
+		        Sound:<span> <%= film.sound.name unless film.sound.nil? %></span>   
 		    </li><br/>
 			<li>
 		        Source:<span> <%= film.source %></span>   
