@@ -7,7 +7,7 @@ class Ville < ActiveRecord::Base
   
   has_many :salles
   
-  validates :name, :uniqueness => true, :presence => true
+  validates :name, :uniqueness => { :case_sensitive => false }, :presence => true
   
  
    def self.search(search)
