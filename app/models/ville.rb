@@ -7,6 +7,8 @@ class Ville < ActiveRecord::Base
   
   has_many :salles
   
+  validates :name, :presence => true
+  
  
    def self.search(search)
     if (search)
