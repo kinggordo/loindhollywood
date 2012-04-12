@@ -97,11 +97,11 @@ Kinggordo::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => "Home#index"
-  #match 'user' => 'films#index'
-  namespace :user do
-    root :to => "films#index"
-  end
-
+  match 'user' => 'films#index', :as => :user_root
+  #namespace :user do
+  #  root :to => "films#index"
+  #end
+  
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

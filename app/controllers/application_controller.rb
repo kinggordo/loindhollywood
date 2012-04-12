@@ -5,13 +5,13 @@ class ApplicationController < ActionController::Base
 
 
   
-  def after_sign_in_path_for(resource)
-      if resource.is_a?(User)
-        films_path
-      else
-        super
-      end
-    end
+  #def after_sign_in_path_for(resource)
+  #    if resource.is_a?(User)
+  #      films_path
+  #    else
+  #      super
+  #    end
+  #  end
 
   def prepare_search
     found_films = Film.search(params[:search])
