@@ -56,5 +56,7 @@ private
   def set_user_language
     I18n.locale = 'fr'
   end
+  
+  
 
 end

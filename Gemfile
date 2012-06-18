@@ -24,16 +24,16 @@ gem 'devise' # Devise must be required before RailsAdmin
 #gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 group :phil do
-  gem 'pg' #for postgresql (same database as in heroku)
-  gem 'ruby-debug19'
+  #gem 'pg' #for postgresql (same database as in heroku)
+  #gem 'ruby-debug19'
   gem 'taps'
 end
 
 group :development, :test, :phil do
-  gem 'rspec-rails'
-  gem 'simplecov'
-  gem 'webrat'
-  gem 'factory_girl_rails'
+  #gem 'rspec-rails'
+  #gem 'simplecov'
+  #gem 'webrat'
+  #gem 'factory_girl_rails'
 end
 
 # Use unicorn as the web server

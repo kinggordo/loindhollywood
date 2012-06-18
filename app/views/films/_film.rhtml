@@ -255,7 +255,11 @@
                       <%end%>
                     </th>
                     <th><%= joint.genre %></th>
-                    <th><%= joint.day %></th>
+                    <th>
+						<%= joint.day %>
+						<%= and_or_to_to_s(joint.and_or_to_four) %>
+						<%= joint.daybis %>
+					</th>
                     <th>
                       <% if joint.holydays == true %>
                         yes
@@ -264,16 +268,22 @@
                       <%end%>
                     </th>
                     <th>
-                      <%= joint.time %> 
+                      <%= joint.timea.try(:strftime, "%H:""%M""%p") %> 
                       <%= and_or_to_to_s(joint.and_or_to) %>
-                      <%= joint.timebis %> 
+                      <%= joint.timebisa.try(:strftime, "%H:""%M""%p") %> 
                       <%= and_or_to_to_s(joint.and_or_to_bis) %>
-                      <%= joint.timeter %> 
+                      <%= joint.timetera.try(:strftime, "%H:""%M""%p") %> 
                       <%= and_or_to_to_s(joint.and_or_to_ter) %>
-                      <%= joint.timefour %>
+                      <%= joint.timefoura.try(:strftime, "%H:""%M""%p") %>
                     </th>
-                    <th><%= joint.schedule %></th>
-                    <th><%= joint.price %></th>
+                    <th>
+						<%= joint.dayextra %>
+						<%= joint.extratimea.try(:strftime, "%H:""%M""%p") %>
+						<%= and_or_to_to_s(joint.extra_and_or_to) %>
+						<%= joint.extratimebisa.try(:strftime, "%H:""%M""%p") %>
+					
+					</th>
+                    <th><%= joint.prices.collect(&:currency_id).join(", ") %></th>
                     <th><%= link_to_function "see", "$('#joint_#{joint.id}').toggle()" %></th>
                   </tr>
                   <div id="joint_<%=joint.id%>" style="display:none;" >
