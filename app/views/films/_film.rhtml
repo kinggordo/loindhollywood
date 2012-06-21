@@ -268,19 +268,19 @@
                       <%end%>
                     </th>
                     <th>
-                      <%= joint.timea.try(:strftime, "%H:""%M""%p") %> 
+                      <%= joint.time %> 
                       <%= and_or_to_to_s(joint.and_or_to) %>
-                      <%= joint.timebisa.try(:strftime, "%H:""%M""%p") %> 
+                      <%= joint.timebis %> 
                       <%= and_or_to_to_s(joint.and_or_to_bis) %>
-                      <%= joint.timetera.try(:strftime, "%H:""%M""%p") %> 
+                      <%= joint.timeter %> 
                       <%= and_or_to_to_s(joint.and_or_to_ter) %>
-                      <%= joint.timefoura.try(:strftime, "%H:""%M""%p") %>
+                      <%= joint.timefour %>
                     </th>
                     <th>
 						<%= joint.dayextra %>
-						<%= joint.extratimea.try(:strftime, "%H:""%M""%p") %>
+						<%= joint.extratime %>
 						<%= and_or_to_to_s(joint.extra_and_or_to) %>
-						<%= joint.extratimebisa.try(:strftime, "%H:""%M""%p") %>
+						<%= joint.extratimebis %>
 					
 					</th>
                     <th><%= joint.prices.collect(&:currency_id).join(", ") %></th>
