@@ -92,7 +92,7 @@
 				      <label for="first_name">Screening days:</label> 
 				       Week:  <%=  f.select :day, Date::DAYNAMES.each_with_index{|d, i|} ,:include_blank => true %>
 				              <%= f.select :and_or_to_four, list_and_or_to() %>
-				              <%=  f.select :daybis, Date::DAYNAMES.each_with_index ,:include_blank => true %>
+				              <%=  f.select :daybis, Date::DAYNAMES.each_with_index{|d, i|} ,:include_blank => true %>
 
 				       Sundays and holidays : <%= f.check_box :holydays  %>
 				    </li>
@@ -114,7 +114,7 @@
 <hr/>
 				<li>
                  <label for="first_name">Extra screening:</label>
-					<%= f.select :dayextra, Date::DAYNAMES.each_with_index,:include_blank => true  %>
+					<%= f.select :dayextra, Date::DAYNAMES.each_with_index{|d, i|},:include_blank => true  %>
                                         <%= f.select :extratime,list_hours_each_quarter(), { :include_blank => true} %>
                                         <%= f.select :extra_and_or_to, list_and_or_to() %>
                                         <%= f.select :extratimebis,list_hours_each_quarter(), { :include_blank => true} %>
