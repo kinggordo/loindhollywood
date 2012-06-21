@@ -103,21 +103,21 @@
      			<li>
                  <label for="first_name">Screening schedule:</label>
 
-                                        <%= f.time_select :timea, { :twelve_hour => true, :prompt => {:hour => 'Choose hour', :minute => 'Choose minute',:minute_step => 15 }} %>
+                                        <%= f.select :time,list_hours_each_quarter(), { :include_blank => true} %>
                                         <%= f.select :and_or_to, list_and_or_to() %>
-                                        <%= f.time_select :timebisa, { :twelve_hour => true, :prompt => {:hour => 'Choose hour', :minute => 'Choose minute',:minute_step => 15 }} %>
+                                        <%= f.select :timebis,list_hours_each_quarter(), { :include_blank => true}  %>
                                         <%= f.select :and_or_to_bis, list_and_or_to() %>
-                                        <%= f.time_select :timetera, { :twelve_hour => true, :prompt => {:hour => 'Choose hour', :minute => 'Choose minute',:minute_step => 15 }} %>
+                                        <%= f.select :timeter,list_hours_each_quarter(), { :include_blank => true}  %>
                                         <%= f.select :and_or_to_ter, list_and_or_to() %>
-                                        <%= f.time_select :timefoura, { :twelve_hour => true, :prompt => {:hour => 'Choose hour', :minute => 'Choose minute',:minute_step => 15 }} %>
+                                        <%= f.select :timefour,list_hours_each_quarter(), { :include_blank => true}  %>
               	</li>
 <hr/>
 				<li>
                  <label for="first_name">Extra screening:</label>
 					<%= f.select :dayextra, Date::DAYNAMES,:include_blank => true  %>
-                                        <%= f.time_select :extratimea, { :twelve_hour => true, :prompt => {:hour => 'Choose hour', :minute => 'Choose minute',:minute_step => 15 }} %>
+                                        <%= f.select :extratime,list_hours_each_quarter(), { :include_blank => true} %>
                                         <%= f.select :extra_and_or_to, list_and_or_to() %>
-                                        <%= f.time_select :extratimebisa, { :twelve_hour => true, :prompt => {:hour => 'Choose hour', :minute => 'Choose minute',:minute_step => 15 }} %>
+                                        <%= f.select :extratimebis,list_hours_each_quarter(), { :include_blank => true} %>
 					 <br/>
               	</li>
 <hr/>
