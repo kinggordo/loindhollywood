@@ -90,7 +90,7 @@
 				  
      				<li>
 				      <label for="first_name">Screening days:</label> 
-				       Week:  <%=  f.select :day, Date::DAYNAMES.each_with_index ,:include_blank => true %>
+				       Week:  <%=  f.select :day, Date::DAYNAMES.each_with_index.collect{|name,i| [name,i]} ,:include_blank => true %>
 				              <%= f.select :and_or_to_four, list_and_or_to() %>
 				              <%=  f.select :daybis, Date::DAYNAMES.each_with_index ,:include_blank => true %>
 
