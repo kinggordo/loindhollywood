@@ -9,7 +9,7 @@ module ApplicationHelper
   end
 
   def list_prices
-    (1..10).to_a.map{|i| [i,i]}
+    (1..20).to_a.map{|i| [i,i]}
   end
 
   def timetohoursandminutes(thetime)
@@ -116,6 +116,8 @@ module ApplicationHelper
     }
     link_to_remote(text, options, html_options)
   end
+  
+  
 
 
 end

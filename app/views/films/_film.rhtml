@@ -283,7 +283,7 @@
 						<%= joint.extratimebis %>
 					
 					</th>
-                    <th><%= joint.prices.collect(&:currency_id).join(", ") %></th>
+                    <th><%= joint.prices.collect{|x|[x.number, x.currency.name]}.join("<br />").html_safe %></th>
                     <th><%= link_to_function "see", "$('#joint_#{joint.id}').toggle()" %></th>
                   </tr>
                   <div id="joint_<%=joint.id%>" style="display:none;" >
