@@ -135,7 +135,7 @@
   def jointure
     params[:group] ||= "ville"
     @rea = Film.find(params[:id], :include => {:joints => [:salle, :ville, :film ]})
-    @rea_joints = @rea.joints.find(:all).group_by {|j| j.send(params[:group])}
+    @rea_joints = @rea.joints.find(:all, :order=>'end_date').group_by {|j| j.send(params[:group])}
     @villes = Ville.all
   end
   
