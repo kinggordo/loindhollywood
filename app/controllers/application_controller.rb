@@ -37,7 +37,41 @@ class ApplicationController < ActionController::Base
     
 
     #order and paginate:
-    @films = found_films.order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
+    @films = found_films.paginate(:per_page => 25, :page => params[:page])
+  end
+  
+  def prepare_search_office
+    found_offices = Office.search(params[:search])
+    @count = found_offices.count
+
+    @countries = Office.all.collect { |office| office.country }.compact.sort{ |a,b| a.downcase <=> b.downcase }.uniq
+    found_offices = found_offices.where('country = ?', params[:country]) unless params[:country].blank?
+
+    @sons = Office.all.collect { |office| office.son }.compact.sort{ |a,b| a.downcase <=> b.downcase }.uniq
+    found_offices = found_offices.where('son = ?', params[:son]) unless params[:son].blank?
+
+    @producers = Office.all.collect { |office| office.producer }.compact.sort{ |a,b| a.downcase <=> b.downcase }.uniq
+    found_offices = found_offices.where('producer = ?', params[:producer]) unless params[:producer].blank?
+
+    @lieux = Office.all.collect { |office| office.lieu }.compact.sort{ |a,b| a.downcase <=> b.downcase }.uniq
+    found_offices = found_offices.where('lieu = ?', params[:lieu]) unless params[:lieu].blank?
+
+    @lesformats = Office.all.collect { |office| office.format }.compact.sort{ |a,b| a.downcase <=> b.downcase }.uniq
+    found_offices = found_offices.where('format = ?', params[:leformat]) unless params[:leformat].blank?
+
+    @genres = Office.all.collect { |office| office.genre }.compact.sort{ |a,b| a.downcase <=> b.downcase }.uniq
+    found_offices = found_offices.where('genre = ?', params[:genre]) unless params[:genre].blank?
+
+    @supports = Office.all.collect { |office| office.support}.compact.sort{ |a,b| a.downcase <=> b.downcase }.uniq
+    found_offices = found_offices.where('support = ?', params[:support]) unless params[:support].blank?
+
+    @themeas = Office.all.collect { |office| office.themea}.compact.sort{ |a,b| a.downcase <=> b.downcase }.uniq
+    found_offices = found_offices.where('themea = ?', params[:themea]) unless params[:themea].blank?
+
+    @themebs = Office.all.collect { |office| office.themeb}.compact.sort{ |a,b| a.downcase <=> b.downcase }.uniq
+    found_offices = found_offices.where('themeb = ?', params[:themeb]) unless params[:themeb].blank?
+
+    @offices = found_offices.paginate(:per_page => 25, :page => params[:page])
   end
   
   def prepare_search_bis

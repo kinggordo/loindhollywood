@@ -7,7 +7,6 @@
 	
     <p>
       Company: <%= select_tag( "company", options_for_select( @companies, params[:company] ), :include_blank => true ) %>
-      
 	</p>
 	<p>
       Country: <%= select_tag( "country", options_for_select( @countries, params[:country] ), :include_blank => true ) %>

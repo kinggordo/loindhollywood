@@ -16,7 +16,7 @@ var sliderCount = 1;
 $.fn.codaSlider = function(settings) {
 
 	settings = $.extend({
-		autoHeight: false,
+		autoHeight: true,
 		autoHeightEaseDuration: 1000,
 		autoHeightEaseFunction: "easeInOutExpo",
 		autoSlide: false,

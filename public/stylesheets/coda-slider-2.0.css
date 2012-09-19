@@ -17,13 +17,19 @@
 	.coda-slider {background: url(/images/ldh_fond-page.jpg) repeat;}
 	
 	/* Use this to keep the slider content contained in a box even when JavaScript is disabled */
-	.coda-slider-no-js .coda-slider { height: 200px; overflow: auto !important; padding-right: 0px }
+	.coda-slider-no-js .coda-slider { height: 200px; overflow-y: auto !important; padding-right: 0px }
 	
 	/* Change the width of the entire slider (without dynamic arrows) */
-	.coda-slider, .coda-slider .panel { } 
+	.coda-slider, .coda-slider .panel {   } 
 	
 	/* Change margin and width of the slider (with dynamic arrows) */
-	.coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel { width: 970px; }
+	.coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel { 
+	width: 970px; display: block;
+	overflow:hidden;
+	overflow-x: hidden;
+	overflow-y: auto;
+	min-height:1900px !important;
+	}
 	.coda-slider-wrapper.arrows .coda-slider { margin: 0 0px ; margin-right:0px;}
 	
 	/* Arrow styling */
@@ -34,23 +40,114 @@
 	.coda-nav ul li a.current { background: transparent;color:#800015; }
 	
 	/* Panel padding */
-	.coda-slider .panel-wrapper { padding-bottom: 50px;  min-height:300px !important; }
-	.coda-slider .panel-wrapper img{ margin-top:0px;}
-	.panel-wrapper h2.title{font-size:1px;  color:transparent; margin-top:-50px;  }
-	.panel-wrapper h1.title{font-family: 'Ultra', serif; font-size:50px; line-height:60px; color:#402025; text-shadow:1px 1px 0px #FFF;width: 970px;background:#bfb9ac;padding-top:30px;height:100px;border-top: 1px solid red; }
+	.coda-slider .panel-wrapper { padding-bottom: 50px;   }
+	.coda-slider .panel-wrapper img{ margin-top:0px;margin-bottom:55px;}
+	.panel-wrapper h2.title{font-size:1px;  color:transparent; margin-top:-50px;   }
+	.panel-wrapper h1.title{font-family: 'Ultra', serif; margin-top:-30px;font-size:44px; line-height:60px; color:#402025; text-shadow:1px 1px 0px #FFF;width: 970px;background:#bfb9ac;padding-top:30px;height:90px; }
 	.panel{ width: 980px;}
 	/* Preloader */
 	.coda-slider p.loading { padding: 0px; text-align: center }
-
+	
+	.panel-wrapper #left {
+		position:relative;margin-left:15px;margin-top:-15px;width:475px;font-family:'Helvetica Neue', Arial;
+		text-rendering:optimizelegibility;font-size:14px;color:#262626; line-height:18px;
+	}
+	.panel-wrapper #right {
+		position:relative;width:475px;margin-left:495px; margin-top:-674px;
+		font-family:'Helvetica Neue', Arial;
+		text-rendering:optimizelegibility;font-size:14px;color:#262626;line-height:18px;
+	}
+	.panel-wrapper #left p{text-align: left; margin-bottom:-15px;padding-right:10px;}
+	.panel-wrapper #right p{text-align: left;margin-bottom:-15px;padding-right:10px;}
+	.panel-wrapper #left p img{margin-right:5px;margin-top:10px;margin-bottom:20px;}
+	.panel-wrapper #right p img{margin-left:0px;margin-right:5px;margin-top:10px;margin-bottom:20px;}
+	
+	.panel-wrapper #leftt {
+		position:relative;margin-left:15px;margin-top:-15px;width:475px;font-family:'Helvetica Neue', Arial;
+		text-rendering:optimizelegibility;font-size:14px;color:#262626; line-height:18px;
+	}
+	.panel-wrapper #rightt {
+		position:relative;width:475px;margin-left:495px; margin-top:-735px;
+		font-family:'Helvetica Neue', Arial;
+		text-rendering:optimizelegibility;font-size:14px;color:#262626;line-height:18px;
+	}
+	.panel-wrapper #leftt p{text-align:left; margin-bottom:0px;padding-right:10px;}
+	.panel-wrapper #rightt p{text-align:left;margin-bottom:-15px;padding-right:10px;color:#402025;}
+	.panel-wrapper #leftt p img{float:left;margin-right:15px;margin-top:5px;margin-bottom:0px;}
+	.panel-wrapper #rightt p img{margin-left:0px;margin-right:5px;margin-top:10px;margin-bottom:20px;}
+	
+	.panel-wrapper #rightt h3{
+		text-align: left;color:#bf0020;font-family:'Helvetica Neue', Arial;
+	text-rendering:optimizelegibility;font-size:14px;line-height:18px;
+	}
+	.panel-wrapper #leftt h3{
+		text-align: left;color:#bf0020;font-family:'Helvetica Neue', Arial;
+	text-rendering:optimizelegibility;font-size:14px;line-height:18px;
+	}
+	
+	.panel-wrapper #lefttt {
+		position:relative;margin-left:15px;margin-top:-15px;width:475px;font-family:'Helvetica Neue', Arial;
+		text-rendering:optimizelegibility;font-size:14px;color:#262626; line-height:18px;
+	}
+	.panel-wrapper #righttt {
+		position:relative;width:475px;margin-left:495px; margin-top:-880px;
+		font-family:'Helvetica Neue', Arial;
+		text-rendering:optimizelegibility;font-size:14px;color:#262626;line-height:18px;
+	}
+	.panel-wrapper #lefttt p{text-align:left; margin-bottom:0px;padding-right:10px;}
+	.panel-wrapper #righttt p{text-align:left;margin-bottom:-15px;padding-right:10px;color:#402025;}
+	.panel-wrapper #lefttt p img{float:left;margin-right:5px;margin-top:0px;margin-bottom:-10px;}
+	.panel-wrapper #righttt p img{margin-left:0px;margin-right:5px;margin-top:10px;margin-bottom:20px;}
+	
+	.panel-wrapper #righttt h3{
+		text-align: left;color:#bf0020;font-family:'Helvetica Neue', Arial;
+	text-rendering:optimizelegibility;font-size:14px;line-height:18px;
+	}
+	.panel-wrapper #lefttt h3{
+		text-align: left;color:#bf0020;font-family:'Helvetica Neue', Arial;
+	text-rendering:optimizelegibility;font-size:14px;line-height:18px;
+	}
+	
+	#filet {margin-top:-15px;margin-left:15px;width:940px;height:1px; border-top: 1px solid #bf0020}
+	#filett {margin-top:10px;margin-left:15px;width:940px;height:1px; border-top: 1px solid #bf0020}
+	#filettt {margin-top:110px;margin-left:15px;width:940px;height:1px; border-top: 1px solid #bf0020}
+	#fileth {position:absolute;margin-top:-54px;margin-left:15px;width:940px;height:1px; border-top: 4px solid #bf0020}
+	#filethb {position:absolute;margin-top:-47px;margin-left:15px;width:940px;height:1px; border-top: 1px solid #bf0020}
+	#filetm {position:absolute;margin-top:-25px;margin-left:15px;width:940px;height:1px; border-top: 1px solid #bf0020}
+	#filetb {position:absolute;margin-top:-30px;margin-left:15px;width:940px;height:1px; border-top: 1px solid #bf0020}
+	
+	#credit {
+		position:relative;margin-left:15px;margin-top:-5px;margin-bottom:15px;width:475px;font-family:'Helvetica Neue', Arial;
+		text-rendering:optimizelegibility;font-size:12px;color:#262626; line-height:16px;
+	}
+	#credit p{text-align: left; margin-bottom:-15px;padding-right:10px;}
+	
+	
+	#creditt {
+		position:relative;margin-left:15px;margin-top:-5px;width:475px;font-family:'Helvetica Neue', Arial;
+		text-rendering:optimizelegibility;font-size:12px;color:#262626; line-height:16px;
+	}
+	#creditt p{text-align: left; margin-bottom:-15px;padding-right:10px;}
+	
+	#credittt {
+		position:relative;margin-left:15px;margin-top:-5px;width:475px;font-family:'Helvetica Neue', Arial;
+		text-rendering:optimizelegibility;font-size:12px;color:#262626; line-height:16px;
+	}
+	#credittt p{text-align: left; margin-bottom:-15px;padding-right:10px;}
+	
+	
+	#search{position:relative}
+	
+	
 /* Don't change anything below here unless you know what you're doing */
 
 	/* Tabbed nav */
 	
-	.coda-nav ul {position:absolute; clear: both; display:block; margin-left:700px; margin-top:-200px;width:50px }
+	.coda-nav ul {position:absolute; clear: both; display:block; margin-left:670px; margin-top:-200px;width:50px }
 	.coda-nav ul li { display:list-item; margin-bottom:10px;color:transparent;}
-	.coda-nav ul li a { background: transparent; color: #bf0020; display: block; float:left; padding: 3px 6px; text-decoration: none; font-size:12px;letter-spacing:2px; text-shadow:1px 1px 0px #FFF;}
+	.coda-nav ul li a { background: transparent; color: #bf0020; display: block; float:left;width:232px;text-align:left; padding: 3px 6px; text-decoration: none; font-size:12px;letter-spacing:2px; text-shadow:1px 1px 0px #FFF;border-bottom: 1px solid #bf0020;}
 	.coda-nav ul li a:hover{ color:  #262626; display: block; float: left; margin-right: 1px; padding: 3px 6px; text-decoration: none; font-size:12px;letter-spacing:2px }
-	.coda-nav ul li a:active{ }
+	.coda-nav ul li a:active{ color:  #262626;}
 	/* Miscellaneous */
 	.coda-slider-wrapper { clear: both; overflow: auto }
 	.coda-slider { float: left; overflow: hidden; position: relative }

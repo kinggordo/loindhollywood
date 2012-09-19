@@ -1,0 +1,26 @@
+
+<% if @offices.count == 0 %>
+
+<p>pas d'offices...</p>
+
+<% else %>
+
+<p><%= @offices.count %> office(s) found</p>
+
+<div id='hrrr'></div>
+
+
+<ul>
+	
+    <% @offices.each do |office| %>
+   
+      <li class='filmtitle'><%= office.titre %> | <%= office.rea %> | <%= office.lieu %> | <%= office.genre %></li><br/>
+	  <div id='hr'></div>
+	
+    <% end %>
+</ul>
+<br/>
+<br/>
+
+
+<% end %>
