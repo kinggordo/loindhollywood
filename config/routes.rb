@@ -2,6 +2,8 @@ Kinggordo::Application.routes.draw do
   
   
 
+  resources :participants
+
   resources :currencies
 
   resources :sounds

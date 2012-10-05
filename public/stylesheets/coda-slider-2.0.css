@@ -121,6 +121,7 @@
 	#filetp {position:absolute;margin-top:0px;margin-left:15px;width:940px;height:1px; border-top: 1px solid #bf0020}
 	#filetpp {position:absolute;margin-top:380px;margin-left:15px;width:940px;height:1px; border-top: 1px solid #bf0020}
 	#filetppp {position:absolute;margin-top:-5px;margin-left:15px;width:940px;height:1px; border-top: 1px solid #bf0020}
+	#filetpart {position:relative;margin-top:15px;margin-left:15px;width:940px;height:1px; border-top: 1px solid #bf0020}
 	
 	
 	#credit {
@@ -167,6 +168,13 @@
 	#imagee img{float:left;margin-right:150px;}
 	#imagebis img{float:left;margin-right:190px;}
 	#imageebis img{float:left;margin-right:120px;}
+	
+	#name{position:relative;width:300px;height:100px;border-right: 1px solid #262626;text-align:right;padding-right:15px;}
+	#name h1{text-align:right;}
+	#name a{color:red;}
+		
+	#body{position:relative;width:600px;height:100px;margin-top:-110px;margin-left: 310px;text-align:left;padding-left:15px;}
+	#body p{}
 	
 /* Don't change anything below here unless you know what you're doing */
 

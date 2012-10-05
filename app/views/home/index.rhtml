@@ -223,6 +223,23 @@
 				<h1 class="title">Participants</h1>
 				<div id="filetb"></div>
 				
+				
+
+				<% @participants.each do |participant| %>
+
+				<div id="name">
+				    <h1><%= participant.name%></h1>
+					Mail: <%= mail_to participant.mail%><br/>
+					Web: <%= link_to participant.web, url_for("http://#{participant.web}"),  :target=>"blank"%>
+				</div>
+				<div id="body">
+					<p><%= participant.body%></p>
+				</div>
+				    
+				<div id="filetpart"></div> 
+				<% end %>
+				
+				
 			</div>
 		</div>
 		

@@ -5,6 +5,7 @@ class HomeController < ApplicationController
   def index
          prepare_search 
          prepare_search_office 
+        @participants = Participant.all
   end
   
   

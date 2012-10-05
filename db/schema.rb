@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120618075537) do
+ActiveRecord::Schema.define(:version => 20121005173953) do
 
   create_table "cinematographers", :force => true do |t|
     t.string    "name"
@@ -285,46 +285,46 @@ ActiveRecord::Schema.define(:version => 20120618075537) do
   end
 
   create_table "joints", :force => true do |t|
-    t.integer  "film_id"
-    t.integer  "ville_id"
-    t.integer  "salle_id"
-    t.string   "titreoriginal"
-    t.string   "titreoriginalb"
-    t.string   "genre"
-    t.string   "date"
-    t.string   "price"
-    t.string   "show"
-    t.date     "start_date"
-    t.date     "end_date"
-    t.string   "schedule"
-    t.string   "onstage"
-    t.string   "episode"
-    t.string   "audience"
-    t.string   "source"
-    t.text     "comment"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "day"
-    t.string   "daybis"
-    t.boolean  "holydays"
-    t.string   "dayextra"
-    t.time     "time"
-    t.datetime "timebis"
-    t.datetime "timeter"
-    t.datetime "timefour"
-    t.integer  "and_or_to"
-    t.integer  "and_or_to_bis"
-    t.integer  "and_or_to_ter"
-    t.integer  "extra_and_or_to"
-    t.string   "extratime"
-    t.string   "extratimebis"
-    t.integer  "and_or_to_four"
-    t.datetime "timea"
-    t.datetime "timebisa"
-    t.datetime "timetera"
-    t.datetime "timefoura"
-    t.datetime "extratimea"
-    t.datetime "extratimebisa"
+    t.integer   "film_id"
+    t.integer   "ville_id"
+    t.integer   "salle_id"
+    t.string    "titreoriginal"
+    t.string    "titreoriginalb"
+    t.string    "genre"
+    t.string    "date"
+    t.string    "price"
+    t.string    "show"
+    t.date      "start_date"
+    t.date      "end_date"
+    t.string    "schedule"
+    t.string    "onstage"
+    t.string    "episode"
+    t.string    "audience"
+    t.string    "source"
+    t.text      "comment"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "day"
+    t.string    "daybis"
+    t.boolean   "holydays"
+    t.string    "dayextra"
+    t.string    "time"
+    t.string    "timebis"
+    t.string    "timeter"
+    t.string    "timefour"
+    t.integer   "and_or_to"
+    t.integer   "and_or_to_bis"
+    t.integer   "and_or_to_ter"
+    t.integer   "extra_and_or_to"
+    t.string    "extratime"
+    t.string    "extratimebis"
+    t.integer   "and_or_to_four"
+    t.timestamp "timea"
+    t.timestamp "timebisa"
+    t.timestamp "timetera"
+    t.timestamp "timefoura"
+    t.timestamp "extratimea"
+    t.timestamp "extratimebisa"
   end
 
   create_table "malecasts", :force => true do |t|
@@ -373,6 +373,15 @@ ActiveRecord::Schema.define(:version => 20120618075537) do
     t.integer   "joint_id"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+  end
+
+  create_table "participants", :force => true do |t|
+    t.string   "name"
+    t.string   "mail"
+    t.string   "web"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "people", :force => true do |t|
