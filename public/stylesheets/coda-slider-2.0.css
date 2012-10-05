@@ -45,6 +45,9 @@
 	.panel-wrapper h2.title{font-size:1px;  color:transparent; margin-top:-50px;   }
 	.panel-wrapper h1.title{font-family: 'Ultra', serif; margin-top:-30px;font-size:44px; line-height:60px; color:#402025; text-shadow:1px 1px 0px #FFF;width: 970px;background:#bfb9ac;padding-top:30px;height:90px; }
 	.panel{ width: 980px;}
+	.panel-wrapper h3{font-family:'Helvetica Neue', Arial; text-rendering:optimizelegibility; margin-top:-15px;font-size:18px; color:#bf0020;  }
+	.panel-wrapper h4{font-family:'Helvetica Neue', Arial; text-rendering:optimizelegibility; margin-top:415px;font-size:18px; color:#bf0020;  }
+	
 	/* Preloader */
 	.coda-slider p.loading { padding: 0px; text-align: center }
 	
@@ -115,6 +118,10 @@
 	#filethb {position:absolute;margin-top:-47px;margin-left:15px;width:940px;height:1px; border-top: 1px solid #bf0020}
 	#filetm {position:absolute;margin-top:-25px;margin-left:15px;width:940px;height:1px; border-top: 1px solid #bf0020}
 	#filetb {position:absolute;margin-top:-30px;margin-left:15px;width:940px;height:1px; border-top: 1px solid #bf0020}
+	#filetp {position:absolute;margin-top:0px;margin-left:15px;width:940px;height:1px; border-top: 1px solid #bf0020}
+	#filetpp {position:absolute;margin-top:380px;margin-left:15px;width:940px;height:1px; border-top: 1px solid #bf0020}
+	#filetppp {position:absolute;margin-top:-5px;margin-left:15px;width:940px;height:1px; border-top: 1px solid #bf0020}
+	
 	
 	#credit {
 		position:relative;margin-left:15px;margin-top:-5px;margin-bottom:15px;width:475px;font-family:'Helvetica Neue', Arial;
@@ -138,6 +145,28 @@
 	
 	#search{position:relative}
 	
+	#image{
+		position:absolute;margin-top:-30px;margin-left:15px;width:940px;height:170px;
+		padding-top:50px;padding-left:70px;	
+	}
+	#imagee{
+		position:absolute;margin-top:150px;margin-left:15px;width:940px;height:170px;
+		padding-top:50px;padding-left:70px;	
+	}
+	#imagebis{
+		position:absolute;margin-top:-35px;margin-left:15px;width:940px;height:170px;
+		padding-top:50px;padding-left:70px;
+		
+	}
+	#imageebis{
+		position:absolute;margin-top:150px;margin-left:15px;width:940px;height:170px;
+		padding-top:50px;padding-left:70px;
+		
+	}
+	#image img{float:left;margin-right:190px;}
+	#imagee img{float:left;margin-right:150px;}
+	#imagebis img{float:left;margin-right:190px;}
+	#imageebis img{float:left;margin-right:120px;}
 	
 /* Don't change anything below here unless you know what you're doing */
 
