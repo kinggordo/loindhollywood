@@ -18,15 +18,15 @@
    	
 
 	
-	<div id="film_<%=film.id%>" style="display:none;" >
+<div id="film_<%=film.id%>" style="display:none;" >
 		
 		<div id='result_title'>
 			<%= film.name %> <span>FILM</span>
 		</div>
 		
-	<div id='result'>
+<div id='result'>
 		
-		<div id='result_content_left'>
+<div id='result_content_left'>
 		
     	<br/>
 
@@ -88,19 +88,70 @@
 			<li>
 		        Source:<span> <%= film.source %></span>   
 		    </li><br/>
+		
+			<% film.tecnicals.each do |f| %>
+	          <li> 
+	            <%=h f.name %> : <b><%= f.tecnicalattribs.collect(&:name).join(", ") %></b>
+	          </li><br/>
+	        <% end %>
 		  
 		<br/>
 		
 		<legend>FUNCTIONS/PEOPLE</legend> 
 		<div id='hrr'></div>
+		
+		<% film.directors.each do |f| %>
+          <li> 
+            Director : <b><%= f.people.collect(&:name).join(", ") %></b>
+          </li><br/>
+        <% end %>
 	  
-	      <% film.functions.each do |f| %>
-	      <li> 
-	        <%=h f.name %>: <span> <%= f.people.collect(&:name).join(", ") %></span> 
-	      </li><br/>
-	      <% end %>
+	      <% film.malecasts.each do |f| %>
+          <li> 
+            Male cast : <b><%= f.people.collect(&:name).join(", ") %></b>
+          </li><br/>
+        <% end %>
+    
+      
+        <%film.femalecasts.each do |f| %>
+          <li> 
+            Female cast : <b><%= f.people.collect(&:name).join(", ") %></b>
+          </li><br/>
+        <% end %>
+      
+        <% film.producers.each do |f| %>
+          <li> 
+            Producer : <b><%= f.people.collect(&:name).join(", ") %></b>
+          </li><br/>
+        <% end %>
+     
+        <% film.scriptwriters.each do |f| %>
+          <li> 
+            Scriptwriter : <b><%= f.people.collect(&:name).join(", ") %></b>
+          </li><br/>
+        <% end %>
+      
+        <% film.cinematographers.each do |f| %>
+          <li> 
+            Cinematographor : <b><%= f.people.collect(&:name).join(", ") %></b>
+          </li><br/>
+        <% end %>
+      
+        <% film.musicians.each do |f| %>
+          <li> 
+            Musician : <b><%= f.people.collect(&:name).join(", ") %></b>
+          </li><br/>
+        <% end %>
+      
+        <% film.functions.each do |f| %>
+          <li> 
+            <%=h f.name %> : <b><%= f.people.collect(&:name).join(", ") %></b>
+          </li><br/>
+        <% end %>
+      
 	    
-		<br/>
+	
+	
 		
 		
 		<legend>COUNTRY/THEATER</legend> 
@@ -117,11 +168,11 @@
 			</li><br/>
 			
 			<li>
-        		Realease title: <span><%= joint.titreoriginal %></span>
+        		Realease title: <span><%= joint.titreoriginalb %></span>
 			</li><br/>
 			
 			<li>
-        		Episode title release: <span><%= joint.titreoriginalb %></span>
+        		Episode title release: <span><%= joint.episode %></span>
 			</li><br/>
 			
 			
@@ -135,18 +186,27 @@
 			</li><br/>
 			
 			<li>
-        		Screening schedule: <span><%= joint.schedule %></span>
+        		Screening schedule: 
+				<span>
+				  <%= joint.time %> 
+                  <%= and_or_to_to_s(joint.and_or_to) %>
+                  <%= joint.timebis %> 
+                  <%= and_or_to_to_s(joint.and_or_to_bis) %>
+                  <%= joint.timeter %> 
+                  <%= and_or_to_to_s(joint.and_or_to_ter) %>
+                  <%= joint.timefour %>
+				</span>
 			</li><br/>
 			
 			<li>
-        		Screening prices: <span><%= joint.price %></span>
+        		Screening prices: <span><%= joint.prices.collect{|x|[x.number, x.currency.name]}.join("/").html_safe %></span>
 			</li><br/>
        	
 			<li>
           		Show: <%= link_to_function "see →", "$('#joint_#{joint.id}').toggle()" %>
             </li><br/>
-          
-  <div id="joint_<%=joint.id%>" style="display:none;" >
+         
+<div id="joint_<%=joint.id%>" style="display:none;" >
           
           <li>      
               Run date : <span><%= joint.start_date.strftime('%Y/''%m/''%d') unless joint.start_date.nil? %> to <%= joint.end_date.strftime('%Y/''%m/''%d') unless joint.end_date.nil? %></span>
@@ -177,10 +237,12 @@
           </li><br/>
 
 		<br/>
-  </div>
+</div>
+
 <br/>
 
-  <div id="joint_<%=joint.salle_id%>" style="display:none;" >
+
+<div id="joint_<%=joint.salle_id%>" style="display:none;" >
 		
 		
 		
@@ -188,7 +250,7 @@
 			<%=joint.salle.name %> <span>THEATER</span>
 		</div>
 		
-		<div id='result_content_left_salle'>
+<div id='result_content_left_salle'>
 			<br/>
 			<li>
 				Theater name: <span> <%=joint.salle.name%> →</span>
@@ -228,9 +290,9 @@
 			</li><br/>
 			<br/>
 			<div id='hrr'></div>
-		</div>
+</div>
 		
-  </div>
+</div>
 		
 
 		<%end%>
@@ -239,9 +301,9 @@
 
 			
 				
-		</div>
-	</div>	
-	</div>  
+</div>
+</div>	
+</div>  
 	<div id='hr'></div>
 	
 

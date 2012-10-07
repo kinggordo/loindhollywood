@@ -3,8 +3,9 @@ class HomeController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-         prepare_search 
-         prepare_search_office 
+        prepare_search_office
+        prepare_search 
+          
         @participants = Participant.all
   end
   
