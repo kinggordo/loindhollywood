@@ -1,7 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.4.rc1'
-gem 'sqlite3'
+#gem 'sqlite3'
+gem 'pg'
 gem 'rails3-jquery-autocomplete'
 
 gem 'jquery-rails'
@@ -23,18 +24,18 @@ gem 'i18n'
 gem 'devise' # Devise must be required before RailsAdmin
 #gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
-group :phil do
+#group :phil do
   #gem 'pg' #for postgresql (same database as in heroku)
   #gem 'ruby-debug19'
-  gem 'taps'
-end
+  #gem 'taps'
+#end
 
-group :development, :test, :phil do
+#group :development, :test, :phil do
   #gem 'rspec-rails'
   #gem 'simplecov'
   #gem 'webrat'
   #gem 'factory_girl_rails'
-end
+#end
 
 # Use unicorn as the web server
 # gem 'unicorn'
